@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\Service\HTML;
@@ -23,7 +23,7 @@ use Joomla\Registry\Registry;
 /**
  * Content Component HTML Helper
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class Icon
 {
@@ -32,7 +32,7 @@ class Icon
 	 *
 	 * @var    CMSApplication
 	 *
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	private $application;
 
@@ -41,7 +41,7 @@ class Icon
 	 *
 	 * @param   CMSApplication  $application  The application
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function __construct(CMSApplication $application)
 	{
@@ -57,7 +57,7 @@ class Icon
 	 *
 	 * @return  string  The HTML markup for the create item link
 	 *
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	public static function create($category, $params, $attribs = array())
 	{
@@ -97,7 +97,7 @@ class Icon
 	 *
 	 * @return  string   The HTML for the book edit icon.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public static function edit($book, $params, $attribs = array(), $legacy = false)
 	{

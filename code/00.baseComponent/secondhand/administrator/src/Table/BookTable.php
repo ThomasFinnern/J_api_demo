@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -24,7 +24,7 @@ use Joomla\Registry\Registry;
 /**
  * Book Table class.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BookTable extends Table implements VersionableTableInterface, TaggableTableInterface
 {   
@@ -34,7 +34,7 @@ class BookTable extends Table implements VersionableTableInterface, TaggableTabl
 	 * Indicates that columns fully support the NULL value in the database
 	 *
 	 * @var    boolean
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	protected $_supportNullValue = true;
 
@@ -42,7 +42,7 @@ class BookTable extends Table implements VersionableTableInterface, TaggableTabl
 	 * Ensure the params and metadata in json encoded in the bind method
 	 *
 	 * @var    array
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	//protected $_jsonEncode = array('params', 'metadata');
     
@@ -51,7 +51,7 @@ class BookTable extends Table implements VersionableTableInterface, TaggableTabl
 	 *
 	 * @param   DatabaseDriver  $db  Database connector object
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 
 	 */
 	public function __construct(DatabaseDriver $db)
@@ -67,7 +67,7 @@ class BookTable extends Table implements VersionableTableInterface, TaggableTabl
 	 * @return  boolean  True on success, false on failure
 	 *
 	 * @see     \JTable::check
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function check()
 	{
@@ -187,7 +187,7 @@ class BookTable extends Table implements VersionableTableInterface, TaggableTabl
 	 *
 	 * @return  string  The alias as described above
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function getTypeAlias()
 	{

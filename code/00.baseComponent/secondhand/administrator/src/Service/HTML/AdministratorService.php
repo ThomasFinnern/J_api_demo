@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\Service\HTML;
@@ -15,7 +15,7 @@ use Joomla\CMS\Language\Text;
 /**
  * Secondhand HTML class.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class AdministratorService
 {

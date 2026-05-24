@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -22,7 +22,7 @@ use Joomla\Database\ParameterType;
 /**
  * Supports a modal book picker.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BookField extends FormField
 {
@@ -30,7 +30,7 @@ class BookField extends FormField
 	 * The form field type.
 	 *
 	 * @var     string
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected $type = 'Modal_Book';
 
@@ -39,7 +39,7 @@ class BookField extends FormField
 	 *
 	 * @return  string  The field input markup.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function getInput()
 	{
@@ -149,7 +149,7 @@ class BookField extends FormField
 				. ' data-bs-toggle="modal"'
 				. ' type="button"'
 				. ' data-bs-target="#ModalSelect' . $modalId . '">'
-				. '<span class="icon-file" aria-hidden="true"></span> ' . Text::_('JSELECT')
+				. '<span class="icon-books" aria-hidden="true"></span> ' . Text::_('JSELECT')
 				. '</button>';
 		}
 
@@ -311,7 +311,7 @@ class BookField extends FormField
 	 *
 	 * @return  string  The field label markup.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function getLabel()
 	{

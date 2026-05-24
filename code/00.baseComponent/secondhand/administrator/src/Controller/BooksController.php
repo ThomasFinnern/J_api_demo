@@ -1,28 +1,32 @@
 <?php
+
 /**
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright   Copyright (C) 2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
+
 namespace Bluebox\Component\Secondhand\Administrator\Controller;
 
-\defined('_JEXEC') or die;
-
-use Joomla\CMS\Language\Text;
-use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Controller\AdminController;
 use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
 use Joomla\Input\Input;
 use Joomla\CMS\Session\Session;
 use Joomla\CMS\Router\Route;
+use Joomla\Utilities\ArrayHelper;
+
+// phpcs:disable PSR1.Files.SideEffects
+\defined('_JEXEC') or die;
+// phpcs:enable PSR1.Files.SideEffects
 
 /**
  * The Books list controller class.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BooksController extends AdminController
 {	
@@ -43,7 +47,7 @@ class BooksController extends AdminController
 	 *
 	 * @return  \Joomla\CMS\MVC\Model\BaseDatabaseModel
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function getModel($name = 'Book', $prefix = 'Administrator', $config = array('ignore_request' => true))
 	{
@@ -64,7 +68,7 @@ class BooksController extends AdminController
 		
 		if (empty($ids))
 		{
-			JError::raiseWarning(500, Text::_('COM_SECONDHAND_NO_ITEM_SELECTED'));
+			Error::raiseWarning(500, Text::_('COM_SECONDHAND_NO_ITEM_SELECTED'));
 		}
 		else
 		{

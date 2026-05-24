@@ -3,13 +3,14 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\View\Books;
 
 \defined('_JEXEC') or die;
 
+use Bluebox\Component\Secondhand\Administrator\Model\BooksModel;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Language\Multilanguage;
@@ -22,7 +23,7 @@ use Joomla\CMS\Toolbar\ToolbarHelper;
 /**
  *  * View class for a list of books.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class HtmlView extends BaseHtmlView
 {
@@ -66,10 +67,10 @@ class HtmlView extends BaseHtmlView
 	 *
 	 * @var   boolean
 	 *
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	private $isEmptyState = false;
-	
+
 	/**
 	 * Method to display the view.
 	 *
@@ -77,21 +78,24 @@ class HtmlView extends BaseHtmlView
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
     public function display($tpl = null): void
     {
-        $this->items         = $this->get('Items');
-		$this->pagination    = $this->get('Pagination');
-		$this->state         = $this->get('State');
-		$this->filterForm    = $this->get('FilterForm');
-		$this->activeFilters = $this->get('ActiveFilters'); 
-        
+        /** @var BooksModel $model */
+        $model       = $this->getModel();
+
+        $this->items         = $model->getItems();
+        $this->pagination    = $model->getPagination();
+        $this->state         = $model->getState();
+        $this->filterForm    = $model->getFilterForm();
+        $this->activeFilters = $model->getActiveFilters();
+
         if (!\count($this->items) && $this->isEmptyState = $this->get('IsEmptyState'))
         {
 			$this->setLayout('emptystate');
 		}
-        
+
         // We don't need toolbar in the modal window.
 		if ($this->getLayout() !== 'modal')
 		{
@@ -112,16 +116,16 @@ class HtmlView extends BaseHtmlView
 	{
 		$user = Factory::getApplication()->getIdentity();
 		$canDo = ContentHelper::getActions('com_secondhand');
-        
+
 		ToolbarHelper::title(Text::_('COM_SECONDHAND_HEADLINE_BOOKS'), 'list com_secondhand');
-        
+
 		// Get the toolbar object instance
 		$toolbar = Toolbar::getInstance('toolbar');
 		if ($canDo->get('core.create'))
 		{
 			$toolbar->addNew('book.add');
 		}
-        
+
         if (!$this->isEmptyState && $canDo->get('core.edit.state'))
 		{
             $dropdown = $toolbar->dropdownButton('status-group')
@@ -136,15 +140,15 @@ class HtmlView extends BaseHtmlView
 			$childBar->publish('books.publish')->listCheck(true);
 
 			$childBar->unpublish('books.unpublish')->listCheck(true);
-            
+
             $childBar->archive('books.archive')->listCheck(true);
-            
+
             if ($this->state->get('filter.published') != -2)
 			{
 				$childBar->trash('books.trash')->listCheck(true);
 			}
         }
-        
+
         if (!$this->isEmptyState && $this->state->get('filter.published') == -2 && $canDo->get('core.delete'))
 		{
 			$toolbar->delete('books.delete')
@@ -152,12 +156,12 @@ class HtmlView extends BaseHtmlView
 				->message('JGLOBAL_CONFIRM_DELETE')
 				->listCheck(true);
 		}
-		
+
 		if ($user->authorise('core.admin', 'com_secondhand') || $user->authorise('core.options', 'com_secondhand'))
 		{
 			$toolbar->preferences('com_secondhand');
 		}
-		
-		
+
+
 	}
 }

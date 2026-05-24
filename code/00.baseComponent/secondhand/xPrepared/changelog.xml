@@ -10,7 +10,7 @@
 	<changelog>
 		<element>com_secondhand</element>
 		<type>component</type>
-		<version>1.0.0</version>
+		<version>0.1.0</version>
 		<security>
 			<item><![CDATA[<p>No security issues.</p>]]></item>
 		</security>

@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -19,7 +19,7 @@ use Joomla\CMS\Language\Associations;
  * Supports a generic list of options.
  * Displays only when Associations are enabled.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BlankField extends ListField
 {
@@ -27,7 +27,7 @@ class BlankField extends ListField
 	 * The form field type.
 	 *
 	 * @var    string
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	protected $type = 'Blank';
 

@@ -3,13 +3,14 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\Model;
 
 \defined('_JEXEC') or die;
 
+use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\CMS\Language\Associations;
 use Joomla\CMS\Factory;
@@ -20,17 +21,17 @@ use Joomla\CMS\Table\Table;
 /**
  * Methods supporting a list of books records.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BooksModel extends ListModel
-{	
+{
 	/**
 	 * Constructor.
 	 *
 	 * @param   array  $config  An optional associative array of configuration settings.
 	 *
 	 * @see     JController
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function __construct($config = array())
 	{
@@ -47,7 +48,7 @@ class BooksModel extends ListModel
 
 		parent::__construct($config);
 	}
-	
+
 
 	/**
 	 * Returns a reference to the a Table object, always creating it.
@@ -58,13 +59,13 @@ class BooksModel extends ListModel
 	 *
 	 * @return  JTable  A database object
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function getTable($type = 'Book', $prefix = 'Administrator', $config = array())
 	{
 		return parent::getTable($type, $prefix, $config);
 	}
-	
+
 	/**
 	 * Returns an object list
 	 *
@@ -78,15 +79,15 @@ class BooksModel extends ListModel
 	{
 		$listOrder = $this->getState('list.ordering', 'a.id');
 		$listDirn  = $this->getState('list.direction', 'asc');
-		
+
 		$query->order($this->_db->quoteName($listOrder) . ' ' . $this->_db->escape($listDirn));
 
 		// Process pagination.
 		$result = parent::_getList($query, $limitstart, $limit);
 		return $result;
 	}
-	
-	
+
+
 	/**
 	 * Build an SQL query to load the list data.
 	 *
@@ -103,8 +104,8 @@ class BooksModel extends ListModel
 		// Select the required fields from the table.
 		$query->select('a.*');
 		$query->from($db->quoteName('#__secondhand_books', 'a'));
-        
-		
+
+
         // Filter by published state
 		$published = (string) $this->getState('filter.published');
 
@@ -117,10 +118,10 @@ class BooksModel extends ListModel
 		{
 			$query->where('(' . $db->quoteName('a.published') . ' = 0 OR ' . $db->quoteName('a.published') . ' = 1)');
 		}
-        
+
 		// Filter by search in title or note or id:.
 		$search = $this->getState('filter.search');
-        
+
 		if (!empty($search))
 		{
 			if (stripos($search, 'id:') === 0)
@@ -144,7 +145,7 @@ class BooksModel extends ListModel
 			}
 		}
 
-        
+
 		return $query;
 	}
 
@@ -156,7 +157,7 @@ class BooksModel extends ListModel
      *
      * @return  \Joomla\CMS\Form\Form|null  The Form object or null if the form can't be found
      *
-     * @since   1.0.0
+     * @since   0.1.0
      */
     public function getFilterForm($data = array(), $loadData = true)
     {
@@ -175,7 +176,7 @@ class BooksModel extends ListModel
 
         return $form;
     }
-    
+
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -186,15 +187,15 @@ class BooksModel extends ListModel
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function populateState($ordering = 'a.id', $direction = 'asc')
 	{
 		// Load the filter state.
 		$this->setState('filter.search', $this->getUserStateFromRequest($this->context . '.filter.search', 'filter_search', '', 'string'));
-		
+
 		// List state information.
 		parent::populateState($ordering, $direction);
 	}
-    
+
 }

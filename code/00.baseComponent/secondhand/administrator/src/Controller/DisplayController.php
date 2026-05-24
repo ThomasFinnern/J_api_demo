@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\Controller;
@@ -18,7 +18,7 @@ use Joomla\CMS\Language\Text;
 /**
  * Secondhand Component Controller.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class DisplayController extends BaseController
 {
@@ -26,7 +26,7 @@ class DisplayController extends BaseController
 	 * The default view for the display method.
 	 *
 	 * @var string
-	 * @since 1.0.0
+	 * @since 0.1.0
 	 */
 	protected $default_view = 'books'; // or default
 	
@@ -40,7 +40,7 @@ class DisplayController extends BaseController
 	 * @param   CMSApplication       $app      The JApplication for the dispatcher
 	 * @param   \JInput              $input    Input
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function __construct($config = [], MVCFactoryInterface $factory = null, $app = null, $input = null)
 	{
@@ -55,7 +55,7 @@ class DisplayController extends BaseController
 	 *
 	 * @return  BaseController|bool  This object to support chaining.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 *
 	 * @throws  \Exception
 	 */
@@ -68,7 +68,7 @@ class DisplayController extends BaseController
 	 * Fetch and process ajax calls
      * Delete if you don't use ajax
      *
-     * @since 1.0.0
+     * @since 0.1.0
 	 */
 	public function ajax()
 	{

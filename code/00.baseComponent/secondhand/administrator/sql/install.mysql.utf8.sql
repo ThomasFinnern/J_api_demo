@@ -3,14 +3,12 @@
 --
 CREATE TABLE if not exists `#__secondhand_books` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `content` mediumtext COLLATE utf8mb4_unicode_ci,
-  `bookfield1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `bookfield2` int(11) NOT NULL DEFAULT '0',
-  `bookfield3` tinyint(4) NOT NULL DEFAULT '0',
+  `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `isbn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `description` text COLLATE utf8mb4_unicode_ci,
+
   `published` tinyint(4) NOT NULL DEFAULT '0',
-  `featured` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `created` datetime NOT NULL,
   `created_by` int(10) unsigned NOT NULL DEFAULT '0',
   `modified` datetime NOT NULL,

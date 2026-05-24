@@ -4,7 +4,7 @@ Secondhand
 Bare minimum component displaying a books list
 com_secondhand
 
-Copyright (C) 2026 Steven Smith. All rights reserved. 
+(C) 2026-2026 Steven Smith 
 Steven Smith
 https://smith14639@whatever.com
 

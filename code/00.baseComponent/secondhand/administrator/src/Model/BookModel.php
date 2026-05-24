@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 namespace Bluebox\Component\Secondhand\Administrator\Model;
@@ -30,7 +30,7 @@ use Joomla\Utilities\ArrayHelper;
 /**
  * Item Model for a Book.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class BookModel extends AdminModel
 {
@@ -40,13 +40,13 @@ class BookModel extends AdminModel
 	 * The type alias for this content type.
 	 *
 	 * @var      string
-	 * @since    1.0.0
+	 * @since    0.1.0
 	 */
 	public $typeAlias = 'com_secondhand.book';
 
 	/**
 	 * @var    string  The prefix to use with controller messages.
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	protected $text_prefix = 'COM_SECONDHAND';
     
@@ -60,7 +60,7 @@ class BookModel extends AdminModel
 
 	/**
 	 * @var    string  The help screen base URL for the component.
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 */
 	// protected $helpURL;
 	
@@ -71,7 +71,7 @@ class BookModel extends AdminModel
 	 * @param   MVCFactoryInterface   $factory      The factory.
 	 * @param   FormFactoryInterface  $formFactory  The form factory.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @throws  \Exception
 	 */
 	public function __construct($config = array(), MVCFactoryInterface $factory = null, FormFactoryInterface $formFactory = null)
@@ -88,7 +88,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  Table  A Table object
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 * @throws  \Exception
 	 */
 	public function getTable($type = 'Book', $prefix = 'Administrator', $config = array())
@@ -104,7 +104,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  \JForm|boolean  A \JForm object on success, false on failure
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function getForm($data = [], $loadData = true)
 	{
@@ -151,7 +151,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function preprocessForm(Form $form, $data, $group = 'content')
 	{
@@ -163,7 +163,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  mixed  The data for the form.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function loadFormData()
 	{
@@ -186,7 +186,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  boolean  True on success.
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	public function save($data)
 	{
@@ -201,7 +201,7 @@ class BookModel extends AdminModel
 	 *
 	 * @return  void
 	 *
-	 * @since   1.0.0
+	 * @since   0.1.0
 	 */
 	protected function prepareTable($table)
 	{

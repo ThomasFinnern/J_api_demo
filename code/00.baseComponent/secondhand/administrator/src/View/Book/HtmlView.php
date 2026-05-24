@@ -3,14 +3,15 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 namespace Bluebox\Component\Secondhand\Administrator\View\Book;
- 
+
 \defined('_JEXEC') or die;
 
+use Bluebox\Component\Secondhand\Administrator\Model\BookModel;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
@@ -22,7 +23,7 @@ use Joomla\CMS\Toolbar\ToolbarHelper;
 /**
  * View to edit a Book.
  *
- * @since  1.0.0
+ * @since  0.1.0
  */
 class HtmlView extends BaseHtmlView
 {
@@ -47,7 +48,7 @@ class HtmlView extends BaseHtmlView
      * @var  object
      */
     protected $state;
-	
+
 	/**
 	 * Display the view
 	 *
@@ -57,10 +58,13 @@ class HtmlView extends BaseHtmlView
 	 */
 	public function display($tpl = null)
 	{
-		$this->form = $this->get('Form');
-        $this->item = $this->get('Item');
-        $this->state = $this->get('State');
-		
+        /** @var BookModel $model */
+        $model       = $this->getModel();
+
+		$this->form = $model->getForm();
+        $this->item = $model->getItem();
+        $this->state = $model->getState();
+
 		$this->addToolbar();
 
 		return parent::display($tpl);
@@ -77,12 +81,12 @@ class HtmlView extends BaseHtmlView
 	{
 		// disable Joomla main menue
 		Factory::getApplication()->input->set('hidemainmenu', true);
-		
+
 		$user = Factory::getApplication()->getIdentity();
 		$canDo = ContentHelper::getActions('com_secondhand');
-		
+
 		$isNew = ($this->item->id == 0);
-		
+
 		if ($isNew)
 		{
 			ToolbarHelper::title(Text::_('COM_SECONDHAND_MANAGER_BOOK_NEW'), 'home com_secondhand');
@@ -91,7 +95,7 @@ class HtmlView extends BaseHtmlView
 		{
 			ToolbarHelper::title(Text::_('COM_SECONDHAND_MANAGER_BOOK_EDIT'), 'home com_secondhand');
 		}
-		
+
 		$toolbarButtons = [];
 
 		// If a new book, can save the book.  Allow users with edit permissions to apply changes to prevent returning to grid.
@@ -138,9 +142,9 @@ class HtmlView extends BaseHtmlView
 		{
 			ToolbarHelper::cancel('book.cancel', 'JTOOLBAR_CLOSE');
 		}
-		
+
 		ToolbarHelper::divider();
-        
+
         if (version_compare(JVERSION, 4.2, '>='))
 		{
             // inline help button
@@ -150,7 +154,7 @@ class HtmlView extends BaseHtmlView
                 ToolbarHelper::inlinehelp();
             }
         }
-        
-		
+
+
 	}
 }

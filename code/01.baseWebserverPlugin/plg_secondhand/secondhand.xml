@@ -6,7 +6,7 @@
   <author>Steven Smith</author>
   <authorEmail>steven_smith@dummy.com</authorEmail>
   <authorUrl>https://smith14639.whatever.com</authorUrl>
-  <copyright>Copyright (C) 2026 Steven Smith. All rights reserved.</copyright>
+  <copyright>(C) 2026-2026 Steven Smith</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
   <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
   <namespace path="src">Bluebox\Plugin\Webservices\Secondhand</namespace>

@@ -3,7 +3,7 @@
     <config>
 		<inlinehelp button="show"/>
 	</config>
-    
+
     <fieldset addfieldprefix="Bluebox\Component\Secondhand\Administrator\Field">
         <field
 			name="id"
@@ -13,7 +13,17 @@
 			class="readonly"
 			readonly="true"
 		/>
-        
+
+        <field
+			name="title"
+			type="text"
+			label="COM_SECONDHAND_FIELD_TITLE_LABEL"
+			description="COM_SECONDHAND_FIELD_TITLE_DESC"
+			class="input-xxlarge"
+			default=""
+			required="true"
+        />
+
         <field
 			name="alias"
 			type="text"
@@ -21,7 +31,8 @@
 			description="JFIELD_ALIAS_DESC"
 			hint="JFIELD_ALIAS_PLACEHOLDER"
 		/>
-        
+
+
         <field
 			name="published"
 			type="list"
@@ -36,34 +47,13 @@
 			<option value="-2">JTRASHED</option>
 		</field>
 
-		<field
-			name="featured"
-			type="radio"
-			layout="joomla.form.field.radio.switcher"
-			label="JFEATURED"
-			default="0"
-			>
-			<option value="0">JNO</option>
-			<option value="1">JYES</option>
-		</field>
-		
-        <field
-			name="title"
-			type="text"
-			label="COM_SECONDHAND_FIELD_TITLE_LABEL"
-			description="COM_SECONDHAND_FIELD_TITLE_DESC"
-			class="input-xxlarge"
-			default=""
-			required="true"
-        />
-        
         <field
 			name="note"
 			type="text"
 			label="COM_SECONDHAND_FIELD_NOTE_LABEL"
 			maxlength="255"
 		/>
-        
+
         <field
 			name="created_by"
 			type="user"
@@ -101,50 +91,26 @@
 			validate="UserId"
 		/>
     </fieldset>
-    
-    <fieldset name="bookfieldset">
-        <field
-            name="content"
-            type="editor"
-            label="COM_SECONDHAND_FIELD_CONTENT_LABEL"
-            filter="JComponentHelper::filterText"
-            buttons="true"
-            hide="readmore,pagebreak"
-        />
 
-        <field
-            name="bookfield1"
-            type="text"
-            label="COM_SECONDHAND_FIELD_BOOKFIELD1_LABEL"
-            description="COM_SECONDHAND_FIELD_BOOKFIELD1_DESC"
-            class="input-xxlarge"
-            default=""
-            required="true"
-        />
+	<fieldset name="bookfieldset">
+		<field
+			name="isbn"
+			type="text"
+			label="COM_SECONDHAND_ISBN"
+			description="COM_SECONDHAND_ISBN_DESC"
+			class="input-xxlarge"
+			default=""
+		/>
 
-        <field
-            name="bookfield2"
-            type="radio"
-            label="COM_SECONDHAND_FIELD_BOOKFIELD2_LABEL"
-            layout="joomla.form.field.radio.switcher"
-            validate="options"
-        >
-            <option value="0">JNO</option>
-            <option value="1">JYES</option>
-        </field>
+		<field
+			name="description"
+			type="editor"
+			label="COM_SECONDHAND_DESCRIPTION"
+			description="COM_SECONDHAND_DESCRIPTION_DESC"
+			filter="JComponentHelper::filterText"
+			buttons="true"
+			hide="readmore,pagebreak"
+		/>
 
-        <field
-            name="bookfield3"
-            type="list"
-            label="COM_SECONDHAND_FIELD_BOOKFIELD3_LABEL"
-            default="0"
-            validate="options"
-        >
-            <option value="-1">COM_SECONDHAND_FIELD_BOOKFIELD3_SELECT</option>
-            <option value="1">COM_SECONDHAND_FIELD_BOOKFIELD3_VALUE_1</option>
-            <option value="2">COM_SECONDHAND_FIELD_BOOKFIELD3_VALUE_2</option>
-            <option value="3">COM_SECONDHAND_FIELD_BOOKFIELD3_VALUE_3</option>
-            <option value="4">COM_SECONDHAND_FIELD_BOOKFIELD3_VALUE_4</option>
-        </field>
-    </fieldset>
+	</fieldset>
 </form>

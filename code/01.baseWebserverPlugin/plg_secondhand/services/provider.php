@@ -4,7 +4,7 @@
  * @package     Joomla.Plugin
  * @subpackage  Webservices.Secondhand
  * @author      Steven Smith
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 

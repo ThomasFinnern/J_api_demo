@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_secondhand
  *
- * @copyright   Copyright (C) 2026 Steven Smith. All rights reserved.
+ * @copyright  (C) 2026-2026 Steven Smith
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -27,12 +27,13 @@ $layout  = 'edit';
 $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 ?>
 <div class="secondhand secondhand_book">
-	<form action="<?php echo Route::_('index.php?option=com_secondhand&layout=' . $layout . $tmpl . '&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
+	<form action="<?php echo Route::_('index.php?option=com_secondhand&layout=' . $layout . $tmpl
+        . '&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
 		<?php echo LayoutHelper::render('joomla.edit.title_alias', $this); ?>
-        
+
         <div class="main-card">
             <?php echo HTMLHelper::_('uitab.startTabSet', 'myTab', array('active' => 'details', 'recall' => true, 'breakpoint' => 768)); ?>
-            
+
             <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'details', empty($this->item->id) ? Text::_('COM_SECONDHAND_NEW_BOOK') : Text::_('COM_SECONDHAND_EDIT_BOOK')); ?>
             <div class="row">
                 <div class="col-lg-9">
@@ -43,7 +44,7 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
                 </div>
             </div>
             <?php echo HTMLHelper::_('uitab.endTab'); ?>
-                
+
             <?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'publishing', Text::_('JGLOBAL_FIELDSET_PUBLISHING')); ?>
             <div class="row">
                 <div class="col-lg-6">
@@ -59,10 +60,10 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
                 </div>
             </div>
             <?php echo HTMLHelper::_('uitab.endTab'); ?>
-                
+
             <?php echo HTMLHelper::_('uitab.endTabSet'); ?>
         </div>
-        
+
 		<?php echo HTMLHelper::_('form.token'); ?>
 		<input type="hidden" name="task" value="">
 	</form>
