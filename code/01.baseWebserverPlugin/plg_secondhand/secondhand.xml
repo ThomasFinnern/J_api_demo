@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+  <name>plg_webservices_secondhand</name>
+  <creationDate>2026.05.24</creationDate>
+  <version>0.1.0</version>
+  <author>Steven Smith</author>
+  <authorEmail>steven_smith@dummy.com</authorEmail>
+  <authorUrl>https://smith14639.whatever.com</authorUrl>
+  <copyright>Copyright (C) 2026 Steven Smith. All rights reserved.</copyright>
+  <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
+  <namespace path="src">Bluebox\Plugin\Webservices\Secondhand</namespace>
+  <files>
+    <folder plugin="secondhand">services</folder>
+    <folder>language</folder>
+    <folder>services</folder>
+    <folder>src</folder>
+    <file>secondhand.xml</file>
+  </files>
+  <!-- <updateservers> -->
+  <!-- <server type="extension" priority="1" name="plg_webservices_secondhand">https://YOUR-UPDATE-URL.COM/plg_webservices_secondhand/extension.xml</server> -->
+  <!-- </updateservers> -->
+</extension>

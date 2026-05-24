@@ -1,0 +1,20 @@
+<updates>
+	<update>
+		<name>Secondhand</name>
+		<description>Bare minimum component displaying a books list</description>
+		<element>com_secondhand</element>
+		<type>component</type>
+		<client>both</client>
+		<version>1.0.0</version>
+		<infourl title="Steven Smith">https://smith14639@whatever.com</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://YOUR-UPDATE-URL.COM/com_secondhand/com_secondhand.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>Steven Smith</maintainer>
+		<maintainerurl>https://smith14639@whatever.com</maintainerurl>
+		<targetplatform name="joomla" version="4.*"/>
+	</update>
+</updates>

@@ -1,0 +1,15 @@
+
+code/.buildPHP/*.log
+code/.buildPHP/*.*.log
+code/.buildPHP/Translations/.idea/
+
+code/.cleanPHP/*.log
+code/.cleanPHP/*.*.log
+
+code/.packages/
+code/.packages_zip/
+
+# org and temp files
+**/*.org.*
+**/*.tmp
+

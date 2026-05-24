@@ -1,0 +1,7 @@
+task:buildExtension
+/type=component
+/srcRoot="../../J!_api_demo/code/00.baseComponent/secondhand"
+   // /isNoRecursion=true
+/buildDir="../../J!_api_demo/code/.packages"
+/name=com_secondhand
+/mani:isUpdateActCopyrightYear=true

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_secondhand</name>
+	<author>Steven Smith</author>
+	<creationDate>May 2026</creationDate>
+	<copyright>Copyright (C) 2026 Steven Smith. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>steven_smith@book.com</authorEmail>
+	<authorUrl>https://smith14639@whatever.com</authorUrl>
+	<version>0.1.0</version>
+	<description>COM_SECONDHAND_XML_DESCRIPTION</description>
+    <namespace path="src">Bluebox\Component\Secondhand</namespace>
+	
+	<scriptfile>script.php</scriptfile>
+	
+	<install> <!-- Runs on install -->
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	
+	<update> <!-- Runs on update -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<media destination="com_secondhand" folder="media">
+		<filename>index.html</filename>
+        <filename>joomla.asset.json</filename>
+		<folder>css</folder>
+        <folder>images</folder>
+		<folder>js</folder>
+		<folder>scss</folder>
+	</media>
+
+	<files folder="site">
+		<folder>forms</folder>
+        <folder>helpers</folder>
+		<folder>layouts</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<languages folder="site/language">
+		
+			<language tag="en-GB">en-GB/com_secondhand.ini</language>
+		
+	</languages>
+ 
+	<administration>
+        <menu img="class:comment">
+			COM_SECONDHAND		</menu>
+		<submenu>
+			<menu view="books">
+                COM_SECONDHAND_SUBMENU_BOOKS
+                <params>
+					<menu-quicktask-title>COM_SECONDHAND_SUBMENU_NEW_BOOK</menu-quicktask-title>
+					<menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask>
+				</params>
+            </menu>
+            
+		</submenu>
+        
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>secondhand.xml</filename>	
+
+			<filename>script.php</filename>
+			<folder>sql</folder>
+            <folder>forms</folder>
+            <folder>services</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+			<folder>misc</folder>
+		</files>
+		
+		<languages folder="administrator/language">
+			
+			<language tag="en-GB">en-GB/com_secondhand.ini</language>
+			<language tag="en-GB">en-GB/com_secondhand.sys.ini</language>
+					
+		</languages>
+	</administration>
+  
+    <changelogurl>/com_secondhand/changelog.xml</changelogurl>
+    
+	<updateservers>
+		<server type="extension" priority="1" name="secondhand Updates">https://YOUR-UPDATE-URL.COM/com_secondhand/extension.xml</server>
+	</updateservers>
+    
+</extension>

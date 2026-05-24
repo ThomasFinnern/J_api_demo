@@ -1,0 +1,7 @@
+task:buildExtension
+/type=plugin
+/srcRoot="../../J!_api_demo/code/01.baseWebserverPlugin\plg_secondhand"
+   // /isNoRecursion=true
+/buildDir="../../J!_api_demo/code/.packages"
+/name=plg_webservices_secondhand
+/mani:isUpdateActCopyrightYear=true
