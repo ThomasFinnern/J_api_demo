@@ -9,7 +9,11 @@ code/.cleanPHP/*.*.log
 code/.packages/
 code/.packages_zip/
 
+code/.apiTests/curl_http_files/
+code/.apiTests/results/
+code/.apiTests/*.json
+code/.apiTests/*.jsonoutside.txt
+
 # org and temp files
 **/*.org.*
 **/*.tmp
-
