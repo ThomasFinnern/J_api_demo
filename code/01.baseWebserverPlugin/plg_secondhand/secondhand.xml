@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="webservices" method="upgrade">
   <name>plg_webservices_secondhand</name>
-  <creationDate>2026.05.24</creationDate>
+  <creationDate>2026.05.26</creationDate>
   <version>0.1.0</version>
   <author>Steven Smith</author>
   <authorEmail>steven_smith@dummy.com</authorEmail>
@@ -9,9 +9,9 @@
   <copyright>(C) 2026-2026 Steven Smith</copyright>
   <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
   <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
-  <namespace path="src">Bluebox\Plugin\Webservices\Secondhand</namespace>
+  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
   <files>
-    <folder plugin="secondhand">services</folder>
+    <folder plugin="secondhand">src</folder>
     <folder>language</folder>
     <folder>services</folder>
     <folder>src</folder>

@@ -2,13 +2,13 @@
 
 /**
  * @package     Joomla.Plugin
- * @subpackage  Webservices.Secondhand 
+ * @subpackage  Webservices.Secondhand
  *
- * @copyright  (C) 2026-2026 Steven Smith 
- * @license     GNU General Public License version 2 or later; see LICENSE.txt 
+ * @copyright  (C) 2026-2026 Steven Smith
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-namespace Bluebox\Plugin\Webservices\Secondhand\Extension;
+namespace Bluebox\Plugin\WebServices\Secondhand\Extension;
 
 use Joomla\CMS\Event\Application\BeforeApiRouteEvent;
 use Joomla\CMS\Plugin\CMSPlugin;
@@ -62,5 +62,5 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
             'books',
             $getDefaults
         );
-    }  
+    }
 }
