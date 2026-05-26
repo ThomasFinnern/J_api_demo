@@ -3,7 +3,7 @@
   <name>com_secondhand</name>
   <element>com_secondhand</element>
   <author>Steven Smith</author>
-  <creationDate>2026.05.24</creationDate>
+  <creationDate>2026.05.26</creationDate>
   <copyright>(C) 2026-2026 Steven Smith</copyright>
   <license>GNU General Public License version 3 or later</license>
   <authorEmail>steven_smith@dummy.com</authorEmail>
@@ -38,7 +38,6 @@
                 <params><menu-quicktask-title>COM_SECONDHAND_SUBMENU_NEW_BOOK</menu-quicktask-title><menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask></params>
             </menu>
     </submenu>
-
     <files folder="administrator">
       <filename>access.xml</filename>
       <!--filename>changelog.xml</filename-->
@@ -54,6 +53,12 @@
       <folder>tmpl</folder>
     </files>
   </administration>
+    <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+
   <!--changelogurl>/com_secondhand/changelog.xml</changelogurl-->
   <!--updateservers>
     <server type="extension" priority="1" name="secondhand Updates">https://YOUR-UPDATE-URL.COM/com_secondhand/extension.xml</server>
