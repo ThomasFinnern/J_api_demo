@@ -25,7 +25,9 @@ use Joomla\CMS\Versioning\VersionableModelInterface;
 use Joomla\CMS\Versioning\VersionableModelTrait;
 use Joomla\Component\Categories\Administrator\Helper\CategoriesHelper;
 use Joomla\Database\ParameterType;
+use Joomla\Filter\OutputFilter;
 use Joomla\Registry\Registry;
+use Joomla\String\StringHelper;
 use Joomla\Utilities\ArrayHelper;
 
 /**
@@ -188,7 +190,30 @@ class BookModel extends AdminModel implements VersionableModelInterface
 	 */
 	public function save($data)
 	{
-        $input = Factory::getApplication()->input;
+        $app    = Factory::getApplication();
+//        $input = Factory::getApplication()->input;
+
+        if ($data['alias'] == null) {
+            if ($app->get('unicodeslugs') == 1) {
+                $data['alias'] = OutputFilter::stringUrlUnicodeSlug($data['title']);
+            } else {
+                $data['alias'] = OutputFilter::stringURLSafe($data['title']);
+            }
+        }
+
+        $table = $this->getTable();
+
+        if ($table->load(['alias' => $data['alias']])) {
+            $msg = Text::_('COM_CONTENT_SAVE_WARNING');
+        }
+
+        [$title, $alias] = $this->generateNewTitle($data['catid'], $data['alias'], $data['title']);
+        $data['alias']   = $alias;
+
+        if (isset($msg)) {
+            $app->enqueueMessage($msg, 'warning');
+        }
+
         return parent::save($data);
     }
 
@@ -261,4 +286,34 @@ class BookModel extends AdminModel implements VersionableModelInterface
 		// Default to component settings if category not known.
 		return parent::canEditState($record);
 	}
+
+    /**
+     * Method to change the title & alias.
+     *
+     * @param   integer  $parent_id  The id of the parent.
+     * @param   string   $alias      The alias.
+     * @param   string   $title      The title.
+     *
+     * @return  array    Contains the modified title and alias.
+     *
+     * @since   5.1.0     */
+    //? title -> ? name
+    protected function generateNewTitle($parent_id, $alias, $title)
+    {
+        // Alter the title & alias
+        $table = $this->getTable();
+        $aliasField = $table->getColumnAlias('alias');
+        $titleField = $table->getColumnAlias('title');
+
+        while ($table->load([$aliasField => $alias])) {
+            if ($title === $table->$titleField) {
+                $title = StringHelper::increment($title);
+            }
+
+            $alias = StringHelper::increment($alias, 'dash');
+        }
+
+        return [$title, $alias];
+    }
+
 }

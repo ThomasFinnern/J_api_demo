@@ -5,7 +5,7 @@ task:post
 /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
 /isCreateAutoResponseFile=true
 /param='"title": "My book"'
-/param='"alias": "my-book"'
+	// /param='"alias": "my-book"'
 /param='"isbn": "12-3456-78-90"'
 /param='"description": "The next book i write"'
 /param='"published": 1'
