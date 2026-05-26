@@ -21,6 +21,7 @@ use Joomla\CMS\Language\LanguageHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\MVC\Model\AdminModel;
 use Joomla\CMS\String\PunycodeHelper;
+use Joomla\CMS\Versioning\VersionableModelInterface;
 use Joomla\CMS\Versioning\VersionableModelTrait;
 use Joomla\Component\Categories\Administrator\Helper\CategoriesHelper;
 use Joomla\Database\ParameterType;
@@ -32,24 +33,24 @@ use Joomla\Utilities\ArrayHelper;
  *
  * @since  0.1.0
  */
-class BookModel extends AdminModel
+class BookModel extends AdminModel implements VersionableModelInterface
 {
 	use VersionableModelTrait;
-    
-	/**
-	 * The type alias for this content type.
-	 *
-	 * @var      string
-	 * @since    0.1.0
-	 */
-	public $typeAlias = 'com_secondhand.book';
 
 	/**
 	 * @var    string  The prefix to use with controller messages.
 	 * @since  0.1.0
 	 */
 	protected $text_prefix = 'COM_SECONDHAND';
-    
+
+    /**
+     * The type alias for this content type.
+     *
+     * @var      string
+     * @since    0.1.0
+     */
+    public $typeAlias = 'com_secondhand.book';
+
     /**
 	 * Name of the form
 	 *
@@ -58,27 +59,27 @@ class BookModel extends AdminModel
 	 */
 	protected $formName = 'book';
 
-	/**
-	 * @var    string  The help screen base URL for the component.
-	 * @since  0.1.0
-	 */
-	// protected $helpURL;
-	
-	/**
-	 * Constructor.
-	 *
-	 * @param   array                 $config       An array of configuration options (name, state, dbo, table_path, ignore_request).
-	 * @param   MVCFactoryInterface   $factory      The factory.
-	 * @param   FormFactoryInterface  $formFactory  The form factory.
-	 *
-	 * @since   0.1.0
-	 * @throws  \Exception
-	 */
-	public function __construct($config = array(), MVCFactoryInterface $factory = null, FormFactoryInterface $formFactory = null)
-	{
-		parent::__construct($config, $factory, $formFactory);
-	}
-	
+//	/**
+//	 * @var    string  The help screen base URL for the component.
+//	 * @since  0.1.0
+//	 */
+//	// protected $helpURL;
+
+//	/**
+//	 * Constructor.
+//	 *
+//	 * @param   array                 $config       An array of configuration options (name, state, dbo, table_path, ignore_request).
+//	 * @param   MVCFactoryInterface   $factory      The factory.
+//	 * @param   FormFactoryInterface  $formFactory  The form factory.
+//	 *
+//	 * @since   0.1.0
+//	 * @throws  \Exception
+//	 */
+//	public function __construct($config = array(), MVCFactoryInterface $factory = null, FormFactoryInterface $formFactory = null)
+//	{
+//		parent::__construct($config, $factory, $formFactory);
+//	}
+//
 	/**
 	 * Method to get a table object, load it if necessary.
 	 *
@@ -95,7 +96,7 @@ class BookModel extends AdminModel
 	{
 		return parent::getTable($type, $prefix, $config);
 	}
-	
+
 	/**
 	 * Method to get the row form.
 	 *
@@ -112,36 +113,33 @@ class BookModel extends AdminModel
         $form = $this->loadForm(
             'com_secondhand.' . $this->formName,
             $this->formName,
-            array(
-                'control' => 'jform',
-                'load_data' => $loadData
-            )
+            [ 'control' => 'jform', 'load_data' => $loadData ]
         );
 
-        if (empty($form))
-        {
-            return false;
-        }
-        
-        // Modify the form based on access controls.
-		if (!$this->canEditState((object) $data))
-        {
-            $form->setFieldAttribute('published', 'disabled', 'true');
-            
-            // Disable fields while saving.
-			// The controller has already verified this is a record you can edit.
-			$form->setFieldAttribute('published', 'filter', 'unset');
-        }
-        
-        // Don't allow to change the created_by user if not allowed to access com_users.
-		if (!Factory::getApplication()->getIdentity()->authorise('core.manage', 'com_users'))
-		{
-			$form->setFieldAttribute('created_by', 'filter', 'unset');
-		}
+//        if (empty($form))
+//        {
+//            return false;
+//        }
+//
+//        // Modify the form based on access controls.
+//		if (!$this->canEditState((object) $data))
+//        {
+//            $form->setFieldAttribute('published', 'disabled', 'true');
+//
+//            // Disable fields while saving.
+//			// The controller has already verified this is a record you can edit.
+//			$form->setFieldAttribute('published', 'filter', 'unset');
+//        }
+//
+//        // Don't allow to change the created_by user if not allowed to access com_users.
+//		if (!Factory::getApplication()->getIdentity()->authorise('core.manage', 'com_users'))
+//		{
+//			$form->setFieldAttribute('created_by', 'filter', 'unset');
+//		}
 
         return $form;
 	}
-	
+
 	/**
 	 * Preprocess the form.
 	 *
@@ -157,7 +155,7 @@ class BookModel extends AdminModel
 	{
         parent::preprocessForm($form, $data, $group);
 	}
-    
+
 	/**
 	 * Method to get the data that should be injected in the form.
 	 *
@@ -178,7 +176,7 @@ class BookModel extends AdminModel
 
 		return $data;
 	}
-    
+
     /**
 	 * Method to save the form data.
 	 *
@@ -193,7 +191,7 @@ class BookModel extends AdminModel
         $input = Factory::getApplication()->input;
         return parent::save($data);
     }
-    
+
     /**
 	 * Prepare and sanitise the table prior to saving.
 	 *
@@ -206,9 +204,9 @@ class BookModel extends AdminModel
 	protected function prepareTable($table)
 	{
 		$date = Factory::getDate()->toSql();
-        
+
 		$table->generateAlias();
-        
+
         if (empty($table->id))
 		{
 			// Set the values
@@ -221,9 +219,9 @@ class BookModel extends AdminModel
 			$table->modified_by = Factory::getApplication()->getIdentity()->id;
 		}
 	}
-    
-    
-    
+
+
+
     /**
 	 * Method to test whether a record can be deleted.
 	 *
@@ -240,7 +238,7 @@ class BookModel extends AdminModel
 			return false;
 		}
 		return Factory::getApplication()->getIdentity()->authorise('core.delete');
- 
+
 	}
 
 	/**
