@@ -1,0 +1,6 @@
+--------------------------------------------------------
+Outside data found: 20260526_070609
+--------------------------------------------------------
+Pre text found:
+Class "Bluebox\Plugin\WebServices\Secondhand\Extension\Secondhand" not found
+--------------------------------------------------------

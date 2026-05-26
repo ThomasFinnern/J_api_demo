@@ -1,0 +1,7 @@
+###
+GET http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token: c2hhMjU2Ojc3Njo5MzFkNGIxNzhmZjY2OTgwYzA5MTA4Yzc1N2NjOGFmMTczNjg4MzkwZGI0ODVlNjJjZjg4NmM0YjQxNGU2MTQ4
+
+> D:\Entwickl\2026\_gitHub\J!_api_demo\code\.apiTests\curl_http_files\sec_getBooks.json
