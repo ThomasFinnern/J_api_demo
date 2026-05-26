@@ -36,9 +36,7 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
      */
     public static function getSubscribedEvents(): array
     {
-        return [
-            'onBeforeApiRoute' => 'onBeforeApiRoute',
-        ];
+        return ['onBeforeApiRoute' => 'onBeforeApiRoute',];
     }
 
     /**
@@ -54,10 +52,15 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
     {
         $router = $event->getRouter();
 
+        $defaults = ['component' => 'com_secondhand'];
+        // ToDo: Remove when tests finished, enables access without token
+        // $getDefaults = array_merge(['public' => true], $defaults);
+        $getDefaults = array_merge(['public' => false], $defaults);
+
         $router->createCRUDRoutes(
             'v1/secondhand/books',
             'books',
-            ['component' => 'com_redirect']
+            $getDefaults
         );
     }  
 }
