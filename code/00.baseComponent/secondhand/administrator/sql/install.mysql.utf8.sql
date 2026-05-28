@@ -6,6 +6,7 @@ CREATE TABLE if not exists `#__secondhand_books` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `isbn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` text COLLATE utf8mb4_unicode_ci,
 
   `published` tinyint(4) NOT NULL DEFAULT '0',

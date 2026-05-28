@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="webservices" method="upgrade">
   <name>plg_webservices_secondhand</name>
-  <creationDate>2026.05.26</creationDate>
+  <creationDate>2026.05.28</creationDate>
   <version>0.1.0</version>
   <author>Steven Smith</author>
   <authorEmail>steven_smith@dummy.com</authorEmail>

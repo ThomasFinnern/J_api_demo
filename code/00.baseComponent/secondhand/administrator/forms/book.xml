@@ -17,8 +17,8 @@
         <field
 			name="title"
 			type="text"
-			label="COM_SECONDHAND_FIELD_TITLE_LABEL"
-			description="COM_SECONDHAND_FIELD_TITLE_DESC"
+			label="COM_SECONDHAND_TITLE"
+			description="COM_SECONDHAND_TITLE_DESC"
 			class="input-xxlarge"
 			default=""
 			required="true"
@@ -50,7 +50,7 @@
         <field
 			name="note"
 			type="text"
-			label="COM_SECONDHAND_FIELD_NOTE_LABEL"
+			label="COM_SECONDHAND_NOTE_LABEL"
 			maxlength="255"
 		/>
 
@@ -99,6 +99,15 @@
 			label="COM_SECONDHAND_ISBN"
 			description="COM_SECONDHAND_ISBN_DESC"
 			class="input-xxlarge"
+			default=""
+		/>
+
+		<field
+			name="author"
+			type="text"
+			label="COM_SECONDHAND_AUTHOR"
+			description="COM_SECONDHAND_AUTHOR_DESC"
+			class="input-large"
 			default=""
 		/>
 

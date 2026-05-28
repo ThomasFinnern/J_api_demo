@@ -3,12 +3,12 @@
   <name>com_secondhand</name>
   <element>com_secondhand</element>
   <author>Steven Smith</author>
-  <creationDate>2026.05.26</creationDate>
+  <creationDate>2026.05.28</creationDate>
   <copyright>(C) 2026-2026 Steven Smith</copyright>
   <license>GNU General Public License version 3 or later</license>
   <authorEmail>steven_smith@dummy.com</authorEmail>
   <authorUrl>https://smith14639@whatever.com</authorUrl>
-  <version>0.1.0</version>
+  <version>0.1.0.3</version>
   <description>COM_SECONDHAND_XML_DESCRIPTION</description>
   <namespace path="src">Bluebox\Component\Secondhand</namespace>
   <install>
@@ -30,13 +30,10 @@
     </schemas>
   </update>
   <administration>
-    <menu img="class:comment">
-			COM_SECONDHAND		</menu>
+    <menu img="class:fas fa-cog">COM_SECONDHAND</menu>
     <submenu>
-      <menu view="books">
-                COM_SECONDHAND_SUBMENU_BOOKS
-                <params><menu-quicktask-title>COM_SECONDHAND_SUBMENU_NEW_BOOK</menu-quicktask-title><menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask></params>
-            </menu>
+      <menu view="books">COM_SECONDHAND_SUBMENU_BOOKS<params><menu-quicktask-title>COM_SECONDHAND_SUBMENU_NEW_BOOK</menu-quicktask-title><menu-quicktask-icon>fas fa-book</menu-quicktask-icon><menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask></params>
+	  </menu>
     </submenu>
     <files folder="administrator">
       <filename>access.xml</filename>
@@ -53,12 +50,11 @@
       <folder>tmpl</folder>
     </files>
   </administration>
-    <api>
+  <api>
     <files folder="api">
       <folder>src</folder>
     </files>
   </api>
-
   <!--changelogurl>/com_secondhand/changelog.xml</changelogurl-->
   <!--updateservers>
     <server type="extension" priority="1" name="secondhand Updates">https://YOUR-UPDATE-URL.COM/com_secondhand/extension.xml</server>

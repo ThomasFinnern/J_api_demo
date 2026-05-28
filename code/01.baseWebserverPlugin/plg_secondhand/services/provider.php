@@ -14,29 +14,33 @@
 
 use Joomla\CMS\Extension\PluginInterface;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use Joomla\Event\DispatcherInterface;
 use Bluebox\Plugin\WebServices\Secondhand\Extension\Secondhand;
 
 return new class () implements ServiceProviderInterface{
-    public function register(Container $container)
+    /**
+     * Registers the service provider with a DI container.
+     *
+     * @param   Container  $container  The DI container.
+     *
+     * @return  void
+     *
+     * @since   0.1.0
+     */
+    public function register(Container $container): void
     {
         $container->set(
             PluginInterface::class,
-            function (Container $container) {
-
-                $plugin     = PluginHelper::getPlugin('webservices', 'secondhand');
-                $dispatcher = $container->get(DispatcherInterface::class);
-
-                /** @var CMSPlugin $plugin */
-                $plugin = new Secondhand($dispatcher, (array) $plugin);
+            $container->lazy(Secondhand::class, function (Container $container) {
+                $plugin     = new Secondhand(
+                    (array) PluginHelper::getPlugin('webservices', 'secondhand')
+                );
                 $plugin->setApplication(Factory::getApplication());
 
                 return $plugin;
-            }
+            })
         );
     }
 };
