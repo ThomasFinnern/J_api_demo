@@ -1,0 +1,13 @@
+task:post
+/apiPath="v1/secondhand/books"
+/baseUrl="http://127.0.0.1/api_6x/api/index.php"
+    // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
+/joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+/isCreateAutoResponseFile=true
+
+/param='"title": "The Future Is Faster Than You Think"'
+	// /param='"alias": "my-book"'
+/param='"isbn": "0a61d279-f071-485a-826b-f586fed3fbe4"'
+/param='"author": "Peter H. Diamandis"'
+/param='"description": "From the New York Times bestselling authors of Abundance and Bold comes a practical playbook for technological convergence in our modern era. In their book Abundance, bestselling authors and futurists Peter Diamandis and Steven Kotler tackled grand global challenges, such as poverty, hunger, and energy. Then, in Bold, they chronicled the use of exponential technologies that allowed the emergence of powerful new entrepreneurs. Now the bestselling authors are back with The Future Is Faster Than You Think, a blueprint for how our world will change in response to the next ten years of rapid technological disruption. Technology is accelerating far more quickly than anyone could have imagined. During the next decade, we will experience more upheaval and create more wealth than we have in the past hundred years. In this gripping and insightful roadmap to our near future, Diamandis and Kotler investigate how wave after wave of exponentially accelerating technologies will impact both our daily lives and society as a whole. What happens as AI, robotics, virtual reality, digital biology, and sensors crash into 3D printing, blockchain, and global gigabit networks? How will these convergences transform today’s legacy industries? What will happen to the way we raise our kids, govern our nations, and care for our planet? Diamandis, a space-entrepreneur-turned-innovation-pioneer, and Kotler, bestselling author and peak performance expert, probe the science of technological convergence and how it will reinvent every part of our lives—transportation, retail, advertising, education, health, entertainment, food, and finance—taking humanity into uncharted territories and reimagining the world as we know it. As indispensable as it is gripping, The Future Is Faster Than You Think provides a prescient look at our impending future."'
+/param='"published": 1'

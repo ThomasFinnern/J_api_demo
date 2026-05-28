@@ -1,0 +1,13 @@
+task:post
+/apiPath="v1/secondhand/books"
+/baseUrl="http://127.0.0.1/api_6x/api/index.php"
+    // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
+/joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+/isCreateAutoResponseFile=true
+
+/param='"title": "The Artist's Way"'
+	// /param='"alias": "my-book"'
+/param='"isbn": "899e7e44-1380-479f-8932-7254724cc8eb"'
+/param='"author": "Julia Cameron"'
+/param='"description": ""With its gentle affirmations, inspirational quotes, fill-in-the-blank lists and tasks — write yourself a thank-you letter, describe yourself at 80, for example — The Artist’s Way proposes an egalitarian view of creativity: Everyone’s got it."—The New York Times "Morning Pages have become a household name, a shorthand for unlocking your creative potential"—Vogue Over four million copies sold! Since its first publication, The Artist-s Way phenomena has inspired the genius of Elizabeth Gilbert and millions of readers to embark on a creative journey and find a deeper connection to process and purpose. Julia Cameron-s novel approach guides readers in uncovering problems areas and pressure points that may be restricting their creative flow and offers techniques to free up any areas where they might be stuck, opening up opportunities for self-growth and self-discovery. The program begins with Cameron’s most vital tools for creative recovery – The Morning Pages, a daily writing ritual of three pages of stream-of-conscious, and The Artist Date, a dedicated block of time to nurture your inner artist. From there, she shares hundreds of exercises, activities, and prompts to help readers thoroughly explore each chapter. She also offers guidance on starting a “Creative Cluster” of fellow artists who will support you in your creative endeavors. A revolutionary program for personal renewal, The Artist-s Way will help get you back on track, rediscover your passions, and take the steps you need to change your life."'
+/param='"published": 1'

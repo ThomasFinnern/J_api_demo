@@ -1,0 +1,6 @@
+task:delete
+/apiPath="v1/secondhand/books/4"
+/baseUrl="http://127.0.0.1/api_6x/api/index.php"
+    // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
+/joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+/isCreateAutoResponseFile=true

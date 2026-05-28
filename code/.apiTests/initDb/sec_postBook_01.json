@@ -1,0 +1,22 @@
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": {
+        "type": "books",
+        "id": "2",
+        "attributes": {
+            "id": 2,
+            "title": "Why We Sleep",
+            "alias": "why-we-sleep",
+            "isbn": "da1b2048-cec2-4127-950e-35bc4b3ee181",
+            "description": "Sleep is one of the most important aspects of our life, health and longevity and yet it is increasingly neglected in twenty-first-century society, with devastating consequences- every major disease in the developed world - Alzheimer - s, cancer, obesity, diabetes - has very strong links to deficient sleep. In this book, the first of its kind written by a scientific expert, Professor Matthew Walker explores twenty years of cutting-edge research to solve the mystery of why sleep matters. Looking at creatures from across the animal kingdom as well as major human studies, Why We Sleep delves in to everything from what really happens in our brains and bodies when we dream to how caffeine and alcohol affect sleep and why our sleep patterns change across a lifetime, transforming our appreciation of the extraordinary phenomenon that safeguards our existence.",
+            "published": 1,
+            "created": "2026-05-27 09:53:06",
+            "created_by": 776,
+            "modified": "2026-05-27 09:53:06",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}

@@ -4,12 +4,11 @@ task:patch
     // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
 /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
 /isCreateAutoResponseFile=true
-	// /param='"id": 2'
-/param='"description": "The next book i write is about joomla"'
 
 	// /param='"title": "My book"'
 	// /param='"alias": "my-book"'
-	// /param='"description": "The next book i write"'
+	// /param='"author": "john breeze"'
+/param='"description": "The next book i write is about joomla"'
 	// /param='"published": 1'
 
 

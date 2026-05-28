@@ -1,0 +1,13 @@
+task:post
+/apiPath="v1/secondhand/books"
+/baseUrl="http://127.0.0.1/api_6x/api/index.php"
+    // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
+/joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+/isCreateAutoResponseFile=true
+
+/param='"title": "Flow (The Psychology of Optimal Experience)"'
+	// /param='"alias": "my-book"'
+/param='"isbn": "978-0-06-133920-2"'
+/param='"author": "Csikszentmihalyi, Mihaly"'
+/param='"description": "Psychologist Mihaly Csikszentmihalyi-s famous investigations of "optimal experience" have revealed that what makes an experience genuinely satisfying is a state of consciousness called flow. During flow, people typically experience deep enjoyment, creativity, and a total involvement with life. In this new edition of his groundbreaking classic work, Csikszentmihalyi ("the leading researcher into -flow states-" -Newsweek) demonstrates the ways this positive state can be controlled, not just left to chance. Flow: The Psychology of Optimal Experience teaches how, by ordering the information that enters our consciousness, we can discover true happiness and greatly improve the quality of our lives."'
+/param='"published": 1'
