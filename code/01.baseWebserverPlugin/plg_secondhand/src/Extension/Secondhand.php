@@ -21,7 +21,7 @@ use Joomla\Router\Route;
 // phpcs:enable PSR1.Files.SideEffects
 
 /**
- * Joomla! Webservices Plugin. webservice secondhand.
+ * Joomla! Webservices Plugin webservice secondhand.
  *
  * @since  0.1.0
  */

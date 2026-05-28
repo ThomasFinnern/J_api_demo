@@ -3,12 +3,12 @@
   <name>com_secondhand</name>
   <element>com_secondhand</element>
   <author>Steven Smith</author>
-  <creationDate>2026.05.28</creationDate>
+  <creationDate>2026.05.27</creationDate>
   <copyright>(C) 2026-2026 Steven Smith</copyright>
   <license>GNU General Public License version 3 or later</license>
   <authorEmail>steven_smith@dummy.com</authorEmail>
   <authorUrl>https://smith14639@whatever.com</authorUrl>
-  <version>0.1.0.3</version>
+  <version>0.1.0.2</version>
   <description>COM_SECONDHAND_XML_DESCRIPTION</description>
   <namespace path="src">Bluebox\Component\Secondhand</namespace>
   <install>

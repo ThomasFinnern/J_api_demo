@@ -8,7 +8,7 @@
   <license>GNU General Public License version 3 or later</license>
   <authorEmail>steven_smith@dummy.com</authorEmail>
   <authorUrl>https://smith14639@whatever.com</authorUrl>
-  <version>0.1.0.1</version>
+  <version>0.1.0.2</version>
   <description>COM_SECONDHAND_XML_DESCRIPTION</description>
   <namespace path="src">Bluebox\Component\Secondhand</namespace>
   <install>
@@ -32,7 +32,7 @@
   <administration>
     <menu img="class:fas fa-cog">COM_SECONDHAND</menu>
     <submenu>
-      <menu view="books">COM_SECONDHAND_MENU_BOOKS<params><menu-quicktask-title>COM_SECONDHAND_NEW_BOOK</menu-quicktask-title><menu-quicktask-icon>fas fa-book</menu-quicktask-icon><menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask></params>
+      <menu view="books">COM_SECONDHAND_SUBMENU_BOOKS<params><menu-quicktask-title>COM_SECONDHAND_SUBMENU_NEW_BOOK</menu-quicktask-title><menu-quicktask-icon>fas fa-book</menu-quicktask-icon><menu-quicktask>index.php?option=com_secondhand&amp;task=book.add</menu-quicktask></params>
 	  </menu>
     </submenu>
     <files folder="administrator">
