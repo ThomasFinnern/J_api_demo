@@ -14,6 +14,7 @@ The idea is to use an external scan the ISBN of the book, fetch book data by oth
 ## Web Services API plg_webservices_secondhand
 
 ### The general folder structure:
+
 ```
 plg_secondhand  
 ├─── language  
@@ -27,10 +28,14 @@ plg_secondhand
 │              └─── Secondhand.php  
 └─── secondhand.xml
 ```
-The general folder structure is similar to each other plugin bse structure.
+The general folder structure is similar to each other API base structure.
 The file src->Extension->Secondhand.php will hold the API definition, whereas all other folders and files support the API event interception.
 
 ### Manifest file
+
+```secondhand.xml```
+
+```
 You probably know the structure of a manifest file so following is a excerpt.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +71,10 @@ PLG_WEBSERVICES_SECONDHAND="webservice secondhand"
 PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION="webservice for component secondhand"
 ```
 Please prefix 'PLG_WEBSERVICES' to the constant name SECONDHAND.
-### services/provider.php 
+### service provider 
+
+```services/provider.php```
+
 Here the secondhand API definition class is instantiated and listed as a service provider.
 ```php
 /**
@@ -106,7 +114,8 @@ return new class () implements ServiceProviderInterface{
 ```
 ### Extension Class
 
-Overview (All code), details will follow
+```src\Extension\Secondhand.php```
+
 ```php
 /**  
  * @package ... */  
@@ -153,8 +162,9 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
     }  
 }
 ```
+
 **function getSubscribedEvents**
-Here the function onBeforeApiRoute is asigned to the API event list
+Here the function onBeforeApiRoute is assigned to the API event list
 
 **function onBeforeApiRoute**
 Here the magic happens with call to createCRUDERoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete) API routes to call over HTTP
@@ -162,14 +172,181 @@ Here the magic happens with call to createCRUDERoutes. This is a function provid
 The first parameter ```php  'v1/secondhand/books' ``` tell the route which can be used in the call to the web page. 'v1' is used as the version, 'secondhand' is the component and 'books' are the items.
 The second parameter is the controller to be used. The last is the internal config parameter which defines the actual component to be used and  and how 'public' the API is reachable.
 
-To be moved:
-Now you may have an inkling how 
-A more detailed description will follow
+This does not look like much but the matching 'controller', 'model' and view are supported in the component.
+## Component "com_secondhand" API additions
 
-## Component "com_secondhand" API additons
+We have to add code into the joomla root API folder. 
+### Manifest
+
+Section 'API' is added as separate branch parallel to ```<administrator>```
+
+```xml
+  <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+```
+It follows the standard form sections are handled. It just tells where to find the root of files ...
+### The API sub folder structure:
+
+From the root of the joomla web page
+```
+api\components\com_secondhand\  
+├─── src  
+     ├─── Controller  
+     │    └─── BooksController.php  
+     └─── View  
+          └─── Books  
+               └─── JsonapiView.php  
+```
+Attention the API folder structure is similar to other  structure with the exception that the controller folder keeps all ```nnnController.php``` files without further sub directories
+
+### Controller in API part
+
+ ```BooksController.php```
+
+```php
+/**
+ * @package   ....
+ */
+
+namespace Bluebox\Component\Secondhand\Api\Controller;
+
+use Joomla\CMS\Filter\InputFilter;
+use Joomla\CMS\Helper\TagsHelper;
+use Joomla\CMS\MVC\Controller\ApiController;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+
+// phpcs:disable PSR1.Files.SideEffects
+\defined('_JEXEC') or die;
+// phpcs:enable PSR1.Files.SideEffects
+
+/**
+ * The books controller
+ *
+ * @since  4.0.0
+ */
+class BooksController extends ApiController
+{
+    /**
+     * The content type of the item.
+     *
+     * @var    string
+     * @since  4.0.0
+     */
+    protected $contentType = 'books';
+
+    /**
+     * The default view for the display method.
+     *
+     * @var    string
+     * @since  3.0
+     */
+    protected $default_view = 'books';
+
+
+    // Implement other methods like read, update, delete as needed
+}
+```
+Beside the namespace there is not much code.
+```php
+    protected $contentType = 'books';
+    protected $default_view = 'books';
+```
+
+The Joomla API supporting code can live with just a with a content type and a default view. More explanation follows below. 
+
+### View in API part
+
+```JsonapiView.php```
+
+```php
+<?php
+
+/**
+ * @package   ....
+ */
+
+namespace Bluebox\Component\Secondhand\Api\View\Books;
+
+use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\TagsHelper;
+use Joomla\CMS\Language\Multilanguage;
+use Joomla\CMS\MVC\View\JsonApiView as BaseApiView;
+use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+use Joomla\Registry\Registry;
+use Secondhand\Component\Secondhand\Api\Helper\SecondhandHelper;
+use Secondhand\Component\Secondhand\Api\Serializer\SecondhandSerializer;
+
+\defined('_JEXEC') or die;
+
+/**
+ * The books view
+ *
+ * @since  4.0.0
+ */
+class JsonapiView extends BaseApiView
+{
+    /**
+     * The fields to render item in the documents
+     *
+     * @var  array
+     * @since  4.0.0
+     */
+    protected $fieldsToRenderItem = [
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description',
+
+        'note',
+        'published',
+        'created', 'created_by',
+        'modified', 'modified_by',
+    ];
+
+    /**
+     * The fields to render items in the documents
+     *
+     * @var  array
+     * @since  4.0.0
+     */
+    protected $fieldsToRenderList = [        
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description',
+
+        'note',
+        'published',
+        'created', 'created_by',
+        'modified', 'modified_by',
+    ];
+
+}
+```
+
+
+We are not much wiser now so 
+## What is going on behind the scene ?
+
+### // Code of CRUDE 'tree' spread ??? 
 
 
 
+Put is not available 
+
+### Form of 'Route'
+
+
+## Calling the API routes and the results
+
+
+# Deeper example -> next file ..
 
 
 
