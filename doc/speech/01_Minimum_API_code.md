@@ -202,6 +202,27 @@ api\components\com_secondhand\
 ```
 Attention the API folder structure is similar to other  structure with the exception that the controller folder keeps all ```nnnController.php``` files without further sub directories
 
+Test
+```mermaid
+treeView 
+	"packages" 
+		"mermaid" 
+			"src" 
+		"parser"
+```
+treeView-beta "packages" "mermaid" "src" "parser"
+
+```mermaid
+%%{init:{"theme":"forest"}}%%
+
+flowchart LR
+start[API URL]  ~~~|" yyy "| start --> plg[CRUD function] ~~~|" xxx "| plg
+```
+
+
+
+
+
 ### Controller in API part
 
  ```BooksController.php```
@@ -335,6 +356,7 @@ We are not much wiser now so
 ## What is going on behind the scene ?
 
 ### // Code of CRUDE 'tree' spread ??? 
+
 
 
 
