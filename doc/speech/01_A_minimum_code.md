@@ -1,17 +1,19 @@
 # Bare minimum component / webservice API
 Following is a description of a bare minimum component with matching minimum webservice API. 
+
 ## Component "com_secondhand"
+
 Imagine a second hand books component with just the one books table and matching view. 
 
 Table items
-*  id
+* id
 * name
 * author
 * isbn
 * Standard items like publish, created, ...
 
 The idea is to use an external scan the ISBN of the book, fetch book data by other web API and use a J! web API to fill this table.
-## Web Services API plg_webservices_secondhand
+## Web Services API plugin plg_webservices_secondhand
 
 ### The general folder structure:
 
@@ -112,7 +114,7 @@ return new class () implements ServiceProviderInterface{
     }  
 };
 ```
-### Extension Class
+### Route extension class
 
 ```src\Extension\Secondhand.php```
 
@@ -164,18 +166,25 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
 ```
 
 **function getSubscribedEvents**
+
 Here the function onBeforeApiRoute is assigned to the API event list
 
 **function onBeforeApiRoute**
-Here the magic happens with call to createCRUDERoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete) API routes to call over HTTP
 
-The first parameter ```php  'v1/secondhand/books' ``` tell the route which can be used in the call to the web page. 'v1' is used as the version, 'secondhand' is the component and 'books' are the items.
-The second parameter is the controller to be used. The last is the internal config parameter which defines the actual component to be used and  and how 'public' the API is reachable.
+Here the magic happens with call to createCRUDERoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete) 
+API routes to call over HTTP
+
+The first parameter ```php  'v1/secondhand/books' ``` tell the route which can be used in the call to the web page. 'v1' 
+is used as the version, 'secondhand' is the component and 'books' are the items.
+The second parameter is the controller to be used. The last is the internal config parameter 
+which defines the actual component to be used and how 'public' the API is reachable.
 
 This does not look like much but the matching 'controller', 'model' and view are supported in the component.
+
 ## Component "com_secondhand" API additions
 
 We have to add code into the joomla root API folder. 
+
 ### Manifest
 
 Section 'API' is added as separate branch parallel to ```<administrator>```
@@ -200,28 +209,8 @@ api\components\com_secondhand\
           └─── Books  
                └─── JsonapiView.php  
 ```
-Attention the API folder structure is similar to other  structure with the exception that the controller folder keeps all ```nnnController.php``` files without further sub directories
-
-Test
-```mermaid
-treeView 
-	"packages" 
-		"mermaid" 
-			"src" 
-		"parser"
-```
-treeView-beta "packages" "mermaid" "src" "parser"
-
-```mermaid
-%%{init:{"theme":"forest"}}%%
-
-flowchart LR
-start[API URL]  ~~~|" yyy "| start --> plg[CRUD function] ~~~|" xxx "| plg
-```
-
-
-
-
+Attention the API folder structure is similar to other component structures with the exception that the controller folder keeps all ```nnnController.php``` files without further subdirectories
+The view code is always kept in a JsonapiView.php file in a named folder 
 
 ### Controller in API part
 
@@ -351,25 +340,3 @@ class JsonapiView extends BaseApiView
 }
 ```
 
-
-We are not much wiser now so 
-## What is going on behind the scene ?
-
-### // Code of CRUDE 'tree' spread ??? 
-
-
-
-
-Put is not available 
-
-### Form of 'Route'
-
-
-## Calling the API routes and the results
-
-
-# Deeper example -> next file ..
-
-
-
-. . . . . .. 

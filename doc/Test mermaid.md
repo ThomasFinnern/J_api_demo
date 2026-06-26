@@ -1,12 +1,12 @@
 ---
-aliases:
+aliases: assdfg
 ---
 
 ```mermaid
 %%{init:{"theme":"forest"}, flowchart:{"curve": "linear"}}%%
 %% linkStyle default interpolate basis
 flowchart LR
-start[API URL]  ~~~|" yyy "| start --> plg[CRUD function] ~~~|" xxx "| plg
+start[API URL]  ~~~|" "| start --> plg[CRUD function] ~~~|" "| plg
 ```
 
 

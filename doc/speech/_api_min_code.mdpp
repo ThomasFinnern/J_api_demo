@@ -1,0 +1,27 @@
+
+<center>JoomGallery API Documentation</center>
+<center>Version 2026.06.22</center><br>
+
+## Joomgallery API (ready parts)
+
+[//]: # (!INCLUDE "tableOfContent.md")
+[//]: # (---)
+
+!INCLUDE "01_A_minimum_code.md"
+---
+
+!INCLUDE "01_B_min_API_routes.md"
+---
+
+!INCLUDE "01_C_behindTheScenes.md"
+---
+
+!INCLUDE "01_B_min_API_routes.md"
+---
+
+!INCLUDE ""
+---
+
+!INCLUDE "0x.WhatsMissing.md"
+---
+
