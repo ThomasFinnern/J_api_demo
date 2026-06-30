@@ -131,10 +131,10 @@ There may be other types too: ```['component_name' => '([A-Za-z0-9_]+)']```
 TIP: By the way the json parameters given in the request can be fetched by 
 ```php $data = json_decode($this->input->json->getRaw(), true); ``` or ```php $srcFilename  = $this->input->json->getString('filename');```
 
-#### Called Controller 
+#### Controller and Json Api View
 
 In the route definitions above we see the column with ```'books.displayList'``` which tell about the controller name and the function to use.
-This is the entry point in the API part of the component. The code accesses BooksController.php in  path below  
+This is the entry point in the API part of the component. The code accesses BooksController.php see path below.  
 
 ```
 api\components\com_secondhand\  
@@ -145,5 +145,14 @@ api\components\com_secondhand\
           └─── Books  
                └─── JsonapiView.php  
 ```
+
+Inside the minimum controller there are two definitions as the controller class inherits from ApiController
+
+```php
+    protected $contentType = 'books';
+    protected $default_view = 'books';
+```
+
+The content type leads to the model and is given to to the view.
 
 
