@@ -176,5 +176,159 @@ com_media->>media-manager.js:confirm delete
 media-manager.js->>User:remove file from display
 ```
 
+```mermaid
+---
+"title": "Path URL request to used model"
+---
+%%{init:{
+    "theme":"forest",
+    "flowchart" : {"curve" : "linear"}
+    }
+}%%
+
+%% linkStyle default interpolate basis
+
+flowchart LR
+
+    classDef hidden display: none;
+
+    urlRequest("Url request")
+
+    subgraph compApiController["API component controller"]
+        comp_api_controller("Request ()")
+        comp_api_no_controller("<s>Request</s>")
+    end
+
+    subgraph joomlaApiController["Joomla API controller"]
+        joomla_api_controller("Request ()")
+    end
+
+    subgraph compApiModel["API component model"]
+        comp_api_model("functions ()")
+        comp_api_no_model("<s>functions ()</s>")
+    end
+
+    subgraph compAdminModel["Admin component model"]
+        comp_admin_model("functions ()")
+    end
+
+
+    urlRequest --> comp_api_controller
+    urlRequest -.-> comp_api_no_controller -.-> joomla_api_controller 
+%%    urlRequest -.-> joomla_api_controller 
+    
+    %% comp_api_controller --> joomla_api_controller
+    joomla_api_controller --> comp_api_model
+    joomla_api_controller -.-> comp_api_no_model -.-> comp_admin_model
+
+%%    compApiController --- compApiModel
+```
+????
+
+```mermaid
+%%{init:{
+    "theme":"forest",
+    "flowchart" : {"curve" : "linear"}
+    }
+}%%
+
+%% linkStyle default interpolate basis
+
+flowchart LR
+
+    classDef hidden display: none;
+
+    urlRequest("Url request")
+
+    subgraph compApiController["API component controller"]
+        comp_api_controller("Request ()")
+    end
+
+    subgraph joomlaApiController["Joomla API controller"]
+        joomla_api_controller("Request ()")
+    end
+
+    subgraph compApiModel["API component model"]
+        comp_api_model("functions ()")
+    end
+
+    subgraph compAdminModel["Admin component model"]
+        comp_admin_model("functions ()")
+    end
+
+    urlRequest --> comp_api_controller
+    urlRequest -.-> joomla_api_controller 
+%%    urlRequest -.-> joomla_api_controller 
+    
+    %% comp_api_controller --> joomla_api_controller
+    joomla_api_controller --> comp_api_model
+    joomla_api_controller -.-> comp_admin_model
+
+%%    compApiController --- compApiModel
+```
+
+
+```mermaid
+flowchart
+    A-->B[<div style='text-align: left'><h3>Well well well...</h3><ul><li>this is a really</li><li>round-about way to</li><li>do stuff lol...</li></ul><br></div>];
+    B-->C;
+```
+
+        "curve" : "basis"
+        "curve" : "bumpX"
+        "curve" : "bumpY"
+        "curve" : "cardinal"
+        "curve" : "catmullRom"
+        "curve" : "linear"
+        "curve" : "monotoneX"
+        "curve" : "monotoneY"
+        "curve" : "natural"
+        "curve" : "step"
+        "curve" : "stepAfter"
+        "curve" : "stepBefore"
+        
+        
+        "theme":"default",
+        "theme":"forest",
+        "theme":"base",
+        "theme":"dark",
+        "theme":"neutral",
+        
+        "useMaxWidth" : "true"
+        "useMaxWidth" : "false"
+        
+        "diagramPadding" : "0",
+
+        "diagramPadding" : "4",
+        "diagramPadding" : "32",
+        
+        "noteSpacing" : "0",
+        
+        "rankSpacing" : "0",
+        "rankSpacing" : "4",
+
+          direction TB
+
+
+```mermaid
+---
+"title": "General sequence in joomla api controller function"
+---
+
+%%{init:{
+    "theme":"forest",
+        "theme":"base",
+
+    "flowchart" : {
+        "curve" : "step",
+         "useMaxWidth" : "true",
+         "rankSpacing" : "7",
+         "diagramPadding" : "4"
+    }
+}}%%
+
+flowchart LR
+    start[API URL]  ~~~|" "| start --> plg[CRUD function] ~~~|" "| plg
+```
 
 

@@ -4,7 +4,6 @@ We are not much wiser now so what can be done with the code ?
 
 The CRUDE definitions result in following API routes:
 
-
 <xdetails>
  <summary><code>GET v1/secondhand/books</code> <code><b>/</b></code> <code>(lists all books with variables)</code></summary>
 
@@ -385,5 +384,3 @@ The response contains to the route links for called (self), first , previous and
     }
 }
 ```
-
-============================================================================

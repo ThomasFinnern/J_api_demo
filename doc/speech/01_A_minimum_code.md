@@ -1,4 +1,4 @@
-# Bare minimum component / webservice API
+## Bare minimum component / webservice API
 Following is a description of a bare minimum component with matching minimum webservice API. 
 
 ## Component "com_secondhand"
@@ -15,7 +15,7 @@ Table items
 The idea is to use an external scan the ISBN of the book, fetch book data by other web API and use a J! web API to fill this table.
 ## Web Services API plugin plg_webservices_secondhand
 
-### The general folder structure:
+### The general base component folder structure:
 
 ```
 plg_secondhand  
@@ -56,17 +56,34 @@ You probably know the structure of a manifest file so following is a excerpt.
     <file>secondhand.xml</file>
   </files>
   
+  <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+  
   ...
   <updateservers>...</updateservers>
 </extension>
 ```
 The group is 'webservices'.
-Attention: the namespace contains 'WebSpaces' with an uppercase 'S' in te middle
+Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in te middle
+
+The Manifest file gets an additional section 
+
+```XML
+  <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+```
 
 ### Language constants
 In language->en_GB folder the usual two files are expected: 
 - plg_webservices_secondhand.ini
 - plg_webservices_secondhand.sys.ini
+
 Which contains:
 ```ini
 PLG_WEBSERVICES_SECONDHAND="webservice secondhand"
@@ -197,7 +214,11 @@ Section 'API' is added as separate branch parallel to ```<administrator>```
   </api>
 ```
 It follows the standard form sections are handled. It just tells where to find the root of files ...
-### The API sub folder structure:
+
+
+### API part of the component
+
+#### The API sub folder structure:
 
 From the root of the joomla web page
 ```
@@ -212,7 +233,7 @@ api\components\com_secondhand\
 Attention the API folder structure is similar to other component structures with the exception that the controller folder keeps all ```nnnController.php``` files without further subdirectories
 The view code is always kept in a JsonapiView.php file in a named folder 
 
-### Controller in API part
+#### Controller in API part
 
  ```BooksController.php```
 
@@ -259,15 +280,17 @@ class BooksController extends ApiController
     // Implement other methods like read, update, delete as needed
 }
 ```
-Beside the namespace there is not much code.
+
+Within the minimal controller, two definitions need to be implemented, as the controller class inherits from ApiController.
+
 ```php
     protected $contentType = 'books';
     protected $default_view = 'books';
 ```
 
-The Joomla API supporting code can live with just a with a content type and a default view. More explanation follows below. 
+The `$contentType` tells which component model to use and the `$default_view` tells which view is given the collected data does render.
 
-### View in API part
+#### View in API part
 
 ```JsonapiView.php```
 
@@ -314,8 +337,10 @@ class JsonapiView extends BaseApiView
 
         'note',
         'published',
-        'created', 'created_by',
-        'modified', 'modified_by',
+        'created', 
+        'created_by',
+        'modified', 
+        'modified_by',
     ];
 
     /**
@@ -333,10 +358,41 @@ class JsonapiView extends BaseApiView
 
         'note',
         'published',
-        'created', 'created_by',
-        'modified', 'modified_by',
+        'created', 
+        'created_by',
+        'modified', 
+        'modified_by',
     ];
 
 }
 ```
+
+Inside the minimum controller there are two variables to implement as the JsonapiView class inherits from BaseApiView.
+
+The code needs to know which variables should be displayed when rendering item or list data.
+This may define different data for items and list view. The BaseApiView matches the retrieved data from the tables against the list defined here and displays the matching names items.
+
+```php
+    protected $fieldsToRenderItem = [
+        'id', 
+        'title',
+        'alias',
+        'isbn',
+        'description',
+        'note', 'published', 'created', 'created_by', 'modified', 'modified_by',
+    ];
+
+    protected $fieldsToRenderList = [
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description',
+        'note', 'published', 'created', 'created_by', 'modified', 'modified_by',
+    ];
+```
+
+### Resumee:
+
+This is it. The last two files (`BooksController.php`, `JsonapiView.php`) with the support of the joomla api base classes is all what is needed to support basic table data
 

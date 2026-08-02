@@ -1,8 +1,6 @@
 
-<center>JoomGallery API Documentation</center>
-<center>Version 2026.06.22</center><br>
-
-## Joomgallery API (ready parts)
+<h2><center>API demo with minimum component</center></h2>
+<center>Version 2026.07.22</center><br>
 
 [//]: # (!INCLUDE "tableOfContent.md")
 [//]: # (---)
@@ -13,13 +11,23 @@
 !INCLUDE "01_B_min_API_routes.md"
 ---
 
-!INCLUDE "01_C_behindTheScenes.md"
+## What is going on behind the scene ?
+
+!INCLUDE "01_C01_behind.createCRUDRoutes.md"
+
+!INCLUDE "01_C02_behind.codeWorkflow.md"
 ---
 
-!INCLUDE "01_B_min_API_routes.md"
+!INCLUDE "01_D_OverwriteController.md"
 ---
 
-!INCLUDE ""
+[//]: # (!INCLUDE "01_E_xxx.md"
+---
+
+[//]: # (!INCLUDE ""
+---
+
+!INCLUDE "0x.Artefacts.md"
 ---
 
 !INCLUDE "0x.WhatsMissing.md"

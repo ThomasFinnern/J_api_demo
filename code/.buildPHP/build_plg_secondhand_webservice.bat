@@ -50,8 +50,8 @@ pushd  ..\..\..\buildExtension\src
 REM dir /one /b *.tsk
 ECHO Path: %cd% 
 
-echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../J!_api_demo/code/.buildPHP\build_plg_secondhand_webservice.tsk %1 %OptionFile%
-"%ExePath%php.exe" buildExtensionCmd.php -f ../../J!_api_demo/code/.buildPHP\build_plg_secondhand_webservice.tsk %1 %OptionFile%
+echo --- "%ExePath%php.exe" buildExtensionCmd.php -f ../../J!_api_demo/code/.buildPHP\build_plg_secondhand_webservice.tsk %OptionFile%
+"%ExePath%php.exe" buildExtensionCmd.php -f ../../J!_api_demo/code/.buildPHP\build_plg_secondhand_webservice.tsk %OptionFile%
 popd
 
 GOTO :EOF

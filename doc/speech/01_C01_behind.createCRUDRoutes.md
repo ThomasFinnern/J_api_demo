@@ -1,12 +1,13 @@
-## What is going on behind the scene ?
-
-### Creating the internal routes 
+### Internal routes created by createCRUDRoutes 
 
 The following graph shows the path of possible API route inside the joomla code. 
-The **webservice plugin** of the component calls the J! API function createCRUDRoutes 
+The **webservice plugin** of the component calls the J! API function **createCRUDRoutes** 
 and gives it the base route definition and the component controller base.
 
 ```mermaid
+---
+"title": "Resulting URL requests by createCRUDRoutes"
+---
 %%{init:{"theme":"forest"}}%%
 %% linkStyle default interpolate basis
 
@@ -28,10 +29,10 @@ flowchart LR
 		plg("createCRUDRoutes <br>(api-route, <br>component-controller)")
 	end
 	
-        plg --> create
-        plg --> read 
-        plg --> update 
-        plg --> delete 
+    plg --> create
+    plg --> read 
+    plg --> update 
+    plg --> delete 
 
     subgraph ApiPluginSupport["J! API Plugin support"]
         create("Create")
@@ -40,10 +41,10 @@ flowchart LR
         delete("Delete")
 	end
 	
-        create --> apiComp
-        read --> apiComp
-        update --> apiComp
-        delete --> apiComp
+    create --> apiComp
+    read --> apiComp
+    update --> apiComp
+    delete --> apiComp
 
     subgraph ApiComponentController["Api component"]
         
@@ -57,10 +58,9 @@ flowchart LR
 
     end
 
-
     apiJoomla["API Joomla"]	-.->
 	modelComponent["Model of Component"] -.->
-	tableComponent["Table of Component"] 
+	tableComponent["Table of Component"]
 ```
 It is called in the form 
 ```php
@@ -70,12 +70,13 @@ $router->createCRUDRoutes(
     $defaults  
 );  
 ```
-where the first argument is the route and the second the base (controler...) name. 
-The default varaible looks either like  
+where the first argument is the route and the second the base (controller...) name.  
+The `$defaults` variable looks either like  
 ```php $defaults = ['component' => 'com_secondhand', 'public' => false];```  
 or  
 ```php $defaults = ['component' => 'com_secondhand', 'public' => true];```  
-if set  **'public' => true** no X-Token is needed in the route and everyone can access this entry
+if set  **'public' => true** no X-Token will be checked and everyone can access this entry.
+This should only be set for tests
 
 #### createCRUDRoutes function
 
@@ -89,9 +90,9 @@ Post   http://127.0.0.1/web_page/api/index.php/v1/secondhand/books { params }
 Patch  http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id { params }
 Delete http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id
 ```
-Please note that the "Put" route is unavailable and has therefore been crossed out above.
+Please note that the "Put" route is unavailable and was therefore crossed out above in the graph.
 
-The createCRUDRoutes function organizes it as following: 
+The joomla createCRUDRoutes function organizes it as following: 
 
 ```php
  public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
@@ -131,11 +132,17 @@ There may be other types too: ```['component_name' => '([A-Za-z0-9_]+)']```
 TIP: By the way the json parameters given in the request can be fetched by 
 ```php $data = json_decode($this->input->json->getRaw(), true); ``` or ```php $srcFilename  = $this->input->json->getString('filename');```
 
-#### Controller and Json Api View
+#### Forwarding to the controller
 
-In the route definitions above we see the column with ```'books.displayList'``` which tell about the controller name and the function to use.
-This is the entry point in the API part of the component. The code accesses BooksController.php see path below.  
+The middle part of the route definition tells about the 'controller.function' call:
+`new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults)`  
+Here ```'books.displayList'``` tells the controller name is 'books' and the function to be implemented is "displayList".
 
+This is the entry point in the API part of the component. The code above will lead to file BooksController.php. Path to file see below.
+
+### API part of the component
+
+The controller and view structure to implement
 ```
 api\components\com_secondhand\  
 ├─── src  
@@ -146,13 +153,20 @@ api\components\com_secondhand\
                └─── JsonapiView.php  
 ```
 
-Inside the minimum controller there are two definitions as the controller class inherits from ApiController
+The API path starts in the root of the web page
+
+#### Controller file (reminder)
 
 ```php
     protected $contentType = 'books';
     protected $default_view = 'books';
 ```
+The `$contentType` tells which component model to use and the `$default_view` tells which json api view is used to render the collected data.
 
-The content type leads to the model and is given to to the view.
+#### Json Api View file (reminder)
 
+```php
+    protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', 'note', 'published', 'created', 'created_by', 'modified', 'modified_by',];
+    protected $fieldsToRenderList = ['id', 'title', 'alias', 'isbn', 'description', 'note', 'published', 'created', 'created_by', 'modified', 'modified_by',];
+```
 
