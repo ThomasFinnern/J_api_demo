@@ -1,0 +1,16 @@
+<!-- h2><center>API demo with minimum component</center></h2><center>Version 2026.07.22</center -->
+!INCLUDE "abstract.md"
+---
+!INCLUDE "aboutMe.md"
+---
+
+[//]: # (!INCLUDE ""
+---
+
+!INCLUDE "artefacts.md"
+---
+
+!INCLUDE "0x.WhatsMissing.md"
+---
+[//]: # (!INCLUDE "tableOfContent.md")
+[//]: # (---)
