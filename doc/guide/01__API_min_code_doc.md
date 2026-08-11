@@ -1,6 +1,6 @@
 
-<h2><center>API demo with minimum component</center></h2>
-<center>Version 2026.07.22</center><br>
+<h2 style="text-align:center;">API demo with minimum component</h2>
+<span style="text-align:center;">Version 2026.07.22</span>
 
 [//]: # (!INCLUDE "tableOfContent.md")
 [//]: # (---)
@@ -19,7 +19,8 @@ Table items
 * isbn
 * Standard items like publish, created, ...
 
-The idea is to use an external scan the ISBN of the book, fetch book data by other web API and use a J! web API to fill this table.
+The idea is to use of an external scan the ISBN of the book, fetch book data by other web API and use a J! web API to fill this table.
+
 ## Web Services API plugin plg_webservices_secondhand
 
 ### The general base component folder structure:
@@ -42,9 +43,7 @@ The file src->Extension->Secondhand.php will hold the API definition, whereas al
 
 ### Manifest file
 
-```secondhand.xml```
-
-```
+`secondhand.xml`
 You probably know the structure of a manifest file so following is a excerpt.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,7 +126,7 @@ return new class () implements ServiceProviderInterface{
         $container->set(  
             PluginInterface::class,  
             $container->lazy(Secondhand::class, function (Container $container) {  
-                $plugin     = new Secondhand(  
+                $plugin = new Secondhand(  
                     (array) PluginHelper::getPlugin('webservices', 'secondhand')  
                 );  
                 $plugin->setApplication(Factory::getApplication());  

@@ -1,4 +1,4 @@
-background-image: url(./assets/images/backgroundStructure_02.jpg)
+[//]: # (background-image: url&#40;./assets/images/backgroundStructure_02.jpg&#41;)
 
 # Thomas Finnern InsideTheMachine.de
 
@@ -7,7 +7,7 @@ background-image: url(./assets/images/backgroundStructure_02.jpg)
 * Full moon fun run, no race, once per month, running up the hill
 ![full_moon_run](./assets/images/vollmond.png "Full moon run")
 
-## 2013: RSG2 Missing support in 2013 
+## 2013: RSGallery2 Missing support in 2013 
 * Founder with breakdown, rsgallery2.net URL captured for money (1000$), 
 one person maintaining Forum - server and 1 Person upgrading from J! 2.5 to 3.x   
 

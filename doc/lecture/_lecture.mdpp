@@ -3,14 +3,18 @@
 ---
 !INCLUDE "aboutMe.md"
 ---
-
-[//]: # (!INCLUDE ""
+!INCLUDE "bareMinComponent.md"
+---
+!INCLUDE "WebServicePlugin.md"
+---
+!INCLUDE "MinComponentApiPart.md"
 ---
 
-!INCLUDE "artefacts.md"
----
+[//]: # (---)
 
-!INCLUDE "0x.WhatsMissing.md"
----
+[//]: # (!INCLUDE "0x.WhatsMissing.md")
+[//]: # (---)
 [//]: # (!INCLUDE "tableOfContent.md")
 [//]: # (---)
+
+!INCLUDE "artefacts.md"
