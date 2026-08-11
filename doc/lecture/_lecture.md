@@ -278,7 +278,7 @@ Here the magic happens with call to createCRUDERoutes. This is a function provid
 API routes to call over HTTP
 ---
 
-## Route extension class 'src\Extension\Secondhand.php'
+## Route extension class 'src\\Extension\\Secondhand.php'
 
 ### Where the magic is applied
 
@@ -298,27 +298,524 @@ API routes to call over HTTP
 ```
 **createCRUDERoutes**
 
-* The first parameter ```php  'v1/secondhand/books' ``` tells the route which can be 
+* The first parameter `v1/secondhand/books` tells the route which can be 
 used in the call to the web page. 'v1' is used as the version, 
 'secondhand' is the component and 'books' is the table.  
 * The second parameter is the controller file to be used.  
 * The last is the internal config parameter which defines the actual component 
 and how 'public' the API is reachable.
 
-This does not look like much but with just defining the resulting component API Json views
-table items can be created, read, changed and deleted.   
+This does not look like much but with just defining the resulting component API Json views. 
+The table items can be created, read, changed and deleted.
+---
+# Minimum component API additions
+## API part of the component 'com_secondhand'
+
+* We have to insert section API into manifest
+* We have to add code into the joomla root API folder. 
+
+#### The API sub folder structure:
+
+From the root of the joomla web page
+```
+api\components\com_secondhand\  
+├─── src  
+     ├─── Controller  
+     │    └─── BooksController.php  
+     └─── View  
+          └─── Books  
+               └─── JsonapiView.php  
+```
+Attention: The API folder structure is similar to other component 
+structures with the exception that the controller folder keeps all 
+`nnnController.php` files without further subdirectories.  
+The view code is always kept in a JsonapiView.php file in a named folder 
+---
+
+## Controller in API part 'BooksController.php'
+
+```php
+namespace Bluebox\Component\Secondhand\Api\Controller;
+
+use ...
+
+class BooksController extends ApiController
+{
+    // The content type of the item. 
+    protected $contentType = 'books';
+
+    // The default view for the display method.
+    protected $default_view = 'books';
+
+    // Implement other methods like read, update, delete as needed
+    ...
+}
+```
+
+Within the minimal controller only two variables need to be defined, as the controller class inherits from ApiController.
+* The `$contentType` tells which component model to use 
+* The `$default_view` tells which view does render the collected data.
+
+---
+
+## View in API part 'JsonapiView.php'
+
+Inside the minimum controller there are only two variables to implement as the JsonapiView class inherits from BaseApiView.
+ 
+* The `$fieldsToRenderItem` tells which variables of the table to show for single item view
+* The `$fieldsToRenderList` tells which view does render the collected data.
+
+```php
+    protected $fieldsToRenderItem = []
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description', 'note', 'published', 'created', 
+        'created_by', 'modified', 'modified_by',
+    ];
+```
+```php
+   protected $fieldsToRenderList = [        
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description', 'note', 'published', 'created', 
+        'created_by', 'modified', 'modified_by',
+    ];
+```
+
+---
+
+## Resumee:
+
+We defined the API router interface.
+```php
+$router->createCRUDRoutes(  
+    'v1/secondhand/books',  
+    'books',  
+    $getDefaults  
+);  
+```
+We defined what the json response should contain for list and item. 
+
+```php
+protected $fieldsToRenderList = ['id', 'title', 'alias', 'isbn', 'description', ....
+protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', ....
+```
+
+This is it !  
+The plugin and two wo files (`BooksController.php`, `JsonapiView.php`) enables CRUDE ACCESS over the API of joomla
+The joomla api base classes support is all what is needed to handle basic table data.
+
+---
+## API route definitions created
+
+The CRUDE definitions result in following API routes:
+
+| Command | &nbsp;Route                     | &nbsp;Comment                              |
+|:--------|:--------------------------------|:-------------------------------------------| 
+| GET     | &nbsp;`v1/secondhand/books`     | &nbsp;lists all books with variables       |
+| GET     | &nbsp;`v1/secondhand/books/:id` | &nbsp;lists variables of book              |
+| POST    | &nbsp;`v1/secondhand/books`     | &nbsp;creates new book with data           |
+| PATCH   | &nbsp;`v1/secondhand/books/:id` | &nbsp;writes parameters into selected book |
+| DELETE  | &nbsp;`v1/secondhand/books/:id` | &nbsp;deletes selected book                |
+
+---
+## GET v1/secondhand/books (lists all books with variables)</h2>
+
+**Parameters:** None
+
+**Response:**
+
+| http code | content-type                      | response                                                                                                            |
+|-----------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `200`     | `application/json; charset=UTF-8` | ```json {"type": "books","id": "2","attributes": {"id": 2,"title": "Why We Sleep","alias": "why-we-sleep",, ...}``` |
+
+**Example CURL:**
+
+```batch
+curl -s --show-error 
+  -X GET "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books" 
+  -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+**Example http:**
+
+```http
+###
+GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:  ...
+```
+
+---
+
+## GET v1/secondhand/books/:id
+
+**Parameters:**
+
+None
+
+**Responses:**
+
+| http code     | content-type                      | response                                                                                                                    |
+|---------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `200`         | `application/json;charset=UTF-8`        | ```json {"type": "books","id": "2","attributes": {"id": 2,"title": "Why We Sleep","alias": "why-we-sleep",, ... }``` |
+
+**Example CURL:**
+
+```batch
+curl -s --show-error  
+   -X GET "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1" 
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+
+**Example http:**
+
+```http
+###
+GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:  ...
+```
+
+---
+## POST v1/secondhand/books (part 1)
+
+**Parameters:**
+
+| name                | type    | data type    | description |
+|---------------------|---------|--------------|-------------|
+| all book parameters | %       | Json, string |             | 
 
 
+**Responses:**
+
+| http code     | content-type                      | response                                                                                                                   |
+|---------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `200`         | `application/json;charset=UTF-8`  | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
+
+**Example cURL:**
+
+```shell
+curl -s --show-error  
+   -X POST "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books" 
+   -d "{\"title\":\"My book\",\"isbn\":\"12-3456-78-90\",\"author\":\"john breeze\",\"description\":\"The next book i write\",\"published\":1}"  
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+
+---
+## POST v1/secondhand/books (part 2)
+
+**Example http:**
+
+```http
+###
+POST http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token: 
+
+{
+   "title": "My book",
+   "isbn": "12-3456-78-90",
+   "author": "john breeze",
+   "description": "The next book i write",
+   "published": 1
+}
+```
+
+---
+## PATCH v1/secondhand/books/:id (part 1)
+
+**Parameters:**
+
+| name  |  type     | data type               | description                                                           |
+|-------|-----------|-------------------------|-----------------------------------------------------------------------|
+| title |  %     | string   |  | 
+| isbn  |  %     | string   |  | 
+| ...   |  %     | string   |   |
+
+**Responses:**
+
+| http code     | content-type                      | response                                                            |
+|---------------|-----------------------------------|---------------------------------------------------------------------|
+| `200`         | `application/json;charset=UTF-8`        | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
+
+**Example cURL:**
+
+```shell
+curl -s --show-error  
+   -X PATCH "http://127.0.0.1/web_page/api/index.php/v1/secondhand/1/books" 
+   -d "{\"published\":-2,\"isbn\":\"1234-4567-8890\"} "  
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+
+---
+## PATCH v1/secondhand/books/:id (part 2)
+
+**Example http:**
+
+```http
+###
+PATCH http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token: 
+
+{
+    "published": -2,
+    "isbn": "1234-4567-8890",
+}
+```
+---
+## DELETE secondhand/books/:id
+
+Just a reminder: Delete needs trash state before. Please use patch with "published": -2, (see above)
+
+**Parameters:**
+
+None
+
+**Responses:**
+
+None
+
+**Example cURL:**
+
+```shell
+curl -s --show-error  
+  -X DELETE  "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/2"
+  -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+
+**Example http:**
+
+```http
+###
+DELETE http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/2
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token: 
+```
+---
+### API routes responses (json)
+
+The results are json style and contain the links to actual call and next, previous and last page
+
+#### GET book
+
+```json
+{
+  "links": {
+    "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
+  },
+  "data": {
+    "type": "books",
+    "id": "1",
+    "attributes": {
+      "id": 1,
+      "title": "test 01",
+      "alias": "test-01",
+      "isbn": "1234567890",
+      "description": "",
+      "published": 1,
+      "created": "2026-05-24 17:23:19",
+      "created_by": 775,
+      "modified": "2026-05-24 17:42:09",
+      "modified_by": 775,
+      "note": ""
+    }
+  }
+}
+```
+
+---
+#### GET books
+
+```json
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": [
+        {
+            "type": "books",
+            "id": "2",
+            "attributes": {
+                "id": 2,
+                "title": "Why We Sleep",
+                "alias": "why-we-sleep",
+                "isbn": "da1b2048-cec2-4127-950e-35bc4b3ee181",
+                "description": "Sleep is one of the most important aspects of our life, health and longevity and yet it is increasingly neglected in twenty-first-century society, with devastating consequences- every major disease in the developed world - Alzheimer - s, cancer, obesity, diabetes - has very strong links to deficient sleep. In this book, the first of its kind written by a scientific expert, Professor Matthew Walker explores twenty years of cutting-edge research to solve the mystery of why sleep matters. Looking at creatures from across the animal kingdom as well as major human studies, Why We Sleep delves in to everything from what really happens in our brains and bodies when we dream to how caffeine and alcohol affect sleep and why our sleep patterns change across a lifetime, transforming our appreciation of the extraordinary phenomenon that safeguards our existence.",
+                "published": 1,
+                "created": "2026-05-27 09:53:06",
+                "created_by": 776,
+                "modified": "2026-05-27 09:53:06",
+                "modified_by": 776,
+                "note": ""
+            }
+        },
+        {
+            "type": "books",
+            "id": "3",
+            "attributes": {
+                "id": 3,
+                "title": "My book",
+                "alias": "my-book",
+                "isbn": "12-3456-78-90",
+                "description": "The next book i write",
+                "published": 1,
+                "created": "2026-06-23 11:40:16",
+                "created_by": 776,
+                "modified": "2026-06-23 11:40:16",
+                "modified_by": 776,
+                "note": ""
+            }
+        }
+    ],
+    "meta": {
+        "total-pages": 1
+    }
+}
+```
+
+---
+#### Post book
+
+```json
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": {
+        "type": "books",
+        "id": "3",
+        "attributes": {
+            "id": 3,
+            "title": "My book",
+            "alias": "my-book",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": 1,
+            "created": "2026-06-23 11:40:16",
+            "created_by": 776,
+            "modified": "2026-06-23 11:40:16",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+```
+
+---
+#### Patch book trash ("published": -2)
+
+```json
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/4"
+    },
+    "data": {
+        "type": "books",
+        "id": "4",
+        "attributes": {
+            "id": 4,
+            "title": "My book",
+            "alias": "my-book-7",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": -2,
+            "created": "2026-05-26 16:25:09",
+            "created_by": 776,
+            "modified": "2026-05-26 16:41:17",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+```
+
+
+---
+## Pagination Joomla example with configuration (application)
+
+### Links part of API response 
+
+```json
+{
+    "links": {
+        "self":"http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                ?page%5Boffset%5D=30&page%5Blimit%5D=30",
+        "first": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                  ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "previous": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                     ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "next": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=60&page%5Blimit%5D=30",
+        "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=90&page%5Blimit%5D=30"
+    },
+   
+```
+
+Add `?page[offset]=90&page[limit]=30"` to the route in the form shown in above response.  
+The response contains links for called route (self), first-, previous- and last-page 
+
+---
+
+### Data part of API response
+
+```json
+{
+  "links": {
+    "self": "http://127.0.0.1/api_6x/api/index.php/v1/config/application?page%5Boffset%5D=30&page%5Blimit%5D=30",
+    ......
+    "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application?page%5Boffset%5D=90&page%5Blimit%5D=30"
+  },
+  "data": [
+    {
+      "type": "application",
+      "id": "247",
+      "attributes": {
+        "helpurl": "https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}",
+        "id": 247
+      }
+    },
+    {
+      "type": "application",
+      "id": "247",
+      "attributes": {
+        "offset": "UTC",
+        "id": 247
+      }
+    },
+       
+        ...............        
+        
+    ],
+    "meta": {
+        "total-pages": 4
+    }
+}
+```
+
+
+
+---
 
 
 
 
 ---
-## Minimum component API additions
 
-We have to add code into the joomla root API folder. 
+## empty page, should not be together with artefacts
 
-"com_secondhand" 
+leer ooooooooooooooooooooooooooooooooooooooo
+
 
 ---
 

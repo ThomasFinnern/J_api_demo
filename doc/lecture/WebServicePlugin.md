@@ -147,7 +147,7 @@ Here the magic happens with call to createCRUDERoutes. This is a function provid
 API routes to call over HTTP
 ---
 
-## Route extension class 'src\Extension\Secondhand.php'
+## Route extension class 'src\\Extension\\Secondhand.php'
 
 ### Where the magic is applied
 
@@ -167,18 +167,12 @@ API routes to call over HTTP
 ```
 **createCRUDERoutes**
 
-* The first parameter ```php  'v1/secondhand/books' ``` tells the route which can be 
+* The first parameter `v1/secondhand/books` tells the route which can be 
 used in the call to the web page. 'v1' is used as the version, 
 'secondhand' is the component and 'books' is the table.  
 * The second parameter is the controller file to be used.  
 * The last is the internal config parameter which defines the actual component 
 and how 'public' the API is reachable.
 
-This does not look like much but with just defining the resulting component API Json views
-table items can be created, read, changed and deleted.   
-
-
-
-
-
-
+This does not look like much but with just defining the resulting component API Json views. 
+The table items can be created, read, changed and deleted.

@@ -300,6 +300,10 @@ The `$contentType` tells which component model to use and the `$default_view` te
 
 ```JsonapiView.php```
 
+Inside the minimum controller there are only two variables to implement as the JsonapiView class inherits from BaseApiView.
+* The `$fieldsToRenderItem` tells which component model to use
+* The `$fieldsToRenderList` tells which view does render the collected data.
+
 ```php
 <?php
 
@@ -373,8 +377,6 @@ class JsonapiView extends BaseApiView
 }
 ```
 
-Inside the minimum controller there are two variables to implement as the JsonapiView class inherits from BaseApiView.
-
 The code needs to know which variables should be displayed when rendering item or list data.
 This may define different data for items and list view. The BaseApiView matches the retrieved data from the tables against the list defined here and displays the matching names items.
 
@@ -406,7 +408,7 @@ This is it. The last two files (`BooksController.php`, `JsonapiView.php`) with t
 
 ## API route definitions created
 
-We are not much wiser now so what can be done with the code ?
+?? We are not much wiser now so what can be done with the code ?
 
 The CRUDE definitions result in following API routes:
 
@@ -472,7 +474,7 @@ The CRUDE definitions result in following API routes:
 </xdetails>
 
 <xdetails>
- <summary><code>POST secondhand/books</code> <code><b>/</b></code> <code>(creates new book with data)</code></summary>
+ <summary><code>POST v1/secondhand/books</code> <code><b>/</b></code> <code>(creates new book with data)</code></summary>
 
 ##### Parameters
 
@@ -514,7 +516,7 @@ The CRUDE definitions result in following API routes:
 </xdetails>
 
 <xdetails>
- <summary><code>PATCH secondhand/books/:id</code> <code><b>/</b></code> <code>(writes parameters into selected book)</code></summary>
+ <summary><code>PATCH v1/secondhand/books/:id</code> <code><b>/</b></code> <code>(writes parameters into selected book)</code></summary>
 
 ##### Parameters
 
@@ -555,7 +557,7 @@ The CRUDE definitions result in following API routes:
 <xdetails>
  <summary><code>DELETE secondhand/books/:id</code> <code><b>/</b></code> <code>(deletes selected book)</code></summary>
 
-Just a reminder: Delete needs trash state before. use patch with "published": -2, (see above)
+Just a reminder: Delete needs trash state before. Please use patch with "published": -2, (see above)
 
 ##### Parameters
 
@@ -583,11 +585,11 @@ Just a reminder: Delete needs trash state before. use patch with "published": -2
 </xdetails>
 
 
-### Calling API routes results
+### API routes responses (json)
 
 The results are json style and contain the links to actual call and next, previous and last page
 
-#### get book
+#### GET book
 
 ```json
 {
@@ -613,8 +615,9 @@ The results are json style and contain the links to actual call and next, previo
   }
 }
 ```
+---
 
-#### get books
+#### GET books
 
 ```json
 {
@@ -663,7 +666,8 @@ The results are json style and contain the links to actual call and next, previo
 }
 ```
 
-#### post book
+---
+#### Post book
 
 ```json
 {
@@ -690,8 +694,8 @@ The results are json style and contain the links to actual call and next, previo
 }
 ```
 
-
-#### patch book trash ("published": -2)
+---
+#### Patch book trash ("published": -2)
 
 ```json
 {
@@ -718,10 +722,12 @@ The results are json style and contain the links to actual call and next, previo
 }
 ```
 
+---
 #### Example with Joomla configuration (application) using poge offset 
 
-Add ?page[offset]=90&page[limit]=30' to the route in the form hsown in the response. 
-The response contains to the route links for called (self), first , previous and last  
+Add `?page[offset]=90&page[limit]=30"` to the route in the form shown in above response.  
+
+The response contains links for called route (self), first-, previous- and last-page 
 
 ```json
 {
@@ -790,6 +796,9 @@ The response contains to the route links for called (self), first , previous and
     }
 }
 ```
+
+The 'meta' data in th end of json tells about how many pages are available with this 'limit'.
+
 ---
 
 ## What is going on behind the scene ?

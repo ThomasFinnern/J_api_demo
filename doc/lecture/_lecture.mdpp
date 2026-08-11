@@ -9,6 +9,10 @@
 ---
 !INCLUDE "MinComponentApiPart.md"
 ---
+!INCLUDE "MinApiRouteDefinitions.md"
+---
+!INCLUDE "MinApiRouteResponses.md"
+---
 
 [//]: # (---)
 
