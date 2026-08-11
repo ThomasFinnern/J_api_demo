@@ -96,6 +96,6 @@ protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', 
 ```
 
 This is it !  
-The plugin and two wo files (`BooksController.php`, `JsonapiView.php`) enables CRUDE ACCESS over the API of joomla
+The plugin and two wo files (`BooksController.php`, `JsonapiView.php`) enables CRUD ACCESS over the API of joomla
 The joomla api base classes support is all what is needed to handle basic table data.
 

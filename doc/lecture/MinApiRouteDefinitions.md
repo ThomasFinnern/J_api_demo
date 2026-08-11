@@ -1,6 +1,6 @@
 ## API route definitions created
 
-The CRUDE definitions result in following API routes:
+The CRUD definitions result in following API routes:
 
 | Command | &nbsp;Route                     | &nbsp;Comment                              |
 |:--------|:--------------------------------|:-------------------------------------------| 

@@ -194,7 +194,7 @@ Here the function onBeforeApiRoute is assigned to the API event list
 
 **function onBeforeApiRoute**
 
-Here the magic happens with call to createCRUDERoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete) 
+Here the magic happens with call to createCRUDRoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete) 
 API routes to call over HTTP
 
 The first parameter ```php  'v1/secondhand/books' ``` tell the route which can be used in the call to the web page. 'v1' 
@@ -410,7 +410,7 @@ This is it. The last two files (`BooksController.php`, `JsonapiView.php`) with t
 
 ?? We are not much wiser now so what can be done with the code ?
 
-The CRUDE definitions result in following API routes:
+The CRUD definitions result in following API routes:
 
 <xdetails>
  <summary><code>GET v1/secondhand/books</code> <code><b>/</b></code> <code>(lists all books with variables)</code></summary>
@@ -801,7 +801,33 @@ The 'meta' data in th end of json tells about how many pages are available with 
 
 ---
 
-## What is going on behind the scene ?
+## What is going on behind the scenes ?
+
+Reminder:
+
+We have defined the component's API router interface as follows:
+
+```php
+$router->createCRUDRoutes(  
+    'v1/secondhand/books',  
+    'books',  
+    $getDefaults  
+);  
+```
+#### createCRUDRoutes function
+
+The joomla API code provides now all the CRUD entries.
+This leads to following API entry points
+
+```
+Get    http://127.0.0.1/web_page/api/index.php/v1/secondhand/books 
+Get    http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id 
+Post   http://127.0.0.1/web_page/api/index.php/v1/secondhand/books { params }
+Patch  http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id { params }
+Delete http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id
+```
+Please note that the "PUT" route is unavailable and was therefore crossed out above in the graph.
+
 
 ### Internal routes created by createCRUDRoutes 
 
@@ -880,22 +906,8 @@ The `$defaults` variable looks either like
 ```php $defaults = ['component' => 'com_secondhand', 'public' => false];```  
 or  
 ```php $defaults = ['component' => 'com_secondhand', 'public' => true];```  
-if set  **'public' => true** no X-Token will be checked and everyone can access this entry.
-This should only be set for tests
-
-#### createCRUDRoutes function
-
-The joomla API code provides now all the CRUD entries. 
-This leads to following API entry points 
-
-```
-Get    http://127.0.0.1/web_page/api/index.php/v1/secondhand/books 
-Get    http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id 
-Post   http://127.0.0.1/web_page/api/index.php/v1/secondhand/books { params }
-Patch  http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id { params }
-Delete http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/:id
-```
-Please note that the "Put" route is unavailable and was therefore crossed out above in the graph.
+If **'public' => true** is set, no X-Token is checked and everyone can 
+access this entry. This should only be set for tests
 
 The joomla createCRUDRoutes function organizes it as following: 
 

@@ -197,15 +197,3 @@ The response contains links for called route (self), first-, previous- and last-
 ```
 The 'meta' data in th end of json tells about how many pages are available with this 'limit'.
 
----
-
-
-
-
----
-
-## empty page, should not be together with artefacts
-
-leer ooooooooooooooooooooooooooooooooooooooo
-
-

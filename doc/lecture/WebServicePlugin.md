@@ -143,7 +143,7 @@ Here the function onBeforeApiRoute is assigned to the API event list
 ```
 **function onBeforeApiRoute**
 
-Here the magic happens with call to createCRUDERoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete)
+Here the magic happens with call to createCRUDRoutes. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete)
 API routes to call over HTTP
 ---
 
@@ -165,12 +165,12 @@ API routes to call over HTTP
     }  
 }
 ```
-**createCRUDERoutes**
+**createCRUDRoutes**
 
 * The first parameter `v1/secondhand/books` tells the route which can be 
 used in the call to the web page. 'v1' is used as the version, 
 'secondhand' is the component and 'books' is the table.  
-* The second parameter is the controller file to be used.  
+* The second parameter `books` is the controller file to be used.  
 * The last is the internal config parameter which defines the actual component 
 and how 'public' the API is reachable.
 
