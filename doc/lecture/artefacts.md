@@ -15,6 +15,22 @@ Test 02 ============
 test after
 ===========
 
+---
+
+# Whaaatt ????
+
+.left-column[
+![thomasfinnern](./assets/images/finnern-thomas.jpg "Thomas Finnern")
+]
+.right-column[
+# 1999 - 2027 work at Walter Machines
+walter-machines.com
+]
+.left-column[
+![erodingmachine](./assets/images/machine-raptor2.png "Walter Grinding/EDM machine")
+EDM: Electrical Discharge Machining
+]
+
 
 
 

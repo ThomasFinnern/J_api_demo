@@ -1,4 +1,4 @@
-## Bare minimum component / webservice API
+# Bare minimum component / webservice API
 
 ![logo10](./assets/icons/left_right.start.svg)
 [//]: # (??? icon / image ?)
@@ -20,7 +20,7 @@ The idea is to use an external scan of the ISBN of the book, fetch book
 data by other web API and use a J! web API to fill this table.
 
 ---
-# Location of code and a more detailed description
+## Location of code and a more detailed description
 
 In this presentation, we are shortening the code. 
 A complete version can be viewed at on my Github account:

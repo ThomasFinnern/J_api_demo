@@ -58,21 +58,3 @@ one person maintaining Forum - server and 1 Person upgrading from J! 2.5 to 3.x
 ![producedtools](./assets/images/toolsShapes.jpg "Shapes of produced tools")
 ![erodingmachine](./assets/images/toolInOperation.jpg "Image of the tool during the EDM process")  
 EDM: Electrical Discharge Machining
-
-
----
-
-# Whaaatt ????
-
-.left-column[
-![thomasfinnern](./assets/images/finnern-thomas.jpg "Thomas Finnern")
-]
-.right-column[
-# 1999 - 2027 work at Walter Machines
-walter-machines.com
-]
-.left-column[
-![erodingmachine](./assets/images/machine-raptor2.png "Walter Grinding/EDM machine")
-EDM: Electrical Discharge Machining
-]
-
