@@ -5,15 +5,15 @@
 ---
 !INCLUDE "bareMinComponent.md"
 ---
-!INCLUDE "WebServicePlugin.md"
+!INCLUDE "webServicePlugin.md"
 ---
-!INCLUDE "MinComponentApiPart.md"
+!INCLUDE "minComponentApiPart.md"
 ---
-!INCLUDE "MinApiRouteDefinitions.md"
+!INCLUDE "minApiRouteDefinitions.md"
 ---
-!INCLUDE "MinApiRouteResponses.md"
+!INCLUDE "minApiRouteResponses.md"
 ---
-!INCLUDE "BehindTheScenes.md"
+!INCLUDE "behindTheScenes.md"
 ---
 
 [//]: # (---)
