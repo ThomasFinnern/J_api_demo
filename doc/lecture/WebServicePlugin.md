@@ -1,6 +1,6 @@
-## Web Services API plugin plg_webservices_secondhand
+# Web Services API plugin plg_webservices_secondhand
 
-### The general base component folder structure:
+## The general base component folder structure:
 
 ```
 plg_secondhand  
@@ -174,5 +174,5 @@ used in the call to the web page. 'v1' is used as the version,
 * The last is the internal config parameter which defines the actual component 
 and how 'public' the API is reachable.
 
-This does not look like much but with just defining the resulting component API Json views. 
+This does not look like much but with just defining the resulting component API JSON views. 
 The table items can be created, read, changed and deleted.

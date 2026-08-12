@@ -587,7 +587,7 @@ Just a reminder: Delete needs trash state before. Please use patch with "publish
 
 ### API routes responses (json)
 
-The results are json style and contain the links to actual call and next, previous and last page
+The results are JSON style and contain the links to actual call and next, previous and last page
 
 #### GET book
 
@@ -797,7 +797,7 @@ The response contains links for called route (self), first-, previous- and last-
 }
 ```
 
-The 'meta' data in th end of json tells about how many pages are available with this 'limit'.
+The 'meta' data in th end of JSON tells about how many pages are available with this 'limit'.
 
 ---
 
@@ -933,7 +933,7 @@ Additional in the $default parameter the component name and the 'public' variabl
 
 That could have been written instead as 
 
-```
+```php
 new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults),
 new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $getDefaults),
 new Route(['POST'],   'v1/secondhand/books',     'books.add',         [], $defaults),
@@ -941,12 +941,12 @@ new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '
 new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
 ```
 There is a named check for route 'variables' example 'v1/secondhand/books/**2**'.  
-The naming had two aspects: ```['id' => '(\d+)']``` 
+The naming has two aspects: ```['id' => '(\d+)']``` 
 1) The name can later be accessed as standard input parameter 'name'->'value' $input->getInt('id')
 2) Behind is a regex expression which shall check for valid/invalid characters 
 There may be other types too: ```['component_name' => '([A-Za-z0-9_]+)']``` 
 
-TIP: By the way the json parameters given in the request can be fetched by 
+TIP: The JSON parameters given in the request can be fetched by 
 ```php $data = json_decode($this->input->json->getRaw(), true); ``` or ```php $srcFilename  = $this->input->json->getString('filename');```
 
 #### Forwarding to the controller
@@ -978,9 +978,9 @@ The API path starts in the root of the web page
     protected $contentType = 'books';
     protected $default_view = 'books';
 ```
-The `$contentType` tells which component model to use and the `$default_view` tells which json api view is used to render the collected data.
+The `$contentType` tells which component model to use and the `$default_view` tells which JSON api view is used to render the collected data.
 
-#### Json Api View file (reminder)
+#### JSON Api View file (reminder)
 
 ```php
     protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', 'note', 'published', 'created', 'created_by', 'modified', 'modified_by',];

@@ -8,7 +8,7 @@
 * Minimum component API code
 * Standard use of the component controller/modules
 * Patch the data before reaching component controller/modules
-* Prepare the json response
+* Prepare the JSON response
 
 
 
@@ -74,26 +74,8 @@ one person maintaining Forum - server and 1 Person upgrading from J! 2.5 to 3.x
 ![producedtools](./assets/images/toolsShapes.jpg "Shapes of produced tools")
 ![erodingmachine](./assets/images/toolInOperation.jpg "Image of the tool during the EDM process")  
 EDM: Electrical Discharge Machining
-
-
 ---
-
-# Whaaatt ????
-
-.left-column[
-![thomasfinnern](./assets/images/finnern-thomas.jpg "Thomas Finnern")
-]
-.right-column[
-# 1999 - 2027 work at Walter Machines
-walter-machines.com
-]
-.left-column[
-![erodingmachine](./assets/images/machine-raptor2.png "Walter Grinding/EDM machine")
-EDM: Electrical Discharge Machining
-]
-
----
-## Bare minimum component / webservice API
+# Bare minimum component / webservice API
 
 ![logo10](./assets/icons/left_right.start.svg)
 [//]: # (??? icon / image ?)
@@ -115,7 +97,7 @@ The idea is to use an external scan of the ISBN of the book, fetch book
 data by other web API and use a J! web API to fill this table.
 
 ---
-# Location of code and a more detailed description
+## Location of code and a more detailed description
 
 In this presentation, we are shortening the code. 
 A complete version can be viewed at on my Github account:
@@ -129,9 +111,9 @@ It may be a still PR though [???](???)
 
 .footnote[ <\> ]
 ---
-## Web Services API plugin plg_webservices_secondhand
+# Web Services API plugin plg_webservices_secondhand
 
-### The general base component folder structure:
+## The general base component folder structure:
 
 ```
 plg_secondhand  
@@ -305,7 +287,7 @@ used in the call to the web page. 'v1' is used as the version,
 * The last is the internal config parameter which defines the actual component 
 and how 'public' the API is reachable.
 
-This does not look like much but with just defining the resulting component API Json views. 
+This does not look like much but with just defining the resulting component API JSON views. 
 The table items can be created, read, changed and deleted.
 ---
 # Minimum component API additions
@@ -398,7 +380,7 @@ $router->createCRUDRoutes(
     $getDefaults  
 );  
 ```
-We defined what the json response should contain for list and item. 
+We defined what the JSON response should contain for list and item. 
 
 ```php
 protected $fieldsToRenderList = ['id', 'title', 'alias', 'isbn', 'description', ....
@@ -602,9 +584,9 @@ Content-Type: application/json
 X-Joomla-Token: 
 ```
 ---
-### API routes responses (json)
+## API routes responses (json)
 
-The results are json style and contain the links to actual call and next, previous and last page
+The results are JSON style and contain the links to actual call and next, previous and last page
 
 #### GET book
 
@@ -712,7 +694,7 @@ The results are json style and contain the links to actual call and next, previo
 ```
 
 ---
-#### Patch book trash ("published": -2)
+#### Patch book: after trash ("published": -2)
 
 ```json
 {
@@ -799,7 +781,7 @@ The response contains links for called route (self), first-, previous- and last-
     }
 }
 ```
-The 'meta' data in th end of json tells about how many pages are available with this 'limit'.
+The 'meta' data in th end of JSON tells about how many pages are available with this 'limit'.
 
 ---
 # Behind the scenes
@@ -869,13 +851,13 @@ The last parameter for the 'createCRUDRoutes' function is a second entry for the
 ```php
 new Route(['GET'], $baseName, $controller . '.displayList', [], $getDefaults),
 ```
-'displaylist' is the controller which will be called.
+'displaylist' tells the function inside the given controller which will be called.
 
 ```php
 new Route(['GET'], $baseName . '/:id', $controller . '.displayItem', 
                ['id' => '(\d+)'], $getDefaults),
 ```
-
+Handling if (table) 'id'.  
 
 Info: These route functions can be also called direct where we define the getCRUDRoutes
 
@@ -933,7 +915,24 @@ The joomla createCRUDRoutes function organizes it as following:
 
 The Route function is the standard function to define a route. It needs the 'task' (method), the route starting with "v1/..." and the controller.function.
 Additional in the $default parameter the component name and the 'public' variables are expected.
+---
+That could have been written instead as
 
+```php
+new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults),
+new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $getDefaults),
+new Route(['POST'],   'v1/secondhand/books',     'books.add',         [], $defaults),
+new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
+new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
+```
+There is a named check for route 'variables' example 'v1/secondhand/books/**2**'.  
+The naming had two aspects: ```['id' => '(\d+)']```
+1) The name can later be accessed as standard input parameter 'name'->'value' $input->getInt('id')
+2) Behind is a regex expression which shall check for valid/invalid characters
+   There may be other types too: ```['component_name' => '([A-Za-z0-9_]+)']```
+
+TIP: By the way the JSON parameters given in the request can be fetched by
+```php $data = json_decode($this->input->json->getRaw(), true); ``` or ```php $srcFilename  = $this->input->json->getString('filename');```
 
 
 ---
@@ -968,6 +967,22 @@ Test 02 ============
 ===========
 test after
 ===========
+
+---
+
+# Whaaatt ????
+
+.left-column[
+![thomasfinnern](./assets/images/finnern-thomas.jpg "Thomas Finnern")
+]
+.right-column[
+# 1999 - 2027 work at Walter Machines
+walter-machines.com
+]
+.left-column[
+![erodingmachine](./assets/images/machine-raptor2.png "Walter Grinding/EDM machine")
+EDM: Electrical Discharge Machining
+]
 
 
 

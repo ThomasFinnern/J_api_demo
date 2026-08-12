@@ -7,7 +7,7 @@
 * Minimum component API code
 * Standard use of the component controller/modules
 * Patch the data before reaching component controller/modules
-* Prepare the json response
+* Prepare the JSON response
 
 
 

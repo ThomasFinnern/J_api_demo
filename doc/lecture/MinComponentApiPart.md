@@ -88,7 +88,7 @@ $router->createCRUDRoutes(
     $getDefaults  
 );  
 ```
-We defined what the json response should contain for list and item. 
+We defined what the JSON response should contain for list and item. 
 
 ```php
 protected $fieldsToRenderList = ['id', 'title', 'alias', 'isbn', 'description', ....

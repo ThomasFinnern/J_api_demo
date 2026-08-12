@@ -1,6 +1,6 @@
-### API routes responses (json)
+## API routes responses (json)
 
-The results are json style and contain the links to actual call and next, previous and last page
+The results are JSON style and contain the links to actual call and next, previous and last page
 
 #### GET book
 
@@ -108,7 +108,7 @@ The results are json style and contain the links to actual call and next, previo
 ```
 
 ---
-#### Patch book trash ("published": -2)
+#### Patch book: after trash ("published": -2)
 
 ```json
 {
@@ -195,5 +195,5 @@ The response contains links for called route (self), first-, previous- and last-
     }
 }
 ```
-The 'meta' data in th end of json tells about how many pages are available with this 'limit'.
+The 'meta' data in th end of JSON tells about how many pages are available with this 'limit'.
 
