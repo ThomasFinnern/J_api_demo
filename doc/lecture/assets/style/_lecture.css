@@ -1,0 +1,95 @@
+/*--------------------------------------------
+    lecture part
+--------------------------------------------*/
+img[alt=logo10] {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+img[alt=full_moon_run] {
+    width: 400px;
+    display: block;
+//    margin: auto;
+    padding-top: 12px;
+}
+
+img[alt=rsgallery2LogoText] {
+    width: 300px;
+    display: block;
+    margin: auto;
+//    padding-top: 12px;
+}
+
+img[alt=joomgalleryLogo] {
+    width: 400px;
+//    hight: 200px;
+    display: block;
+    margin: auto;
+//    padding-top: 12px;
+}
+
+img[alt=thomasfinnern] {
+    width: 150px;
+//    hight: 200px;
+    display: block;
+//    margin: auto;
+//    padding-top: 12px;
+    padding-right: 5px;
+//    float: left;
+}
+
+img[alt=erodingmachine] {
+    width: 400px;
+//    hight: 200px;
+//    display: block;
+//    margin: auto;
+    padding-top: 5px;
+}
+
+img[alt=producedtools] {
+    width: 200px;
+//    hight: 200px;
+//    display: block;
+//    margin: auto;
+    padding-top: 5px;
+}
+
+img[alt=erodingmachine] {
+    width: 200px;
+//    hight: 200px;
+//    display: block;
+//    margin: auto;
+    padding-top: 5px;
+}
+
+img[alt=joggendielangsamen] {
+    width: 200px;
+//    hight: 200px;
+    display: block;
+//    margin: auto;
+//    padding-top: 12px;
+    padding-right: 5px;
+    float: left;
+}
+
+img[alt=joggingZellerHorn] {
+    width: 184px;
+//    hight: 200px;
+    display: block;
+//    margin: auto;
+//    padding-top: 12px;
+    padding-right: 5px;
+    float: left;
+}
+
+img[alt=joggensanfranzisco] {
+    width: 164px;
+//    hight: 400px;
+    display: block;
+//    margin: auto;
+//    padding-top: 12px;
+    padding-right: 5px;
+//    float: left;
+}
+
