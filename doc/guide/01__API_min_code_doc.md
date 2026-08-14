@@ -957,7 +957,7 @@ Here ```'books.displayList'``` tells the controller name is 'books' and the func
 
 This is the entry point in the API part of the component. The code above will lead to file BooksController.php. Path to file see below.
 
-### API part of the component
+### API part of the component (reminder)
 
 The controller and view structure to implement
 ```

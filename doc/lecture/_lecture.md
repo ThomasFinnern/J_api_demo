@@ -898,19 +898,19 @@ The joomla createCRUDRoutes function organizes it as following:
 
 ```php
  public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
-    {
-        $getDefaults = array_merge(['public' => $publicGets], $defaults);
+{
+    $getDefaults = array_merge(['public' => $publicGets], $defaults);
 
-        $routes = [
-            new Route(['GET'], $baseName, $controller . '.displayList', [], $getDefaults),
-            new Route(['GET'], $baseName . '/:id', $controller . '.displayItem', ['id' => '(\d+)'], $getDefaults),
-            new Route(['POST'], $baseName, $controller . '.add', [], $defaults),
-            new Route(['PATCH'], $baseName . '/:id', $controller . '.edit', ['id' => '(\d+)'], $defaults),
-            new Route(['DELETE'], $baseName . '/:id', $controller . '.delete', ['id' => '(\d+)'], $defaults),
-        ];
+    $routes = [
+        new Route(['GET'], $baseName, $controller . '.displayList', [], $getDefaults),
+        new Route(['GET'], $baseName . '/:id', $controller . '.displayItem', ['id' => '(\d+)'], $getDefaults),
+        new Route(['POST'], $baseName, $controller . '.add', [], $defaults),
+        new Route(['PATCH'], $baseName . '/:id', $controller . '.edit', ['id' => '(\d+)'], $defaults),
+        new Route(['DELETE'], $baseName . '/:id', $controller . '.delete', ['id' => '(\d+)'], $defaults),
+    ];
 
-        $this->addRoutes($routes);
-    }
+    $this->addRoutes($routes);
+}
 ```
 
 The Route function is the standard function to define a route. It needs the 'task' (method), the route starting with "v1/..." and the controller.function.
@@ -925,21 +925,72 @@ new Route(['POST'],   'v1/secondhand/books',     'books.add',         [], $defau
 new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
 new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
 ```
+
 There is a named check for route 'variables' example 'v1/secondhand/books/**2**'.  
-The naming had two aspects: ```['id' => '(\d+)']```
-1) The name can later be accessed as standard input parameter 'name'->'value' $input->getInt('id')
-2) Behind is a regex expression which shall check for valid/invalid characters
-   There may be other types too: ```['component_name' => '([A-Za-z0-9_]+)']```
+The naming has two aspects: `['id' => '(\d+)']`  
+1) The name can later be accessed as standard input parameter 'name'->'value' $input->getInt('id')  
+2) Behind is a regex expression which shall check for valid/invalid characters  
+   There may be other types too: `['component_name' => '([A-Za-z0-9_]+)']`  
 
-TIP: By the way the JSON parameters given in the request can be fetched by
-```php $data = json_decode($this->input->json->getRaw(), true); ``` or ```php $srcFilename  = $this->input->json->getString('filename');```
-
+TIP: The JSON parameters given in the request can be fetched by  
+```php 
+$data = json_decode($this->input->json->getRaw(), true);
+``` 
+or   
+```php 
+$srcFilename  = $this->input->json->getString('filename');
+```
 
 ---
+
+??? double ?
+#### Forwarding to the controller
+
+The middle part of the route definition tells about the 'controller.function' call:
+`new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults)`  
+Here ```'books.displayList'``` tells the controller name is 'books' and the function to be implemented is "displayList".
+
+This is the entry point in the API part of the component. The code above will lead to file BooksController.php. Path to file see below.
+
+---
+
+?? Leave out reminders ?
+
+???  API part of the component (reminder)
+???  Controller file (reminder)
+???  JSON Api View file (reminder)
+
+---
+# Code workflows
+
+## URL request to used model
+
+The API call to the controller function like 'displayList' will use the code in the component api controller path if available.
+Otherwise, the default API controller steps in and handles the request.
+In similar way the joomla api controller calls the model creator which tries to find the component api model
+or takes the component administrator model with given name.
+
+<img src="http://localhost:8000/lecture/assets/images/mermaid/PathRequestToModel.png" width="100%"/>  
+
+---
+
+## joomla api controller sequence
+
+<img src="http://localhost:8000/lecture/assets/images/mermaid/ApiControllerSequence.png" width="100%"/>  
+
+
+
+
+
+----
+
 
 ## empty page, should not be together with artefacts
 
 leer ooooooooooooooooooooooooooooooooooooooo
+
+
+
 
 
 ---

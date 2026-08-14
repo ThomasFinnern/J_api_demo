@@ -112,30 +112,69 @@ The joomla createCRUDRoutes function organizes it as following:
 
 ```php
  public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
-    {
-        $getDefaults = array_merge(['public' => $publicGets], $defaults);
+{
+    $getDefaults = array_merge(['public' => $publicGets], $defaults);
 
-        $routes = [
-            new Route(['GET'], $baseName, $controller . '.displayList', [], $getDefaults),
-            new Route(['GET'], $baseName . '/:id', $controller . '.displayItem', ['id' => '(\d+)'], $getDefaults),
-            new Route(['POST'], $baseName, $controller . '.add', [], $defaults),
-            new Route(['PATCH'], $baseName . '/:id', $controller . '.edit', ['id' => '(\d+)'], $defaults),
-            new Route(['DELETE'], $baseName . '/:id', $controller . '.delete', ['id' => '(\d+)'], $defaults),
-        ];
+    $routes = [
+        new Route(['GET'], $baseName, $controller . '.displayList', [], $getDefaults),
+        new Route(['GET'], $baseName . '/:id', $controller . '.displayItem', ['id' => '(\d+)'], $getDefaults),
+        new Route(['POST'], $baseName, $controller . '.add', [], $defaults),
+        new Route(['PATCH'], $baseName . '/:id', $controller . '.edit', ['id' => '(\d+)'], $defaults),
+        new Route(['DELETE'], $baseName . '/:id', $controller . '.delete', ['id' => '(\d+)'], $defaults),
+    ];
 
-        $this->addRoutes($routes);
-    }
+    $this->addRoutes($routes);
+}
 ```
 
 The Route function is the standard function to define a route. It needs the 'task' (method), the route starting with "v1/..." and the controller.function.
 Additional in the $default parameter the component name and the 'public' variables are expected.
+---
+That could have been written instead as
 
+```php
+new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults),
+new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $getDefaults),
+new Route(['POST'],   'v1/secondhand/books',     'books.add',         [], $defaults),
+new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
+new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
+```
 
+There is a regex check provided for route 'variables'. Example 'v1/secondhand/books/**2**'.
+
+A colon ':' indicator tell 
+the controller will accept variable indicator may be given the 
+
+The naming has two aspects: `['id' => '(\d+)']`  
+1) The name can later be accessed as standard input parameter 'name'->'value' $input->getInt('id')  
+2) Behind is a regex expression which shall check for valid/invalid characters  
+   There may be other types too: `['component_name' => '([A-Za-z0-9_]+)']`  
+
+TIP: The JSON parameters given in the request can be fetched by  
+```php 
+$data = json_decode($this->input->json->getRaw(), true);
+``` 
+or   
+```php 
+$srcFilename  = $this->input->json->getString('filename');
+```
 
 ---
 
-## empty page, should not be together with artefacts
+??? double ?
+#### Forwarding to the controller
 
-leer ooooooooooooooooooooooooooooooooooooooo
+The middle part of the route definition tells about the 'controller.function' call:
+`new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults)`  
+Here ```'books.displayList'``` tells the controller name is 'books' and the function to be implemented is "displayList".
 
+This is the entry point in the API part of the component. The code above will lead to file BooksController.php. Path to file see below.
+
+---
+
+?? Leave out reminders ?
+
+???  API part of the component (reminder)
+???  Controller file (reminder)
+???  JSON Api View file (reminder)
 
