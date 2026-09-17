@@ -9,6 +9,4 @@
 * Patch the data before reaching component controller/modules
 * Prepare the JSON response
 
-
-
-
+The presentation is aimed at component developers who have no knowledge of Joomla's API functions.

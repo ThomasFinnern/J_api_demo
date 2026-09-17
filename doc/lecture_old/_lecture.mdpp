@@ -1,6 +1,8 @@
 <!-- h2><center>API demo with minimum component</center></h2><center>Version 2026.07.22</center -->
 !INCLUDE "abstract.md"
 ---
+!INCLUDE "guide.url.structure.md"
+---
 !INCLUDE "aboutMe.md"
 ---
 !INCLUDE "bareMinComponent.md"
