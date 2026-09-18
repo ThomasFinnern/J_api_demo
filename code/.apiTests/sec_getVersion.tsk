@@ -1,7 +1,10 @@
 task:get
-/apiPath="v1/secondhand/books/1"
+/apiPath="v1/secondhand/version"
 /baseUrl="http://127.0.0.1/api_6x/api/index.php"
 	// /baseUrlFile="d:\Entwickl\2026\_gitHub\RSGallery2_J4_Dev\.apiTests\_baseUrls.txt"
     // /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_joomla5x.txt"
-/joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+	// /joomlaTokenFile="d:\Entwickl\2026\_gitHub\xTokenFiles\token_api_6x.txt"
+/joomlaTokenAuto
 /isCreateAutoResponseFile=true
+
+
