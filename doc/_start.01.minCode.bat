@@ -1,5 +1,5 @@
 @ECHO OFF
-REM _startPresentation.demo.01.bat
+REM _start.01.minCode.bat
 
-ECHO start http://localhost:8000/presentation/demo.01.start.html
-start http://localhost:8000/presentation/demo.01.start.html
+ECHO start http://localhost:8000/presentation/01.minCode.html
+start http://localhost:8000/presentation/01.minCode.html
