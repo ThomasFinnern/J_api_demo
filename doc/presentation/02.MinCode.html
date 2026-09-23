@@ -34,56 +34,31 @@
 <div class="reveal">
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
+
+<!-- ========================================================================== -->
+
         <section data-markdown>
 			<textarea data-template>
-# Bare minimum component / webservice API
+# Bare minimum component
 
 ![logo10](./assets/icons/left_right.start.svg)
 
-## Component "com_secondhand"
+* plg_webservices_secondhand
+* com_secondhand
 
-Imagine a second hand books component with <br>
-just the one books table and matching view.
-
-Table items
-* id
-* name
-* author
-* isbn
-* Standard items like publish, created, ...
-
-The idea is to use an external scan of the ISBN  <br>
-of the book, fetch book data by other web API  <br>
-and use a J! web API to fill this table.
+This example is only valid when the API shall address component table items
 
 			</textarea>
         </section>
 
         <section data-markdown>
-			<textarea data-template>
-## Location of code and a more detailed description
-
-In this presentation the code is sown as shortened excerpt<br>
-
-A complete version can be viewed at on my Github account:<br>
-
-[https://github.com/ThomasFinnern/J_api_demo/tree/main/code](https://github.com/ThomasFinnern/J_api_demo/tree/main/code)
-
-Parts of this presentation will be transferred to articles<br>
-in [https://guide.joomla.org](https://guide.joomla.org)
-
-
-                 </textarea>
-        </section>
-
-        <section data-markdown>
             <textarea data-template>
 
-# Web Services API plugin <h3>plg_webservices_secondhand</h3>
+## webservice API plugin
 
-### The general base component folder structure:
+The general base component folder structure
 
-```
+```[7,10]
 plg_secondhand
 ├─── language
 │      └─── en-GB
@@ -96,45 +71,11 @@ plg_secondhand
 │              └─── Secondhand.php
 └─── secondhand.xml
 ```
-The general folder structure is similar to each other API base structure.<br>
-The file src->Extension->Secondhand.php will hold the API definition,<br>
-whereas all other folders and files support the API event interception.
+Structure similar to other plugins
 
-			</textarea>
-        </section>
+* provider.php            Registers the service provider with a DI container.
+* Secondhand.php   Endpoint definitions
 
-        <section data-markdown>
-			<textarea data-template>
-## Manifest file 'secondhand.xml'
-
-Following is an excerpt as the content is known
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="webservices" method="upgrade">
-  <name>plg_webservices_secondhand</name>
-  ...
-  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
-  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
-  <files>
-    <folder plugin="secondhand">services</folder>
-    <folder>language</folder>
-    <folder>services</folder>
-    <folder>src</folder>
-    <file>secondhand.xml</file>
-  </files>
-
-  <api>
-    <files folder="api">
-      <folder>src</folder>
-    </files>
-  </api>
-  ...
-</extension>
-```
-
-The group (see first line) is 'webservices'.
-
-Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middle
 			</textarea>
         </section>
 
@@ -143,9 +84,9 @@ Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middl
 			<textarea data-template>
 ## Service provider 'services/provider.php'
 
-Here the 'secondhand' API definition class is instantiated and listed as a service provider.
+Here the 'secondhand' API definition class is instantiated <br>and listed as a service provider.
 
-```php
+```php [14-15]
 use Joomla\...
 
 use Bluebox\Plugin\WebServices\Secondhand\Extension\Secondhand;
@@ -179,7 +120,9 @@ return new class () implements ServiceProviderInterface{
 
 ### part one
 
-```php
+**function getSubscribedEvents:** Register event
+
+```php  [2,5-8]
 /* Joomla! Webservices Plugin webservice secondhand. */
 final class Secondhand extends CMSPlugin implements SubscriberInterface
 {
@@ -191,9 +134,6 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
 
     ....
 ```
-**function getSubscribedEvents**
-
-Here the function onBeforeApiRoute is assigned to the API event list
 
 			</textarea>
         </section>
@@ -204,74 +144,141 @@ Here the function onBeforeApiRoute is assigned to the API event list
 
 ### part two
 
-```php
-    /**
-     * Registers com_secondhand API's routes in the application
-     * @param   BeforeApiRouteEvent  $event  The event object
-     * @return  void
-     * @since   4.0.0     */
-    public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
-    {
-        $router = $event->getRouter();
-
-        $defaults = ['component' => 'com_secondhand'];
-        // ToDo: Remove when tests finished, enables access without token
-        // $getDefaults = array_merge(['public' => true], $defaults);
-        $getDefaults = array_merge(['public' => false], $defaults);
-
-        $router->createCRUDRoutes(
-            'v1/secondhand/books',
-            'books',
-            $getDefaults
-        );
-    }
-}
-```
 **function onBeforeApiRoute**
 
-Here the magic happens with call to **createCRUDRoutes**. This is a function provided by Joomla which supports 'CRUD' (Create, Read, Update; Delete)
-API routes to call over HTTP
+```php [3|5-6,13|8-12]
+public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
+{
+    $router = $event->getRouter();
+
+    $defaults = ['component' => 'com_secondhand'];
+    $getDefaults = array_merge(['public' => false], $defaults);
+
+    $router->createCRUDRoutes(
+        'v1/secondhand/books',
+        'books',
+        $getDefaults
+    );
+}
+```
+
+**createCRUDRoutes:** Here the magic happens.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## createCRUDRoutes
+### Internal routes created
+
+<img src="./assets/images/mermaid/ResultUrlRequest_1.png" />
+
+function createCRUDRoutes has defined all CRUD routes internally
+
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### The magic applied
+
+instead of
+```php
+    $router->createCRUDRoutes(
+        'v1/secondhand/books',
+        'books',
+        $getDefaults
+    );
+```
+We could have written:
+```php
+   $routes = [
+        new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [],                $defaults),
+        new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $defaults),
+        new Route(['POST'],   'v1/secondhand/books',     'books.add',         [],                $defaults),
+        new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
+        new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
+   ];
+
+   $this->addRoutes($routes);
+```
+
+Which tells us `new Route(...)` will be the syntax for all our defined API routes
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-## Route extension class 'src\\Extension\\Secondhand.php'
+## General Route function parameters
 
-### Where the magic is applied
+```php[1,3]
+     new Route('CRUD' command, endpoint, 'controller'.'function', [var.regex], defaults);
 
-File part:
+    $router->createCRUDRoutes('base endpoint', 'controller', defaults);
+```
+
+| &nbsp; | &nbsp; example                 | &nbsp;description                              |
+|:--------|:--------------------------------|:-------------------------------------------|
+| 'CRUD' command     | &nbsp;GET,POST,PATCH,DELETE  | &nbsp;       |
+| endpoint     | &nbsp;`v1/secondhand/books`     | &nbsp; route path       |
+| &nbsp;     | &nbsp;`v1/secondhand/books/:id`     | &nbsp; route path with variable      |
+| controller     | &nbsp;`books`     | &nbsp; path to controller and view      |
+| function     | &nbsp;`displayItem`     | &nbsp; any function in defined controller can be called  |
+| var.regex     | &nbsp;`['id' => '(\d+)']`    | &nbsp; Regex to catch and secure the variable value |
+| defaults     | &nbsp;`['component' => 'com_secondhand',`     | &nbsp; array of 'configuration' variables       |
+| defaults     | &nbsp;`'public' => false]`     | &nbsp;  more see next page       |
+
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+## X-Token and $getDefaults
+
+The route needs to know the component name
 
 ```php
-        $defaults = ['component' => 'com_secondhand'];
-        // ToDo: Remove when tests finished, enables access without token
-        // $getDefaults = array_merge(['public' => true], $defaults);
-        $getDefaults = array_merge(['public' => false], $defaults);
+    $defaults = ['component' => 'com_secondhand'];
+```
 
-        $router->createCRUDRoutes(
-            'v1/secondhand/books',
-            'books',
-            $getDefaults
-        );
-    }
-}
-			</textarea>
+**Joomla X-Token**<br>
+The X-Token is the key to the API door and is expected to <br>
+be part of the curl/http data send. The X-Token can be <br>
+fetched in user admin account after save.
+
+With defaults flag "`'public' => true`" on local development systems we <br>
+enable API calls without X-Token.
+
+```php [2|3]
+    // ToDo: Remove when tests finished, enables access without token
+    $getDefaults = array_merge(['public' => true], $defaults);
+    $getDefaults = array_merge(['public' => false], $defaults);
+```
+
+ Please make sure to remove this before going online
+
+Above $getDefaults is passed  as last parameter to the route <br>function definition
+
+
+
+
+            </textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-**createCRUDRoutes**
+## Start of com_secondhand
 
-* The first parameter `v1/secondhand/books` tells the route which can be
-used in the call to the web page. 'v1' is used as the version,
-'secondhand' is the component and 'books' is the table.
-* The second parameter `books` is the controller file to be used.
-* The last is the internal config parameter which defines the actual component
-and how 'public' the API is reachable.
+```php
+```
 
-This does not look like much but with just defining the resulting component API JSON views.
-The table items can be created, read, changed and deleted.
-                 </textarea>
+			</textarea>
         </section>
 
         <section data-markdown>
@@ -419,7 +426,7 @@ what is needed to handle basic table data.
 
 The CRUD definitions result in following API routes:
 
-| Command | &nbsp;Route                     | &nbsp;Comment                              |
+| Command | &nbsp;endpoint                  | &nbsp;Comment                              |
 |:--------|:--------------------------------|:-------------------------------------------|
 | GET     | &nbsp;`v1/secondhand/books`     | &nbsp;lists all books with variables       |
 | GET     | &nbsp;`v1/secondhand/books/:id` | &nbsp;lists variables of book              |

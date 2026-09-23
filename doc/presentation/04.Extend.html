@@ -356,50 +356,15 @@ The state parameter will be handled in the controller.
 ```php
 $this->modelState->set('data', $data);
 ```
-
-Seen in standard controller functions `displayitems`, `displayList`, `delete` ...
-
-Following example (my own creation) assigns 'para' from input <br>and data from the request json to the state<br>
-<br>
-$param: param in url<br>
-$data:  data by json object<br>
-
-```php
-public function displayItem($param = '')
-{
-    //--- set state from given parameter  -------------------------------------
-
-    $param = $this->input->get('para', '', 'string');
-    $this->modelState->set('param', $param);
-
-    // all variables
-    $data = $this->input->json->getArray();
-    if (!empty($data))
-    {
-        $this->modelState->set('data', $data);
-    }
-
-    //--- display parameters --------------------------------------------------
-
-    return parent::displayItem(0);
-}
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
 ## modelState collection
 
-Examples of modelState use coleccted in joomla component API projects
+Examples of modelState use collected in joomla component API projects. <br>
+Seen in standard controller functions `displayitems`, `displayList` ...
+
+
 ```php
 public function displayList()
 {
-    $this->modelState->set('type_alias', $this->getTypeAliasFromInput());
-    $this->modelState->set('type_id',    $this->getTypeIdFromInput());
-    $this->modelState->set('item_id',    $this->getTypeAliasFromInput() . '.' . $this->getItemIdFromInput());
-
     $this->modelState->set('list.ordering',  'h.save_date');
     $this->modelState->set('list.direction', 'DESC');
 
@@ -413,6 +378,10 @@ public function displayList()
     $this->modelState->set('filter.published',   $filter->clean($apiFilterInfo['state'], 'INT'));
     $this->modelState->set('filter.featured',    $filter->clean($apiFilterInfo['featured'], 'INT'));
 
+    $this->modelState->set('type_alias', $this->getTypeAliasFromInput());
+    $this->modelState->set('type_id',    $this->getTypeIdFromInput());
+    $this->modelState->set('item_id',    $this->getTypeAliasFromInput() . '.' . $this->getItemIdFromInput());
+
     return parent::displayList();
 }
 ```
@@ -420,6 +389,40 @@ public function displayList()
 Especially the filtering addresses the original table model in the <br>
 administrator section. The model can be used like it is intended for <br>
 the component (admin)
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+Following example assigns in the controller 'para' from  <br>URL input
+and data from the request json data to the state<br>
+<br>
+$param: param in url<br>
+$data:  data by json object<br>
+
+```php
+public function displayItem($param = '')
+{
+    //--- set state from given URL parameter  -----------------
+
+    $param = $this->input->get('para', '', 'string');
+    $this->modelState->set('param', $param);
+
+    // --- set state from given json data  ----------------
+
+    $data = $this->input->json->getArray();
+    if (!empty($data))
+    {
+        $this->modelState->set('data', $data);
+    }
+
+    //--- display parameters ----------------------------------
+
+    return parent::displayItem(0);
+}
+```
 
 			</textarea>
         </section>
