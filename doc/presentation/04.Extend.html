@@ -129,10 +129,10 @@ or patch data before save function is called
 
         <section data-markdown>
 			<textarea data-template>
-### Expand by defining own Api module.php
+### Expand by defining own Api model.php
 
 Example route/code for retrieving the component version ID via the API.
-Besides defining the route, a bare controller only a module and
+Besides defining the route, a bare controller only a model and
 a helper is added.
 
 Also the code to change the version is presentetd here
@@ -180,7 +180,7 @@ com_secondhand\api\src
 ### New File VersionModel.php
 
 ! No additional code in controller for get. <br>
-The module supports getItem which is called by joomla API code
+The model supports getItem which is called by joomla API code
 
 ```php
 public function getItem()
@@ -316,13 +316,13 @@ The ManifestHelper.php reads/writes the versionId from/to the database.<br>
 
 ## Get item/items:
 * Tell controller the name of content type and view
-* Overwrite GetItem/GetItems in module
+* Overwrite GetItem/GetItems in model
 <br>
 <br>
 
 ## post/patch item/items:
 * Overwrite edit in controller
-* Create save function in module and call it in edit function
+* Create save function in model and call it in edit function
 <br>
 <br>
 
@@ -417,7 +417,7 @@ public function displayList()
 }
 ```
 
-Especially the filtering addresses the original table module in the <br>
+Especially the filtering addresses the original table model in the <br>
 administrator section. The model can be used like it is intended for <br>
 the component (admin)
 
