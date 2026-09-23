@@ -1,4 +1,6 @@
 
+# --- code ----
+
 code/.buildPHP/*.log
 code/.buildPHP/*.*.log
 code/.buildPHP/Translations/.idea/
@@ -14,6 +16,11 @@ code/.apiTests/curl_http_files/
 code/.apiTests/results/
 code/.apiTests/*.json
 code/.apiTests/*.jsonoutside.txt
+
+#--- documentation ------------------------------
+
+doc/slidedev.x.example
+doc/slidedev/node_modules 
 
 # org and temp files
 **/*.org.*

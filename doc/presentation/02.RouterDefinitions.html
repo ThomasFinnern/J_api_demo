@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Web Services API</title>
+
+    <meta
+            name="description"
+            content="Web Services API: Implementation for components"
+    />
+    <meta name="author" content="Hakim El Hattab"/>
+
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="../dist/reset.css"/>
+    <link rel="stylesheet" href="../dist/reveal.css"/>
+    <!--		<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--		<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />
+    <!--		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css">
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section style="text-align: left;">
+            <h2 style="text-align: center;">API Route definitions overview</h2>
+
+            <h3 style="text-align: center;">URL structure for Joomla API calls (I)</h3>
+            <div style="text-align: center;">
+                <img src="./assets/icons/left_right.start.svg" width="10%" /><br>
+            </div>
+<div>Uniform Resource Locator structure abbreviated:</div>
+            <pre style="background-color: #ecf0f1; font-size: 14px; line-height: 1;"><strong>
+www.example.com/documentation/index.html?p1=A&amp;p2=B#ressource
+\_____________/\_______________________/\________/\________/
+       |                   |                 |         |
+      host                path             query    fragment
+</strong></pre>
+Joomla API example:
+<pre style="background-color: #ecf0f1; font-size: 14px; line-height: 1;"><strong>
+example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=30
+\__________/\____________/\___________________/\_____________________________/
+     |            |                 |                        |
+    host       api path         endpoints                  query
+</strong></pre>
+
+        </section>
+
+        <section style="text-align: left;">
+            <h3>URL structure for Joomla API calls (II)</h3>
+
+            <p>   |     Joomla API example:</p>
+            <pre style="background-color: #ecf0f1; font-size: 14px; line-height: 1;"><strong>
+example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=30
+\__________/\____________/\___________________/\_____________________________/
+     |            |                 |                        |
+    host       api path         endpoints                  query
+</strong></pre>
+
+
+            <span style="text-align: left;">
+				<p>Path:</p>
+				<ul>
+					<li>Api path:    /api/index.php/                -&gt; tells that we address the webservice API</li>
+					<li>Endpoints:  v1/config/application  -&gt; routes to address functionality</li>
+				</ul>
+			</span>
+            <span style="text-align: left;">
+				<p>Query:</p>
+				<ul>
+					<li>pagination:   page[offset]=30&amp;page[limit]=30</li>
+					<li>filter:             filter[catid]=2&amp;filter[state]=1</li>
+					<li>sorting:         list[ordering]=created&amp;list[direction]=desc</li>
+					<li>fields:            fields[articles]=title,catid,state</li>
+				</ul>
+			</span>
+            <span style="text-align: left;">
+				<p>Special characters like '[', ']' must be converted like in other HTML queries</p>
+			</span>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Pagination Joomla example with configuration (application)
+
+### Links part of API response
+
+The response starts with a "links" section and ends with "meta/total pages"
+
+```json
+{
+    "links": {
+        "self":"http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                ?page%5Boffset%5D=30&page%5Blimit%5D=30",
+        "first": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                  ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "previous": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                     ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "next": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=60&page%5Blimit%5D=30",
+        "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=90&page%5Blimit%5D=30"
+    },
+
+```
+
+For pagination add `?page[offset]=90&page[limit]=30"` <br>
+to the route in the form shown in above response.
+
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+
+### Data part of API response
+
+```json
+{
+  "links": {
+    "self": "...",
+  },
+  "data": [
+    {
+      "type": "application",
+      "id": "247",
+      "attributes": {
+        "helpurl": "https://help.joomla.org/proxy?keyref=Help{major}{minor}:{keyref}&lang={langcode}",
+        "id": 247
+      }
+    },
+    {
+      "type": "application",
+      "id": "247",
+      "attributes": {
+        "offset": "UTC",
+        "id": 247
+      }
+    },
+        ...............
+    ],
+    "meta": {
+        "total-pages": 4
+    }
+}
+```
+
+The 'meta' data at the end of the JSON tells <br>
+how many pages are available with this 'limit'.
+
+                 </textarea>
+        </section>
+
+    </div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../dist/plugin/zoom.js"></script>
+<script src="../dist/plugin/notes.js"></script>
+<script src="../dist/plugin/search.js"></script>
+<script src="../dist/plugin/markdown.js"></script>
+<script src="../dist/plugin/highlight.js"></script>
+<script>
+    // Also available as an ES module, see: https://revealjs.com/initialization/
+    // import Reveal from 'reveal.js';
+    // import RevealZoom from 'reveal.js/plugin/zoom';
+    // import RevealNotes from 'reveal.js/plugin/notes';
+    // import RevealSearch from 'reveal.js/plugin/search';
+    // import RevealMarkdown from 'reveal.js/plugin/markdown';
+    // import RevealHighlight from 'reveal.js/plugin/highlight';
+
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+//				disableLayout: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+    });
+</script>
+</body>
+</html>

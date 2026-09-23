@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Web Services API</title>
+
+    <meta
+            name="description"
+            content="Web Services API: Implementation for components"
+    />
+    <meta name="author" content="Hakim El Hattab"/>
+
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="../dist/reset.css"/>
+    <link rel="stylesheet" href="../dist/reveal.css"/>
+    <!--		<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--		<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />
+    <!--		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css">
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section data-markdown>
+			<textarea data-template>
+				## Web Services API:<h3>Implementation for components</h3>
+
+				![logo10](./assets/icons/left_right.start.svg)
+
+				### Dipping the toe into the sea of joomla webserverices API coding for components
+
+				* Minimum component API code
+				* Standard use of the component controller/modules  <!-- .element: class="fragment" data-fragment-index="2" -->
+				* Patch the data before reaching component controller/modules <!-- .element: class="fragment" data-fragment-index="3" -->
+				* Prepare the JSON response <!-- .element: class="fragment" data-fragment-index="4" -->
+
+				The presentation is aimed at component developers who have no knowledge of Joomla's API functions.
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+# Thomas Finnern InsideTheMachine.de
+
+### 2008: First Joomla! web page
+Full moon fun run, no race, <br>once per month, <br>running up the hill
+
+<img src="./assets/images/vollmond.png" width="70%" height="30%"/><br>
+<img src="./assets/icons/RSG2_logoText.svg" width="30%" /><br>
+Using **RSGallery2** as my gallery for images
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea >
+<img src="./assets/icons/RSG2_logoText.svg" width="50%" /><br>
+
+### 2013: RSGallery2 Missing support in 2013
+
+* Founder with breakdown, <br>
+* rsgallery2.net URL captured for money (1000$),<br>
+* One person maintaining forum-server and <br>
+* 1 person upgrading from J! 2.5 to 3.x
+<br>
+<br>
+
+### 2014 Start of coding <!-- .element: class="fragment" data-fragment-index="2" -->
+
+* Start of transfer code from 3x to 4x <!-- .element: class="fragment" data-fragment-index="2" -->
+* Learning the ropes, first code in PHP .... <!-- .element: class="fragment" data-fragment-index="2" -->
+* First joomla! Day / JCamp Essen <!-- .element: class="fragment" data-fragment-index="2" -->
+<br>
+<br>
+
+### 2015 Transfer code to GitHub  <!-- .element: class="fragment" data-fragment-index="3" -->
+
+* 2015: First release of RSG2 J4x <!-- .element: class="fragment" data-fragment-index="3" -->
+* Website RSGallery2.org <!-- .element: class="fragment" data-fragment-index="3" -->
+* RSG2 J4 state OK in 2019 <!-- .element: class="fragment" data-fragment-index="3" -->
+<br>
+<br>
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+### 2019++ Transition code to J5x
+
+* Big ideas but failed due to j code expectations
+* Gid instead of id, ignored categories ....
+<br>
+<br>
+
+### 2025 First version for J5x <!-- .element: class="fragment" data-fragment-index="2" -->
+
+Current status: <!-- .element: class="fragment" data-fragment-index="2" -->
+It works "just barely", needs still a lot of development  <!-- .element: class="fragment" data-fragment-index="2" -->
+
+<hr>
+
+![joomgalleryLogo](./assets/icons/logo-joomgalleryfriendskleiner.svg "JoomGallery Friends logo") <!-- .element: class="fragment" data-fragment-index="3" -->
+
+### 2024++ support for JoomGallery Friends <!-- .element: class="fragment" data-fragment-index="3" -->
+
+* Code for site upload <!-- .element: class="fragment" data-fragment-index="3" -->
+* Code for Web services API <!-- .element: class="fragment" data-fragment-index="3" -->
+<br>
+<br>
+
+			</textarea>
+        </section>
+
+        <section>
+            <h2>Thomas Finnern</h2>
+            <h3>Hobby</h3>
+            <hr>
+            <div class="r-hstack" style="gap: 2rem;">
+                <div>
+                    <img src="./assets/images/joggenDieLangsamen_2.jpg" width="60%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/joggingZellerHorn.jpg" width="35%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/joggingSanFranzisco.jpg" width="50%" /><br>
+                </div>
+            </div>
+            <hr>
+            <h3>1999 - 2027 work at Walter Machines walter-machines.com</h3>
+            <hr>
+            <div class="r-hstack" style="gap: 2rem;">
+                <div>
+                    <img src="./assets/images/machine-raptor2.png" width="70%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/toolsShapes.jpg" width="70%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/toolInOperation.jpg" width="60%" /><br>
+                </div>
+            </div>
+            <hr>
+        </section>
+
+    </div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../dist/plugin/zoom.js"></script>
+<script src="../dist/plugin/notes.js"></script>
+<script src="../dist/plugin/search.js"></script>
+<script src="../dist/plugin/markdown.js"></script>
+<script src="../dist/plugin/highlight.js"></script>
+<script>
+    // Also available as an ES module, see: https://revealjs.com/initialization/
+    // import Reveal from 'reveal.js';
+    // import RevealZoom from 'reveal.js/plugin/zoom';
+    // import RevealNotes from 'reveal.js/plugin/notes';
+    // import RevealSearch from 'reveal.js/plugin/search';
+    // import RevealMarkdown from 'reveal.js/plugin/markdown';
+    // import RevealHighlight from 'reveal.js/plugin/highlight';
+
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+//				disableLayout: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+    });
+</script>
+</body>
+</html>

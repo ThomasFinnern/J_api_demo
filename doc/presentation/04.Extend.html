@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Web Services API</title>
+
+    <meta
+            name="description"
+            content="Web Services API: Implementation for components"
+    />
+    <meta name="author" content="Hakim El Hattab"/>
+
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="../dist/reset.css"/>
+    <link rel="stylesheet" href="../dist/reveal.css"/>
+    <!--		<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--		<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />
+    <!--		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css">
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section data-markdown>
+			<textarea data-template>
+# Extend J! API support with own code
+![logo10](./assets/icons/left_right.start.svg)
+
+If your request does not involve a standard table, <br>
+you must bypass the default behavior of the J! API function.
+* Patch results by overriding base function but calling parent
+* Handle parts/all on your own
+
+Some important examples are listed below. <br>
+
+Of course all functions in the Joomla library API files<br>
+**ApiController.php, ApiMVCFactory.php, JsonApiView.php** can be overridden.<br>
+For 'API' models the standard MVC models are applied. There is no special <br>
+Apimodel.php file for API.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+## Functions to override
+
+There are some empty parent functions provided <br>
+to be overwritten from derived classes
+
+### Function prepareItem (jsonApi.php)
+
+Example: The 'get' command to the component config variables has <br>no **id** but
+the standard view function does expect an id. <br>
+Solution: In component JsonApiView.php override function prepareItem($item)
+
+```php
+/**
+ * Prepare item before render.
+ * @param   object  $item  The model item
+ * @return  object
+ */
+protected function prepareItem($item)
+{
+    // Config resources have no id.
+    $item->id = '0';
+
+    return $item;
+}
+```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+### Function preprocessSaveData (...controller.php)
+
+Controller:  protected function preprocessSaveData(array $data): array
+
+```php
+/**
+ * Method to allow extended classes to manipulate the data to be saved for an extension.
+ * @param   array  $data  An array of input data.
+ * @return  array
+ */
+protected function preprocessSaveData(array $data): array
+{
+    foreach (FieldsHelper::getFields('com_contact.contact') as $field) {
+        if (isset($data[$field->name])) {
+            !isset($data['com_fields']) && $data['com_fields'] = [];
+
+            $data['com_fields'][$field->name] = $data[$field->name];
+            unset($data[$field->name]);
+        }
+    }
+
+    if ($this->input->getMethod() === 'PATCH') {
+        $data['rules'] = json_decode($data['rules'], true);
+    }
+
+    $data['client_id'] = $this->getClientIdFromInput();
+
+    return $data;
+}
+```
+
+This function is mainly used to handle fields, <br>
+apply special variables handling on patch/post commands <br>
+or patch data before save function is called
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Expand by defining own Api module.php
+
+Example route/code for retrieving the component version ID via the API.
+Besides defining the route, a bare controller only a module and
+a helper is added.
+
+Also the code to change the version is presentetd here
+
+Routes in webservice plugin
+```php
+//--- version in db manifest -----------------------------
+$router->addRoutes(
+[
+    // version, creationDate
+    new Route(['GET'],   'v1/secondhand/version', 'version.displayItem', [], $getDefaults),
+    new Route(['PATCH'], 'v1/secondhand/version', 'version.edit',        [], $defaults),
+]);
+```
+
+Controller minimum
+```php
+protected $contentType = 'version';
+protected $default_view = 'version';
+
+... edit() // see patch
+```
+New path structure with additional model and helper
+
+```php
+com_secondhand\api\src
+   ├─── Controller
+   │      ├─── BooksController.php
+   │      └─── VersionController.php
+   ├─── Helper
+   │      └─── ManifestHelper.php
+   ├─── Model
+   │      └─── VersionModel.php
+   └─── View
+          ├─── Books
+          │      └─── JsonapiView.php
+          └─── Version
+                 └─── JsonapiView.php
+```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### New File VersionModel.php
+
+! No additional code in controller for get. <br>
+The module supports getItem which is called by joomla API code
+
+```php
+public function getItem()
+{
+    $oManifest = ManifestHelper::getDbManifest($this->componentName);
+
+    $oVersion->version      = $oManifest['version'];
+    $oVersion->creationDate = $oManifest['creationDate'];
+
+    return $oVersion;
+}
+```
+
+The ManifestHelper.php reads/writes the versionId from/to the database.<br>
+
+Change in jsonApiView.php with additional function prepareItem ()
+
+```php
+class JsonapiView extends BaseApiView
+{
+    protected $fieldsToRenderItem = [
+        'version',
+        'creationDate',
+    ];
+
+    protected function prepareItem($item)
+    {
+        // version resources have no id.
+        $item->id = '0';
+
+        return $item;
+    }
+}
+```
+
+That is all that is required to create a 'getVersion' API code.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Code to write the versionID
+
+In Version controller the edit function interfaces directly with the parallel model
+
+The view (displayItem) is called afterwards with id=0
+as it expects an table id
+<br>
+<br>
+
+VersionController.php
+```php
+public function edit() : ApiController
+{
+    // Access check.
+    if (!$this->allowEdit())
+    {
+        throw new NotAllowed('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED', 403);
+    }
+
+    // all variables
+    $data = $this->input->json->getArray();
+
+    if (empty($data))
+    {
+        throw new InvalidParameterException(Text::_('No parameter given for patch config'), 403);
+    }
+
+    //--- Create the model -----------------------------------------------------------------
+
+    /** @var VersionModel $model */
+    $model = $this->getModel('Version', '', ['ignore_request' => true, 'state' => $this->modelState]);
+
+    $isSaved = $model->save($data);
+
+    return parent::displayItem('0');
+}
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Save code in VersionModel.php
+
+```php
+public function save(mixed $data = []) {
+    $isSaved = true;
+    if (!empty ($data)) {
+        $isChanged = false;
+        $isSaved = false;
+
+        try {
+            $oManifest = ManifestHelper::getDbManifest($this->componentName);
+            if (!empty($oManifest)) {
+                if (!empty ($data['version'])) {
+                    $version = $data['version'];
+                    if ($oManifest['version'] != $version)
+                    {
+                        $oManifest['version'] = $data['version'];
+                        $isChanged = true;
+                    }
+                }
+
+                if (!empty ($data['creationDate'])) {
+                    $creationDate = $data['creationDate'];
+                    if ($oManifest['creationDate'] != $creationDate) {
+                        $oManifest['creationDate'] = $creationDate;
+                        $isChanged = true;
+                    }
+                }
+
+                if ($isChanged) {
+                    $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
+                }
+            }
+        } catch (\Exception $e) { throw new \RuntimeException($e->getMessage()); }
+    }
+
+    return $isSaved;
+}
+```
+
+The ManifestHelper.php reads/writes the versionId from/to the database.<br>
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+# Summary for the requests without the corresponding table:
+
+## Get item/items:
+* Tell controller the name of content type and view
+* Overwrite GetItem/GetItems in module
+<br>
+<br>
+
+## post/patch item/items:
+* Overwrite edit in controller
+* Create save function in module and call it in edit function
+<br>
+<br>
+
+There may be similar aproaches working. But this is the gist of it.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Move model to administrator part
+
+The model code may be moved to the component administrator path <br>
+or a already present model there can be called.
+
+Copy previous example model and helper to<br><br>
+```php
+.../administrator/components/com_secondhand/src/Model/VersionModel.php
+```
+Change the namespace and you are ready to go ;-)
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## How to manipulate the state
+
+The state parameter will be handled in the controller.
+
+```php
+$this->modelState->set('data', $data);
+```
+
+Seen in standard controller functions `displayitems`, `displayList`, `delete` ...
+
+Following example (my own creation) assigns 'para' from input <br>and data from the request json to the state<br>
+<br>
+$param: param in url<br>
+$data:  data by json object<br>
+
+```php
+public function displayItem($param = '')
+{
+    //--- set state from given parameter  -------------------------------------
+
+    $param = $this->input->get('para', '', 'string');
+    $this->modelState->set('param', $param);
+
+    // all variables
+    $data = $this->input->json->getArray();
+    if (!empty($data))
+    {
+        $this->modelState->set('data', $data);
+    }
+
+    //--- display parameters --------------------------------------------------
+
+    return parent::displayItem(0);
+}
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## modelState collection
+
+Examples of modelState use coleccted in joomla component API projects
+```php
+public function displayList()
+{
+    $this->modelState->set('type_alias', $this->getTypeAliasFromInput());
+    $this->modelState->set('type_id',    $this->getTypeIdFromInput());
+    $this->modelState->set('item_id',    $this->getTypeAliasFromInput() . '.' . $this->getItemIdFromInput());
+
+    $this->modelState->set('list.ordering',  'h.save_date');
+    $this->modelState->set('list.direction', 'DESC');
+
+    $this->modelState->set('filter.core',   ($requestBool === 'true') ? '1' : '0');
+    $this->modelState->set('filter.status', $this->input->get('status', $this->input->get->get('status', null, 'INT'), 'INT'));
+    $this->modelState->set('filter.type',   $this->input->get('type', $this->input->get->get('type', null, 'STRING'), 'STRING'));
+
+    $this->modelState->set('filter.author_id',   $filter->clean($apiFilterInfo['author'], 'INT'));
+    $this->modelState->set('filter.category_id', $filter->clean($apiFilterInfo['category'], 'INT'));
+    $this->modelState->set('filter.search',      $filter->clean($apiFilterInfo['search'], 'STRING'));
+    $this->modelState->set('filter.published',   $filter->clean($apiFilterInfo['state'], 'INT'));
+    $this->modelState->set('filter.featured',    $filter->clean($apiFilterInfo['featured'], 'INT'));
+
+    return parent::displayList();
+}
+```
+
+Especially the filtering addresses the original table module in the <br>
+administrator section. The model can be used like it is intended for <br>
+the component (admin)
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## functions to override from ApiController.php in controller
+
+```php
+public function displayItem($id = null)
+public function displayList()
+public function delete($id = null)
+public function add()
+public function edit()
+protected function save($recordKey = null)
+protected function allowEdit($data = [], $key = 'id')
+protected function allowAdd($data = [])
+protected function allowDelete(): bool
+protected function preprocessSaveData(array $data): array
+
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## functions to override from JsonApiView.php in view
+
+```php
+public function displayList(?array $items = null)
+public function displayItem($item = null)
+protected function prepareItem($item)
+protected function queryEncode($query)
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+check function ... in controller / model for special handling
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+# Real examples:
+
+                config<br>
+                ...<br>
+
+```php
+```
+
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+                Have a look at pe7er
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty last
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+    </div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../dist/plugin/zoom.js"></script>
+<script src="../dist/plugin/notes.js"></script>
+<script src="../dist/plugin/search.js"></script>
+<script src="../dist/plugin/markdown.js"></script>
+<script src="../dist/plugin/highlight.js"></script>
+<script>
+    // Also available as an ES module, see: https://revealjs.com/initialization/
+    // import Reveal from 'reveal.js';
+    // import RevealZoom from 'reveal.js/plugin/zoom';
+    // import RevealNotes from 'reveal.js/plugin/notes';
+    // import RevealSearch from 'reveal.js/plugin/search';
+    // import RevealMarkdown from 'reveal.js/plugin/markdown';
+    // import RevealHighlight from 'reveal.js/plugin/highlight';
+
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+//				disableLayout: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+    });
+</script>
+</body>
+</html>
