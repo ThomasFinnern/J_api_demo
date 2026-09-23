@@ -266,17 +266,18 @@ enable API calls without X-Token.
 Above $getDefaults is passed  as last parameter to the route <br>function definition
 
 
-
-
             </textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-## Start of com_secondhand
+![logo10](./assets/icons/left_right.start.svg)
 
-```php
-```
+## Minimum component
+
+When the API just needs to handle table data then <br> following minimuum component structure is possible
+
+
 
 			</textarea>
         </section>
@@ -284,7 +285,60 @@ Above $getDefaults is passed  as last parameter to the route <br>function defini
         <section data-markdown>
             <textarea data-template>
 
-# Minimum component API additions
+## com_secondhand
+
+Second hand books component with <br>
+just the one books table and matching view.
+
+Table items
+* id
+* name
+* author
+* isbn
+* publish, created, ...
+<br>
+<br>
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Manifest file 'secondhand.xml'
+
+Following is an excerpt as the content is known
+```xml [6,15-20]
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+  <name>plg_webservices_secondhand</name>
+  ...
+  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
+  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
+  <files>
+    <folder plugin="secondhand">services</folder>
+    <folder>language</folder>
+    <folder>services</folder>
+    <folder>src</folder>
+    <file>secondhand.xml</file>
+  </files>
+
+  <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+  ...
+</extension>
+```
+
+Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middle
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
 ## API part of the component 'com_secondhand'
 
 * We have to insert section API into manifest
@@ -295,7 +349,7 @@ Above $getDefaults is passed  as last parameter to the route <br>function defini
 ### The API sub folder structure:
 
 From the root of the joomla web page
-```
+``` [1|4|7]
 api\components\com_secondhand\
 ├─── src
      ├─── Controller
@@ -315,10 +369,10 @@ The view code is always kept in a JsonapiView.php file in a named folder
 			<textarea data-template>
 ## Controller in API part 'BooksController.php'
 
-```php
+```php [5,8,11]
 namespace Bluebox\Component\Secondhand\Api\Controller;
 
-use ...
+...
 
 class BooksController extends ApiController
 {
