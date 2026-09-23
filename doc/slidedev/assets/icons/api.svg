@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="180"
+   height="180"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="api.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs7" />
+<sodipodi:namedview
+   id="namedview7"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="4.75"
+   inkscape:cx="89.894737"
+   inkscape:cy="90"
+   inkscape:window-width="1920"
+   inkscape:window-height="1057"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="P"
+   showgrid="false" />
+
+    &gt;
+  <mask id="p_holeX">
+    <rect width="100%" height="100%" fill="white"/>
+    <circle
+            r="0.69999999"
+            cx="12"
+            cy="8"
+            id="a_circle_inside_masked"
+            fill="black"
+
+    />
+  </mask>
+
+  <g
+   style="display:inline"
+   id="API blue"
+   inkscape:label="API blue"
+   transform="translate(0.883333,8.127778)">
+  <g
+     inkscape:groupmode="layer"
+     id="I"
+     style="display:inline;fill:none;fill-opacity:1;stroke:#0c40c3;stroke-width:1.7;stroke-linecap:round;stroke-opacity:1">
+    <line
+       x1="20"
+       y1="5.6999998"
+       x2="20"
+       y2="10"
+       id="i_line_top_down"
+       style="fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="P"
+     style="display:inline;fill:none;fill-opacity:1;stroke:#0c40c3;stroke-width:1.7;stroke-linecap:round;stroke-opacity:1"
+     mask="url(#p_hole)">
+    <line
+       x1="15.9"
+       y1="5.6999998"
+       x2="15.9"
+       y2="10"
+       id="p_line_top_down"
+       style="fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+    <line
+       x1="15.9"
+       y1="5.6999998"
+       x2="17"
+       y2="5.6999998"
+       id="p_line_top_right"
+       style="display:none;fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+    <line
+       x1="15.9"
+       y1="8.5"
+       x2="17"
+       y2="8.5"
+       id="p_line_bottom_right"
+       style="display:none;fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+    <path
+       d="m 16.3,8.5 a 1.4,1.4 0 0 0 0,-2.8"
+       fill="none"
+       id="p_arc_front"
+       style="display:inline;fill:#0c40c3;fill-opacity:1;stroke-width:1.7;stroke-linecap:round;stroke-opacity:1" />
+    <circle
+       r="0.69999999"
+       cx="16.6"
+       cy="7.0999999"
+       id="p_circle_inside"
+       style="display:none;fill:#ffffff;fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="A"
+     style="display:inline;fill:none;fill-opacity:1;stroke:#0c49d9;stroke-width:1.7;stroke-linecap:round;stroke-opacity:1">
+    <line
+       x1="12"
+       y1="5.6999998"
+       x2="10.1"
+       y2="10"
+       id="a_left_top_down"
+       style="fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+    <line
+       x1="12"
+       y1="5.6999998"
+       x2="13.7"
+       y2="10"
+       id="a_right_top_down"
+       style="fill:none;fill-opacity:1;stroke:#0c40c3;stroke-opacity:1" />
+    <path
+       d="m 13.7,10 a 2,2 0 0 0 -3.6,0"
+       fill="none"
+       id="a_arc_bottom"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#0c40c3;stroke-width:1.7;stroke-linecap:round;stroke-opacity:1" />
+    <circle
+       r="0.69999999"
+       cx="12"
+       cy="8"
+       id="a_circle_inside"
+       style="display:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1" />
+
+  </g>
+</g>
+
+</svg>

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "slidev-theme-eloc": "^1.1.0",
+    "slidev-theme-geist": "^0.8.1",
+    "slidev-theme-light-icons": "^1.0.2"
+  }
+}
