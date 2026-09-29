@@ -89,7 +89,7 @@ access this entry. This should only be set for tests
 
 ## Function createCRUDRoutes
 
-The joomla createCRUDRoutes function organizes it as following:
+The joomla createCRUDRoutes function organizes the code as following:
 
 ```php
 public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
@@ -108,23 +108,10 @@ public function createCRUDRoutes($baseName, $controller, $defaults = [], $public
 }
 ```
 
-The new Route function is given the command, the route ($baseName) <br>
+The Route function is given the command, the route ($baseName) <br>
 and the config ($defaults). The last parameter for the 'createCRUDRoutes' <br>
 function is a second entry for the public flag and is merged into the default config.
 
-This could also have been written like following in the web service extension:
-
-```php
-new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [],                $defaults),
-new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $defaults),
-new Route(['POST'],   'v1/secondhand/books',     'books.add',         [],                $defaults),
-new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
-new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
-```
-
-The Route is starting with 'Command', path "v1/..." and then <br>
-the controller.function. In the $default parameter the <br>
-component name and the 'public' variables are expected.
                  </textarea>
         </section>
 
@@ -162,22 +149,6 @@ new Route(['GET'], 'v1/secondhand/categories/:catId/images/:id',
 ```
 
 </span>
-
-                 </textarea>
-        </section>
-
-
-        <section data-markdown>
-            <textarea data-template>
-
-## Internal routes created by createCRUDRoutes
-
-The following graph shows the path of possible API route inside <br>
-the joomla code. The **webservice plugin** of the component calls <br>
-the J! API function **createCRUDRoutes** and gives it the base <br>
-route definition and the component controller base.
-
-<img src="./assets/images/mermaid/ResultUrlRequest_1.png" />
 
                  </textarea>
         </section>

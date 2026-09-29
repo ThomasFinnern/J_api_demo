@@ -9,7 +9,7 @@
             name="description"
             content="Web Services API: Implementation for components"
     />
-    <meta name="author" content="Hakim El Hattab"/>
+    <meta name="author" content="Thomas Finnern"/>
 
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -18,14 +18,16 @@
 
     <link rel="stylesheet" href="../dist/reset.css"/>
     <link rel="stylesheet" href="../dist/reveal.css"/>
-    <!--		<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
-    <!--		<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
-    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />
-    <!--		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
-    <link rel="stylesheet" href="../dist/theme/fith_solarized.css">
+
+    <!-- Theme used for general layout -->
+    <!--	<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+    <!--    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css" id="theme"/>
 
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
 </head>
@@ -39,25 +41,27 @@
 
         <section data-markdown>
 			<textarea data-template>
-![logo10](./assets/icons/left_right.start.svg)
-
 ## Introduction component "com_secondhand"
+
+![logo10](./assets/icons/left_right.start.svg)
 
 Imagine a second hand books component with <br>
 just the one books table and matching view.
 
-Table items
-* id
-* name
-* author
-* isbn
-* publish, created, ...
 <br>
-<br>
-
 The idea is to use an external scan of the ISBN  <br>
 of the book, fetch book data by other web API  <br>
 and use a J! web API to fill this table.
+
+<pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;">
+<strong>Table items
+    * id
+    * name
+    * author
+    * isbn
+    * publish, created, ...
+</strong>
+</pre>
 
 			</textarea>
         </section>
@@ -67,9 +71,9 @@ and use a J! web API to fill this table.
 ## Which API routes do we want to expose ?
 
 CRUD definitions (GET/POST/PATCH/DELETE) <br>
-Which would like following
+Which would look like following
 
-| Command | &nbsp;endpoint                  | &nbsp;Comment                              |
+| Command | &nbsp;Endpoint                  | &nbsp;Comment                              |
 |:--------|:--------------------------------|:-------------------------------------------|
 | GET     | &nbsp;`v1/secondhand/books`     | &nbsp;lists all books with variables       |
 | GET     | &nbsp;`v1/secondhand/books/:id` | &nbsp;lists variables of book              |
@@ -82,43 +86,43 @@ Which would like following
         </section>
 
         <section style="text-align: left;">
-            <h2> URL structure for Joomla API calls</h2>
+            <h2>URL structure for Joomla API calls</h2>
 
 Joomla API form:
-<pre style="background-color: #ecf0f1; font-size: 14px; line-height: 1;"><strong>
+<pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;"><strong>
 example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=30
 \__________/\____________/\___________________/\_____________________________/
      |            |                 |                        |
     host       api path         endpoints                  query
 </strong></pre>
+
+<span style="text-align: left;">
+    <p><b>Api path:</b></p>
+    <ul>
+        <li>/api/index.php/                -&gt; webservice starting in web site `/api` folder </li>
+    </ul>
+</span>
 <br>
-            <span style="text-align: left;">
-				<p><b>Api path:</b></p>
-				<ul>
-					<li>/api/index.php/                -&gt; webservice starting in web site `/api` folder </li>
-				</ul>
-			</span>
-            <br>
-            <span style="text-align: left;">
-				<p><b>Endpoints:</b></p>
-				<ul>
-					<li> v1/config/application  -&gt; routes to address functionality</li>
-				</ul>
-			</span>
-            <br>
-            <span style="text-align: left;">
-				<p><b>Query:</b></p>
-				<ul>
-					<li>pagination:   page[offset]=30&amp;page[limit]=30</li>
-					<li>filter:                  filter[catid]=2&amp;filter[state]=1</li>
-					<li>sorting:           list[ordering]=created&amp;list[direction]=desc</li>
-					<li>fields:                fields[articles]=title,catid,state</li>
-				</ul>
-			</span>
-            <span style="text-align: left;">
-				<p>Special characters like '[' and ']' must be converted to '%5B' and '%5D' ... <br>
-                    like in other HTML queries</p>
-			</span>
+<span style="text-align: left;">
+    <p><b>Endpoints:</b></p>
+    <ul>
+        <li> v1/config/application  -&gt; routes to address functionality</li>
+    </ul>
+</span>
+<br>
+<span style="text-align: left;">
+    <p><b>Query:</b></p>
+    <ul>
+        <li>pagination:   page[offset]=30&amp;page[limit]=30</li>
+        <li>filter:                  filter[catid]=2&amp;filter[state]=1</li>
+        <li>sorting:           list[ordering]=created&amp;list[direction]=desc</li>
+        <li>fields:                fields[articles]=title,catid,state</li>
+    </ul>
+</span>
+<span style="text-align: left;">
+    <p>Special characters like '[' and ']' must be converted to '%5B' and '%5D' ... <br>
+        like in other HTML queries</p>
+</span>
         </section>
 
 

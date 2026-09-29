@@ -9,7 +9,7 @@
             name="description"
             content="Web Services API: Implementation for components"
     />
-    <meta name="author" content="Hakim El Hattab"/>
+    <meta name="author" content="Thomas Finnern"/>
 
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -18,14 +18,16 @@
 
     <link rel="stylesheet" href="../dist/reset.css"/>
     <link rel="stylesheet" href="../dist/reveal.css"/>
-    <!--		<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
-    <!--		<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
-    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />
-    <!--		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
-    <link rel="stylesheet" href="../dist/theme/fith_solarized.css">
+
+    <!-- Theme used for general layout -->
+    <!--	<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+    <!--    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css" id="theme"/>
 
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
 </head>
@@ -39,14 +41,14 @@
 
         <section data-markdown>
 			<textarea data-template>
-# Bare minimum component
+## Bare minimum component
 
 ![logo10](./assets/icons/left_right.start.svg)
 
 * plg_webservices_secondhand
 * com_secondhand
 
-This example is only valid when the API shall address component table items
+This example is valid only if the API is intended to address component tables.
 
 			</textarea>
         </section>
@@ -488,15 +490,27 @@ The CRUD definitions result in following API routes:
 | PATCH   | &nbsp;`v1/secondhand/books/:id` | &nbsp;writes parameters into selected book |
 | DELETE  | &nbsp;`v1/secondhand/books/:id` | &nbsp;deletes selected book                |
 
-Attention: There is no PUT support
+Attention: There is no PUT support in Joomla
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Calling Joomla  API and json response
+<br>
+<br>
+
+How can we call the routes and
+<br>
+<br>
+how does the response look like
+
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
 ## GET v1/secondhand/books (lists all books with variables)</h2>
-
-**Parameters:** None
 
 **Response:**
 
@@ -675,7 +689,8 @@ X-Joomla-Token:
 
 ## DELETE secondhand/books/:id
 
-Just a reminder: Delete needs trash state before. Please use patch with "published": -2, (see above)
+Just a reminder: Delete needs trash state before. <br>
+Please use 'PATCH' command with "published": -2, (see above)
 
 **Parameters:**
 
@@ -714,7 +729,7 @@ The results are JSON style and contain the links to actual call and next, previo
 
 #### GET book
 
-```json
+```
 {
   "links": {
     "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
@@ -835,7 +850,7 @@ The results are JSON style and contain the links to actual call and next, previo
 
 #### Patch book: after trash ("published": -2)
 
-```json
+```json [14]
 {
     "links": {
         "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/4"
@@ -885,7 +900,11 @@ The results are JSON style and contain the links to actual call and next, previo
         progress: true,
         center: true,
         hash: true,
+        slideNumber: true,
 //				disableLayout: true,
+
+        width: 960,
+        height: 540,
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
