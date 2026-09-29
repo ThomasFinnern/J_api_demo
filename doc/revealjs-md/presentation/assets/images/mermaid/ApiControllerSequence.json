@@ -1,0 +1,3440 @@
+{
+    "shapeIds": [
+        "bIB1k96ls95",
+        "zyOVheEVpNq",
+        "FJB2wFGZl9M",
+        "yATJJLnVQOb",
+        "wGlnvs4YK2P",
+        "iKZpFfeuOF2",
+        "MQQzCqyaXCD",
+        "q72bSYh1qGB",
+        "MqtdfxCwsqL",
+        "yXCmUplb29Q",
+        "XExFRotSuHk",
+        "Qkd8ESOqiQq",
+        "crmatBVdZZC",
+        "OQcd96vGCpg",
+        "hgCAWNtsdkk",
+        "bhLMH5LjVrx",
+        "GVK0aRejehG",
+        "g7qImNJgTnd",
+        "rw8cpQWodoX",
+        "cg6bebCaDRE",
+        "qYgcpgS5qeO",
+        "FSuWuVYT7ZS",
+        "QpQD9ZQJCJ0",
+        "W1pgNLnwcxg",
+        "bsyP6ZQV8ew",
+        "pDfXPY51M48",
+        "YqcT13Uk3Ga"
+    ],
+    "selected": false,
+    "copyEdata": true,
+    "shapesToCopy": [
+        {
+            "data": {
+                "id": "bIB1k96ls95",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 670,
+                "y": 840,
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533515404
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 23,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786534180889
+                    }
+                ],
+                "scaleX": 1.0769230769230769,
+                "texts": {
+                    "main": {
+                        "rendering": "carota",
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Model ",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "_alignX": -1,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "width": 42.775001525878906,
+                        "minWidth": 88.81
+                    }
+                },
+                "scaleY": 0.95999999046325679,
+                "autoResizeHeight": false,
+                "userSetHeight": 38.399999618530273
+            },
+            "bounds": {
+                "top": 840,
+                "left": 670,
+                "width": 140,
+                "height": 38.399999618530273
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "zyOVheEVpNq",
+                "zIndex": 10,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 800,
+                        "y": 980,
+                        "shapeId": "yATJJLnVQOb",
+                        "prevId": null,
+                        "gluepointId": "BRZfYLOPiRa",
+                        "gluepointLocked": false,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": -90,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 800,
+                        "y": 1010,
+                        "shapeId": "wGlnvs4YK2P",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": null
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528225303
+                }
+            },
+            "bounds": {
+                "top": 980,
+                "left": 800,
+                "width": 0,
+                "height": 30
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "FJB2wFGZl9M",
+                "zIndex": 12,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 800,
+                        "y": 1080,
+                        "shapeId": "wGlnvs4YK2P",
+                        "prevId": null,
+                        "gluepointId": "BRZfYLOPiRa",
+                        "gluepointLocked": false,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": -90,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 800,
+                        "y": 1110,
+                        "shapeId": "iKZpFfeuOF2",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": null
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528244171
+                }
+            },
+            "bounds": {
+                "top": 1080,
+                "left": 800,
+                "width": 0,
+                "height": 30
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 200,
+                        "height": 100
+                    }
+                },
+                "scaleX": 1.25,
+                "scaleY": 0.70000000105471349,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "yATJJLnVQOb",
+                "x": 700,
+                "y": 910,
+                "userSetWidth": 200,
+                "userSetHeight": 70.000000105471372,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "Create view",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "#4b4b4b",
+                    "size": 10,
+                    "font": "noto_regular"
+                },
+                "data": {
+                },
+                "createdFrom": "OQcd96vGCpg",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526444706
+                },
+                "type": "basic",
+                "zIndex": 7,
+                "connectorIds": [
+                    "bhLMH5LjVrx",
+                    "zyOVheEVpNq"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546034865
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "_alignX": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Component API model or\n",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "none",
+                                "link": null,
+                                "underline": false,
+                                "text": "component admin model",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 36.799999237060547,
+                        "rendering": "carota",
+                        "width": 180,
+                        "minWidth": 77.49
+                    }
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 910,
+                "left": 700,
+                "width": 200,
+                "height": 70.000000105471372
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 200,
+                        "height": 70.000000105471372
+                    }
+                },
+                "scaleX": 1.25,
+                "scaleY": 0.70000000105471372,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "wGlnvs4YK2P",
+                "x": 700,
+                "y": 1010,
+                "userSetWidth": 200,
+                "userSetHeight": 70.000000105471372,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "Create view",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "#4b4b4b",
+                    "size": 10,
+                    "font": "noto_regular"
+                },
+                "data": {
+                },
+                "createdFrom": "yATJJLnVQOb",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528225301
+                },
+                "type": "basic",
+                "zIndex": 9,
+                "connectorIds": [
+                    "zyOVheEVpNq",
+                    "FJB2wFGZl9M"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546004653
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "_alignX": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Assign to view",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(8, 8, 8)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 18.399999618530273,
+                        "rendering": "carota",
+                        "width": 180
+                    }
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 1010,
+                "left": 700,
+                "width": 200,
+                "height": 70.000000105471372
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 200,
+                        "height": 70.000000105471372
+                    }
+                },
+                "scaleX": 1.25,
+                "scaleY": 0.70000000105471372,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "iKZpFfeuOF2",
+                "x": 700,
+                "y": 1110,
+                "userSetWidth": 200,
+                "userSetHeight": 70.000000105471372,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "Assign to view",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "rgb(8, 8, 8)",
+                    "size": 12,
+                    "font": "noto_regular"
+                },
+                "data": {
+                },
+                "createdFrom": "wGlnvs4YK2P",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528244170
+                },
+                "type": "basic",
+                "zIndex": 11,
+                "connectorIds": [
+                    "FJB2wFGZl9M",
+                    "GVK0aRejehG"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786533391663
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "_alignX": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Handle model state",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(8, 8, 8)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 18.399999618530273,
+                        "rendering": "carota",
+                        "width": 180
+                    }
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 1110,
+                "left": 700,
+                "width": 200,
+                "height": 70.000000105471372
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "MQQzCqyaXCD",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 670,
+                "y": 880,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(136, 69, 29); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#88451D",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 0.01,
+                        "height": 37.8,
+                        "handlebars": "{}",
+                        "wrapWidth": 260.00000002549427,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -2,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 5,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#88451D"
+                },
+                "style": {
+                    "lineColor": "#E9A23B",
+                    "textColor": "#88451D",
+                    "themeIndex": 5,
+                    "themeId": "base",
+                    "fillColor": "#FEFBED"
+                },
+                "scaleX": 1.6250000001593392,
+                "autoResizeWidth": false,
+                "userSetWidth": 260.00000002549427,
+                "scaleY": 3.2999999987385715,
+                "autoResizeHeight": false,
+                "userSetHeight": 329.99999987385718,
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786533655962
+                    }
+                ],
+                "vectors": {
+                    "diagonal": {
+                    }
+                }
+            },
+            "bounds": {
+                "top": 880,
+                "left": 670,
+                "width": 260.00000002549427,
+                "height": 329.99999987385718
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "q72bSYh1qGB",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 1060,
+                "y": 810,
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533515404
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 27,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546078507
+                    }
+                ],
+                "scaleX": 1.0769230769230769,
+                "texts": {
+                    "main": {
+                        "rendering": "carota",
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Request action",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "_alignX": -1,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "width": 92.8499984741211,
+                        "minWidth": 88.81
+                    }
+                },
+                "scaleY": 0.95999999046325679,
+                "autoResizeHeight": false,
+                "userSetHeight": 30.415841569200325
+            },
+            "bounds": {
+                "top": 810,
+                "left": 1060,
+                "width": 140,
+                "height": 38.399999618530273
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 200,
+                        "height": 70.000000105471372
+                    }
+                },
+                "scaleX": 1.25,
+                "scaleY": 0.70000000105471372,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "MqtdfxCwsqL",
+                "x": 1079.9999999842044,
+                "y": 869.99993349867964,
+                "userSetWidth": 200,
+                "userSetHeight": 70.000000105471372,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "Handle model state",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "rgb(8, 8, 8)",
+                    "size": 12,
+                    "font": "noto_regular"
+                },
+                "data": {
+                },
+                "createdFrom": "iKZpFfeuOF2",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528271222
+                },
+                "type": "basic",
+                "zIndex": 13,
+                "connectorIds": [
+                    "GVK0aRejehG",
+                    "g7qImNJgTnd"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786533399888
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "_alignX": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Call add, delete, save ...",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(8, 8, 8)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 18.399999618530273,
+                        "rendering": "carota",
+                        "width": 180
+                    }
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 869.99993349867964,
+                "left": 1079.9999999842044,
+                "width": 200,
+                "height": 70.000000105471372
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "yXCmUplb29Q",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 1049.9999999842044,
+                "y": 850,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(38, 88, 128); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#265880",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 240,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "wrapWidth": 260.00000003159147,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -3,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 2,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#265880"
+                },
+                "style": {
+                    "lineColor": "#4BA3E3",
+                    "textColor": "#265880",
+                    "themeIndex": 2,
+                    "themeId": "base",
+                    "fillColor": "#F2F9FE"
+                },
+                "scaleX": 1.6250000001974467,
+                "autoResizeWidth": false,
+                "userSetWidth": 260.00000003159153,
+                "scaleY": 1.1999992963808386,
+                "autoResizeHeight": false,
+                "userSetHeight": 119.99992963808381,
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786534205812
+                    }
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 850,
+                "left": 1049.9999999842044,
+                "width": 260.00000003159153,
+                "height": 119.99992963808381
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "XExFRotSuHk",
+                "defId": "creately.basic.circle",
+                "version": 2,
+                "x": 470.39999212359362,
+                "y": 869.99998424718569,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "URL Request",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 59.200000762939453,
+                        "height": 36.799999237060547,
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota",
+                        "wrapWidth": 79.2000161041525
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786524586471
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 100,
+                    "height": 100
+                },
+                "zIndex": 0,
+                "connectorIds": [
+                    "crmatBVdZZC"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546415212
+                    }
+                ],
+                "gluepoints": {
+                    "BRZfYLOPiRa": {
+                        "connectionState": "expanded"
+                    }
+                },
+                "scaleX": 0.79200016104152493,
+                "scaleY": 0.79200016104152493,
+                "userSetHeight": 79.2000161041525,
+                "userSetWidth": 79.2000161041525,
+                "style": {
+                }
+            },
+            "bounds": {
+                "top": 869.99998424718569,
+                "left": 470.39999212359362,
+                "width": 79.2000161041525,
+                "height": 79.2000161041525
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "type": "basic",
+                "version": 4,
+                "enableTiptap": true,
+                "autoResizeWidth": true,
+                "autoResizeHeight": false,
+                "name": "Rectangle",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color:#1a1a1a\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Get type, name, layout",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 140.92500305175781,
+                        "height": 18.399999618530273,
+                        "id": "identifier",
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota",
+                        "minWidth": 51.03
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a"
+                },
+                "id": "Qkd8ESOqiQq",
+                "x": 409.999999987253,
+                "y": 990.2,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "XExFRotSuHk",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526382892
+                },
+                "zIndex": 3,
+                "connectorIds": [
+                    "crmatBVdZZC",
+                    "hgCAWNtsdkk"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546044872
+                    }
+                ],
+                "scaleX": 1.25,
+                "scaleY": 0.60000000311990753,
+                "userSetHeight": 60.000000311990789,
+                "visible": true
+            },
+            "bounds": {
+                "top": 990.2,
+                "left": 409.999999987253,
+                "width": 200,
+                "height": 60.000000311990789
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "crmatBVdZZC",
+                "texts": {
+                },
+                "type": "connector",
+                "hidden": false,
+                "defId": "creately.connector.default",
+                "version": 1,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 510,
+                        "y": 949,
+                        "shapeId": "XExFRotSuHk",
+                        "prevId": null,
+                        "gluepointId": "BRZfYLOPiRa",
+                        "gluepointLocked": false,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": -90,
+                        "yFixed": false,
+                        "xFixed": true
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 510,
+                        "y": 990,
+                        "shapeId": "Qkd8ESOqiQq",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": true,
+                        "c2": null,
+                        "c1": null
+                    }
+                },
+                "zIndex": 4,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526382894
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 949,
+                "left": 510,
+                "width": 0,
+                "height": 41
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 200,
+                        "height": 100
+                    }
+                },
+                "scaleX": 1.25,
+                "scaleY": 0.59999999860086861,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "type": "defined",
+                        "angleBy": "closest-edge",
+                        "connectionState": "expanded",
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "OQcd96vGCpg",
+                "x": 409.999999987253,
+                "y": 1080.2,
+                "userSetWidth": 200,
+                "userSetHeight": 59.999999860086973,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "Qkd8ESOqiQq",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526422363
+                },
+                "type": "basic",
+                "zIndex": 5,
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "Get type, name, layout",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "rgb(8, 8, 8)",
+                    "size": 12,
+                    "font": "noto_regular"
+                },
+                "connectorIds": [
+                    "hgCAWNtsdkk",
+                    "bhLMH5LjVrx"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546052236
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "_alignX": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Create view",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 18.399999618530273,
+                        "rendering": "carota",
+                        "width": 180,
+                        "minWidth": 44.72
+                    }
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 1080.2,
+                "left": 409.999999987253,
+                "width": 200,
+                "height": 59.999999860086746
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "hgCAWNtsdkk",
+                "zIndex": 6,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 510,
+                        "y": 1050,
+                        "shapeId": "Qkd8ESOqiQq",
+                        "prevId": null,
+                        "gluepointId": "BRZfYLOPiRa",
+                        "gluepointLocked": false,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": -90,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 510,
+                        "y": 1080,
+                        "shapeId": "OQcd96vGCpg",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": null
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526422365
+                }
+            },
+            "bounds": {
+                "top": 1050,
+                "left": 510,
+                "width": 0,
+                "height": 30
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "bhLMH5LjVrx",
+                "zIndex": 8,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 610,
+                        "y": 1110,
+                        "shapeId": "OQcd96vGCpg",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 655,
+                        "y": 1028,
+                        "c2": null,
+                        "c1": {
+                            "x": 654.99999999362649,
+                            "y": 1110.1999999300433
+                        },
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t"
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 700,
+                        "y": 945,
+                        "shapeId": "yATJJLnVQOb",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 654.99999999362649,
+                            "y": 945.00000005273569
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786526444707
+                }
+            },
+            "bounds": {
+                "top": 945,
+                "left": 610,
+                "width": 90,
+                "height": 165
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "GVK0aRejehG",
+                "zIndex": 14,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 900,
+                        "y": 1145,
+                        "shapeId": "iKZpFfeuOF2",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 950,
+                        "y": 1025,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t",
+                        "pathAdjustedManually": true,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 950,
+                            "y": 1145.0000000527357
+                        }
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1080,
+                        "y": 905,
+                        "shapeId": "MqtdfxCwsqL",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 950,
+                            "y": 904.99993355141532
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528271223
+                }
+            },
+            "bounds": {
+                "top": 905,
+                "left": 900,
+                "width": 180,
+                "height": 240
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "g7qImNJgTnd",
+                "zIndex": 16,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1180,
+                        "y": 940,
+                        "shapeId": "MqtdfxCwsqL",
+                        "prevId": null,
+                        "gluepointId": "BRZfYLOPiRa",
+                        "gluepointLocked": false,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": -90,
+                        "yFixed": false,
+                        "xFixed": true
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1180,
+                        "y": 1040,
+                        "shapeId": "rw8cpQWodoX",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": true,
+                        "c2": null,
+                        "c1": null
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528311248
+                }
+            },
+            "bounds": {
+                "top": 940,
+                "left": 1180,
+                "width": 0,
+                "height": 100
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.diamond",
+                "type": "basic",
+                "version": 2,
+                "enableTiptap": true,
+                "name": "Diamond",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 100,
+                    "height": 100
+                },
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(17, 23, 41); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\">Display</span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Display",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 80,
+                        "height": 18.399999618530273,
+                        "id": "identifier",
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#364153",
+                    "fillColor": "#ffffff",
+                    "textColor": "#111729",
+                    "themeId": "base",
+                    "themeIndex": 25,
+                    "fillPreset": "white"
+                },
+                "id": "rw8cpQWodoX",
+                "x": 1130,
+                "y": 1039.9999997940647,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "MqtdfxCwsqL",
+                "endpoints": {
+                    "from": {
+                        "x": 0.5,
+                        "y": 1
+                    },
+                    "to": {
+                        "x": 0.5,
+                        "y": 0
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528311247
+                },
+                "zIndex": 15,
+                "connectorIds": [
+                    "g7qImNJgTnd",
+                    "cg6bebCaDRE",
+                    "QpQD9ZQJCJ0"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546086912
+                    }
+                ],
+                "visible": true,
+                "defaultTextFormat": {
+                    "color": "#FFFFFF"
+                },
+                "themeId": "base",
+                "themeIndex": 25
+            },
+            "bounds": {
+                "top": 1039.9999997940647,
+                "left": 1130,
+                "width": 100,
+                "height": 100
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "cg6bebCaDRE",
+                "zIndex": 18,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                    "ud2exyi8wtj": {
+                        "id": "ud2exyi8wtj",
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "List",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#FFFFFF",
+                                "size": 10,
+                                "font": "noto_regular",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": true,
+                        "pos": 0.36571428571428571,
+                        "width": 22.61250114440918,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    },
+                    "igxvbmu7rfa": {
+                        "id": "igxvbmu7rfa",
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#FFFFFF",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": false,
+                        "pos": 0.62307692307692308,
+                        "width": 11,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    },
+                    "p6arkc1sakn": {
+                        "id": "p6arkc1sakn",
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#FFFFFF",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": false,
+                        "pos": 0.76538461538461533,
+                        "width": 11,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    }
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1130,
+                        "y": 1090,
+                        "shapeId": "rw8cpQWodoX",
+                        "prevId": null,
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": true,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": 0,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "onShape": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1065,
+                        "y": 1130,
+                        "shapeId": "qYgcpgS5qeO",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 1064.9999999916715,
+                            "y": 1089.9999997940647
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528327938
+                }
+            },
+            "bounds": {
+                "top": 1080.8000000690747,
+                "left": 1059.4999999917595,
+                "width": 70.500000008240477,
+                "height": 49.199999930925287
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "type": "basic",
+                "version": 4,
+                "enableTiptap": true,
+                "autoResizeWidth": false,
+                "autoResizeHeight": false,
+                "name": "Rounded Rectangle",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "flippableH": false,
+                "flippableV": false,
+                "minBounds": {
+                    "width": 20,
+                    "height": 20
+                },
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(17, 23, 41); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\">Display list: Calls table <br/>for items of type</span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Display list: Calls table \n",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#111729",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "for items of type",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#111729",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 141.93,
+                        "height": 38.4,
+                        "minWidth": 48.93,
+                        "wrapWidth": 169.99999998334306,
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#364153",
+                    "fillColor": "#ffffff",
+                    "textColor": "#111729",
+                    "themeId": "base",
+                    "themeIndex": 25,
+                    "fillPreset": "white"
+                },
+                "vectors": {
+                    "diagonal": {
+                        "id": "diagonal",
+                        "points": [
+                            {
+                                "x": {
+                                    "value": 15,
+                                    "type": "fixed-start"
+                                },
+                                "y": {
+                                    "value": 15,
+                                    "type": "fixed-start"
+                                }
+                            }
+                        ],
+                        "movement": "diagonal-nwse"
+                    }
+                },
+                "id": "qYgcpgS5qeO",
+                "x": 980,
+                "y": 1129.9999997940649,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "rw8cpQWodoX",
+                "endpoints": {
+                    "from": {
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 1,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528327936
+                },
+                "zIndex": 17,
+                "connectorIds": [
+                    "cg6bebCaDRE"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786534518535
+                    }
+                ],
+                "scaleX": 1.0624999998958942,
+                "visible": true,
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "ports": [
+                ],
+                "premium": false,
+                "switchHistory": {
+                    "creately_basic_roundedrectangle_6": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 141.90000915527344,
+                                "height": 36.799999237060547,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "align": "center",
+                                        "link": null,
+                                        "underline": false,
+                                        "text": "Display list: Calls table \n",
+                                        "bold": false,
+                                        "italic": false,
+                                        "strikeout": false,
+                                        "color": "rgb(8, 8, 8)",
+                                        "size": 10,
+                                        "font": "noto_regular"
+                                    },
+                                    {
+                                        "align": "center",
+                                        "link": null,
+                                        "underline": false,
+                                        "text": "for items of type",
+                                        "bold": false,
+                                        "italic": false,
+                                        "strikeout": false,
+                                        "color": "rgb(8, 8, 8)",
+                                        "size": 10,
+                                        "font": "noto_regular"
+                                    }
+                                ],
+                                "html": "<p></p>",
+                                "rendering": "carota"
+                            }
+                        },
+                        "width": 200,
+                        "height": 100,
+                        "scaleX": 1.25,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                            "0FUuJlNPewl": "cg6bebCaDRE"
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "scaleY": 0.70346620971522278,
+                "userSetHeight": 70.34662097152227,
+                "userSetWidth": 169.99999998334306,
+                "defaultTextFormat": {
+                    "color": "#FFFFFF"
+                },
+                "themeId": "base",
+                "themeIndex": 25
+            },
+            "bounds": {
+                "top": 1129.9999997940649,
+                "left": 980,
+                "width": 169.99999998334306,
+                "height": 70.34662097152227
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "type": "basic",
+                "version": 4,
+                "enableTiptap": true,
+                "autoResizeWidth": false,
+                "autoResizeHeight": false,
+                "name": "Rectangle",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(17, 23, 41); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\">Display item: Calls table <br/>for data with id </span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Display item: Calls table \n",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#111729",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "for data with id ",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#111729",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 152.08,
+                        "height": 38.4,
+                        "id": "identifier",
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "minWidth": 60.02,
+                        "rendering": "carota",
+                        "wrapWidth": 180.00004173751921
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#364153",
+                    "fillColor": "#ffffff",
+                    "textColor": "#111729",
+                    "themeId": "base",
+                    "themeIndex": 25,
+                    "fillPreset": "white"
+                },
+                "id": "FSuWuVYT7ZS",
+                "x": 1210,
+                "y": 1129.9999997940649,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "rw8cpQWodoX",
+                "endpoints": {
+                    "from": {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528386317
+                },
+                "zIndex": 19,
+                "connectorIds": [
+                    "QpQD9ZQJCJ0"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786534387843
+                    }
+                ],
+                "scaleX": 1.1250002608594951,
+                "visible": true,
+                "scaleY": 0.70361445750157636,
+                "userSetHeight": 70.3614457501576,
+                "userSetWidth": 180.00004173751927,
+                "defaultTextFormat": {
+                    "color": "#FFFFFF"
+                },
+                "themeId": "base",
+                "themeIndex": 25
+            },
+            "bounds": {
+                "top": 1129.9999997940649,
+                "left": 1210,
+                "width": 180.00004173751927,
+                "height": 70.3614457501576
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "QpQD9ZQJCJ0",
+                "zIndex": 20,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                    "wqsxhzhktca": {
+                        "id": "wqsxhzhktca",
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Item",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#FFFFFF",
+                                "size": 10,
+                                "font": "noto_regular",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": true,
+                        "pos": 0.47307692307692306,
+                        "width": 30.3125,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    }
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1230,
+                        "y": 1090,
+                        "shapeId": "rw8cpQWodoX",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": true,
+                        "nextId": "t",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "onShape": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1300,
+                        "y": 1130,
+                        "shapeId": "FSuWuVYT7ZS",
+                        "nextId": null,
+                        "prevId": "h",
+                        "gluepointId": "0FUuJlNPewl",
+                        "gluepointLocked": true,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 90,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "onShape": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 1300.0000208687597,
+                            "y": 1089.9999997940647
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786528386318
+                }
+            },
+            "bounds": {
+                "top": 1080.8000000376412,
+                "left": 1230,
+                "width": 70,
+                "height": 49.199999962358788
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "W1pgNLnwcxg",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 379.999999987253,
+                "y": 970.2,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(144, 38, 77); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "text": "",
+                                "color": "#90264D",
+                                "size": 10,
+                                "font": "noto_regular",
+                                "align": "center",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "script": "normal"
+                            }
+                        ],
+                        "width": 0.01,
+                        "height": 19.4,
+                        "handlebars": "{}",
+                        "wrapWidth": 260.00000002549427
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -1,
+                "connectorIds": [
+                ],
+                "ports": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "defaultTextFormat": {
+                    "color": "#90264D"
+                },
+                "style": {
+                    "fillColor": "#FBF2F8",
+                    "lineColor": "#DA5597",
+                    "textColor": "#90264D",
+                    "themeId": "base",
+                    "themeIndex": 4
+                },
+                "themeId": "base",
+                "themeIndex": 4,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "scaleX": 1.6250000001593392,
+                "scaleY": 1.8999990527642234,
+                "userSetHeight": 189.9999052764224,
+                "userSetWidth": 260.00000002549427
+            },
+            "bounds": {
+                "top": 970.2,
+                "left": 379.999999987253,
+                "width": 260.00000002549427,
+                "height": 189.9999052764224
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "bsyP6ZQV8ew",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 380,
+                "y": 910,
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533515404
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 22,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546066166
+                    }
+                ],
+                "scaleX": 1.0769230769230769,
+                "texts": {
+                    "main": {
+                        "_alignX": -1,
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Create View\n",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "(JsonApiView) ",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 36.799999237060547,
+                        "rendering": "carota",
+                        "width": 88.800003051757813,
+                        "minWidth": 88.81
+                    }
+                },
+                "scaleY": 1.5
+            },
+            "bounds": {
+                "top": 910,
+                "left": 380,
+                "width": 140,
+                "height": 60
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "pDfXPY51M48",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 970,
+                "y": 1010,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#306339",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            },
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#306339",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 410,
+                        "height": 36.799999237060547,
+                        "handlebars": "{}",
+                        "wrapWidth": 430.00000000015604,
+                        "rendering": "carota",
+                        "_alignX": 0,
+                        "value": "<span style=\"color: rgb(48, 99, 57); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -4,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 3,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#306339"
+                },
+                "style": {
+                    "lineColor": "#5EC269",
+                    "textColor": "#306339",
+                    "themeIndex": 3,
+                    "themeId": "base",
+                    "fillColor": "#F2FDF5"
+                },
+                "scaleX": 2.6875000000009752,
+                "autoResizeWidth": false,
+                "userSetWidth": 430.000000000156,
+                "scaleY": 2.1999999979805569,
+                "autoResizeHeight": false,
+                "userSetHeight": 219.99999979805557,
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786535053081
+                    }
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 10
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 10
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 1010,
+                "left": 970,
+                "width": 430.000000000156,
+                "height": 219.9999997980558
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "YqcT13Uk3Ga",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 970,
+                "y": 970,
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786545026967
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 28,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                        "time": 1786546093443
+                    }
+                ],
+                "scaleX": 2.1538461538461537,
+                "texts": {
+                    "main": {
+                        "_alignX": -1,
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "call display list/item (-> jsonApiView.php)",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 18.399999618530273,
+                        "minWidth": 108.64,
+                        "rendering": "carota",
+                        "width": 255.75
+                    }
+                }
+            },
+            "bounds": {
+                "top": 970,
+                "left": 970,
+                "width": 280,
+                "height": 40
+            },
+            "type": "basic"
+        }
+    ],
+    "dataDefs": {
+    }
+}
