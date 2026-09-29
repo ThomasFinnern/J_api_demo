@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="140.84111mm"
-   height="114.55843mm"
-   viewBox="0 0 140.84111 114.55843"
+   width="240mm"
+   height="165mm"
+   viewBox="0 0 240 165"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
@@ -25,55 +25,17 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="2.2102062"
-     inkscape:cx="265.8123"
-     inkscape:cy="175.77545"
-     inkscape:window-width="3072"
-     inkscape:window-height="1705"
-     inkscape:window-x="1672"
+     inkscape:cx="327.1188"
+     inkscape:cy="265.35986"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layerOuter"
      showgrid="false" />
   <defs
      id="defs1">
-    <marker
-       style="overflow:visible"
-       id="Dot"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Dot"
-       markerWidth="0.301"
-       markerHeight="0.301"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         sodipodi:nodetypes="sssss"
-         id="path17" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="ArrowWideHeavy"
-       refX="0"
-       refY="0"
-       orient="-75,00"
-       inkscape:stockid="Wide, heavy arrow"
-       markerWidth="0.5"
-       markerHeight="0.5"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
-         id="path4" />
-    </marker>
     <color-profile
        name="sRGB-display-profile-with-display-hardware-configuration-data-derived-from-calibration"
        xlink:href="file:///C:/WINDOWS/system32/spool/drivers/color/CalibratedDisplayProfile-11.icc"
@@ -137,14 +99,13 @@
   <g
      inkscape:label="base level"
      inkscape:groupmode="layer"
-     id="layerOuter"
-     transform="translate(-5.6531026,-4.6138222)">
+     id="layerOuter">
     <circle
        cx="15.359928"
        cy="23.17066"
        id="start_circle"
        fill="#000000"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        r="8" />
     <text
        xml:space="preserve"
@@ -159,14 +120,14 @@
    style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
    id="tspan1">URL</tspan><tspan
    y="12"
-   id="tspan88"> </tspan></tspan><tspan
+   id="tspan63"> </tspan></tspan><tspan
          x="23.815666"
          y="15.562059"
-         id="tspan90"><tspan
+         id="tspan86"><tspan
    style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-   id="tspan89">Request</tspan><tspan
+   id="tspan67">Request</tspan><tspan
    y="15.562059"
-   id="tspan91"> </tspan></tspan></text>
+   id="tspan87"> </tspan></tspan></text>
     <rect
        style="fill:#f3f9fe;fill-opacity:1;stroke:#64a3df;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="API_Controller"
@@ -210,10 +171,10 @@
        inkscape:label="base_text"><tspan
          x="49.108391"
          y="12"
-         id="tspan92">Define content type, </tspan><tspan
+         id="tspan88">Define content type, </tspan><tspan
          x="49.108391"
          y="15.527775"
-         id="tspan93">serializer, paths </tspan></text>
+         id="tspan89">serializer, paths </tspan></text>
     <rect
        style="fill:#fafcf6;fill-opacity:1;stroke:#7bbe72;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect26"
@@ -234,9 +195,9 @@
        inkscape:label="function displayListText"><tspan
          x="26.949738"
          y="12"
-         id="tspan95"><tspan
+         id="tspan91"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan94">Function: &quot;displayList&quot;</tspan></tspan></text>
+           id="tspan90">Function: &quot;displayList&quot;</tspan></tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#040304;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.6, 0.8;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        id="Base_rectangle-4"
@@ -257,10 +218,10 @@
        inkscape:label="base_text"><tspan
          x="39.840221"
          y="12"
-         id="tspan96">Define com_xxx API </tspan><tspan
+         id="tspan92">Define com_xxx API </tspan><tspan
          x="39.840221"
          y="15.527775"
-         id="tspan97">Controller</tspan></text>
+         id="tspan93">Controller</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -281,7 +242,7 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan98">J! ApiController.php </tspan></text>
+         id="tspan94">J! ApiController.php </tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:40.5734;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -292,15 +253,15 @@
        id="text90"><tspan
          x="26.949738"
          y="12"
-         id="tspan100"><tspan
+         id="tspan96"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan99"> 
+           id="tspan95"> 
 </tspan></tspan><tspan
          x="26.949738"
          y="15.527775"
-         id="tspan102"><tspan
+         id="tspan98"><tspan
            style="text-align:center;text-anchor:middle"
-           id="tspan101"> </tspan></tspan></text>
+           id="tspan97"> </tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-53.354769,-2.2091868)"
@@ -311,9 +272,9 @@
        inkscape:label="Title"><tspan
          x="228.39648"
          y="37.662464"
-         id="tspan104"><tspan
+         id="tspan100"><tspan
            style="text-align:start;fill:#00000f;fill-opacity:1;stroke:none"
-           id="tspan103">Minimal code: path for task 'displayList'</tspan></tspan></text>
+           id="tspan99">Minimal code: path for task 'displayList'</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82223px;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#00000f;fill-opacity:1;stroke:none;stroke-width:3.29999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -351,7 +312,7 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan105">J! JsonapiDocument.php</tspan></text>
+         id="tspan101">J! JsonapiDocument.php</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:40.5734;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -362,13 +323,13 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan109"><tspan
+         id="tspan105"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan106">- </tspan><tspan
+           id="tspan102">- </tspan><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan107">Pagination</tspan><tspan
+           id="tspan103">Pagination</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan108"> from input</tspan></tspan></text>
+           id="tspan104"> from input</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -379,13 +340,13 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan113"><tspan
+         id="tspan109"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan110">- </tspan><tspan
+           id="tspan106">- </tspan><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan111">Get view:</tspan><tspan
+           id="tspan107">Get view:</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan112"> type:jsonapi</tspan></tspan></text>
+           id="tspan108"> type:jsonapi</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -396,23 +357,23 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan116"><tspan
+         id="tspan112"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan114">api</tspan><tspan
+           id="tspan110">api</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan115">\components\
+           id="tspan111">\components\
 </tspan></tspan><tspan
          x="47.039722"
          y="15.562059"
-         id="tspan118"><tspan
+         id="tspan114"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan117">com_secondhand\src\View\
+           id="tspan113">com_secondhand\src\View\
 </tspan></tspan><tspan
          x="47.039722"
          y="19.124118"
-         id="tspan120"><tspan
+         id="tspan116"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan119">Books\JsonapiView.php</tspan></tspan></text>
+           id="tspan115">Books\JsonapiView.php</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -423,9 +384,9 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan122"><tspan
+         id="tspan118"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan121">- Set model: </tspan></tspan></text>
+           id="tspan117">- Set model: </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -436,23 +397,23 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan125"><tspan
+         id="tspan121"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan123">administrator</tspan><tspan
+           id="tspan119">administrator</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan124">\components\
+           id="tspan120">\components\
 </tspan></tspan><tspan
          x="47.039722"
          y="15.562059"
-         id="tspan127"><tspan
+         id="tspan123"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan126">com_secondhand\src\Model\
+           id="tspan122">com_secondhand\src\Model\
 </tspan></tspan><tspan
          x="47.039722"
          y="19.124118"
-         id="tspan129"><tspan
+         id="tspan125"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan128">BooksModel.php </tspan></tspan></text>
+           id="tspan124">BooksModel.php </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:40.5734;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -463,13 +424,13 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan133"><tspan
+         id="tspan129"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan130">- </tspan><tspan
+           id="tspan126">- </tspan><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan131">Pagination</tspan><tspan
+           id="tspan127">Pagination</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan132"> to model</tspan></tspan></text>
+           id="tspan128"> to model</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -480,9 +441,9 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan135"><tspan
+         id="tspan131"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan134">- Init document: </tspan></tspan></text>
+           id="tspan130">- Init document: </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -493,15 +454,15 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan137"><tspan
+         id="tspan133"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan136">type=jsonapi, 
+           id="tspan132">type=jsonapi, 
 </tspan></tspan><tspan
          x="47.039722"
          y="15.562059"
-         id="tspan139"><tspan
+         id="tspan135"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan138">otherwise uninitialised</tspan></tspan></text>
+           id="tspan134">otherwise uninitialised</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:0.145;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -512,11 +473,11 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan142"><tspan
+         id="tspan138"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan140">- $view-&gt;</tspan><tspan
+           id="tspan136">- $view-&gt;</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan141">displayList() </tspan></tspan></text>
+           id="tspan137">displayList() </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:40.5734;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -527,7 +488,7 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan143">J! jsonApiView.php</tspan></text>
+         id="tspan139">J! jsonApiView.php</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -558,9 +519,9 @@
        inkscape:label="base_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan145"><tspan
+         id="tspan141"><tspan
            style="font-weight:bold;-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan144">- json_encode</tspan></tspan></text>
+           id="tspan140">- json_encode</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.92093px;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:40.0771;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -571,7 +532,7 @@
        inkscape:label="function displayListText"><tspan
          x="26.949738"
          y="12"
-         id="tspan146">Function: render</tspan></text>
+         id="tspan142">Function: render</tspan></text>
     <rect
        style="fill:#fafcf6;fill-opacity:1;stroke:#7bbe72;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect96"
@@ -584,7 +545,7 @@
        inkscape:label="rectDisplayList" />
     <text
        xml:space="preserve"
-       style="font-size:2.71755px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:48.4552;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="font-size:2.71755217px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:48.4552;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        x="26.949738"
        y="12"
        id="text97"
@@ -592,9 +553,9 @@
        inkscape:label="function displayListText"><tspan
          x="26.949738"
          y="12"
-         id="tspan148"><tspan
+         id="tspan144"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan147">Function: &quot;displayList&quot;</tspan></tspan></text>
+           id="tspan143">Function: &quot;displayList&quot;</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -605,9 +566,9 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan150"><tspan
+         id="tspan146"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan149">- prepareItem()</tspan></tspan></text>
+           id="tspan145">- prepareItem()</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -618,9 +579,9 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan152"><tspan
+         id="tspan148"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan151">override for changes</tspan></tspan></text>
+           id="tspan147">override for changes</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:49.6682;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -631,13 +592,13 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan156"><tspan
+         id="tspan152"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan153">- </tspan><tspan
+           id="tspan149">- </tspan><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan154">Pagination</tspan><tspan
+           id="tspan150">Pagination</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan155"> from model</tspan></tspan></text>
+           id="tspan151"> from model</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -648,11 +609,11 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan157">Url: first , previous, next, 
+         id="tspan153">Url: first , previous, next, 
 </tspan><tspan
          x="47.039722"
          y="15.527775"
-         id="tspan158">last, page count</tspan></text>
+         id="tspan154">last, page count</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:34.5102;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -663,11 +624,11 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan161"><tspan
+         id="tspan157"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan159">- Fields:</tspan><tspan
+           id="tspan155">- Fields:</tspan><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan160"> event </tspan></tspan></text>
+           id="tspan156"> event </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:50.2745;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -678,9 +639,9 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="42.068363"
          y="12"
-         id="tspan163"><tspan
+         id="tspan159"><tspan
            style="font-weight:bold;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan162">- Collect data </tspan></tspan></text>
+           id="tspan158">- Collect data </tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:46.2325;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -691,15 +652,15 @@
        inkscape:label="rectDisplayList_text"><tspan
          x="47.039722"
          y="12"
-         id="tspan165"><tspan
+         id="tspan161"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan164">items, urls, ...
+           id="tspan160">items, urls, ...
 </tspan></tspan><tspan
          x="47.039722"
          y="15.562059"
-         id="tspan167"><tspan
+         id="tspan163"><tspan
            style="font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono'"
-           id="tspan166">Assign to -&gt;document</tspan></tspan></text>
+           id="tspan162">Assign to -&gt;document</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -715,15 +676,20 @@
        rx="1"
        ry="1" />
     <rect
-       style="fill:#000000;fill-opacity:0;stroke:#040304;stroke-width:0.821178;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="fill:#000000;fill-opacity:0;stroke:#040304;stroke-width:1.21272;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="Base_rectangle-23"
-       width="140.01993"
-       height="113.73725"
-       x="6.0636916"
-       y="5.0244112"
-       rx="2.3363519"
-       ry="3.2069809"
+       width="225.81943"
+       height="153.80762"
+       x="6.2594628"
+       y="5.2201824"
+       rx="3.7679901"
+       ry="4.3368211"
        inkscape:label="base_rectangle" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 147.72188,29.44861 -0.0815,81.5263"
+       id="path2"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:32.9816;display:inline;fill:#00000f;fill-opacity:1;stroke-width:3.668;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
@@ -734,28 +700,16 @@
        inkscape:label="base_text"><tspan
          x="26.949738"
          y="12"
-         id="tspan169"><tspan
+         id="tspan165"><tspan
            style="font-weight:bold;-inkscape-font-specification:'JetBrains Mono Bold'"
-           id="tspan168">- jsonSerialize</tspan></tspan></text>
-    <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.312395;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
-       d="M 81.105474,9.6545753 81.03637,113.91334"
-       id="path2"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#00ff4c;fill-opacity:1;stroke:#0000ff;stroke-width:1.1071;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-start:url(#Dot);marker-end:url(#ArrowWideHeavy);paint-order:markers fill stroke"
-       d="M 71.547999,103.80371 C 87.694096,35.906982 87.556865,35.906982 87.556865,35.906982 l 0.718259,-0.957678"
-       id="path3"
-       sodipodi:nodetypes="ccc" />
+           id="tspan164">- jsonSerialize</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="1. layer"
-     transform="translate(-5.6531026,-4.6138222)" />
+     inkscape:label="1. layer" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="Inside Function displayList"
-     transform="translate(-5.6531026,-4.6138222)" />
+     inkscape:label="Inside Function displayList" />
 </svg>
