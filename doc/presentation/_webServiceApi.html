@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Web Services API</title>
+
+    <meta
+            name="description"
+            content="Web Services API: Implementation for components"
+    />
+    <meta name="author" content="Thomas Finnern"/>
+
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="../dist/reset.css"/>
+    <link rel="stylesheet" href="../dist/reveal.css"/>
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../dist/plugin/highlight/monokai.css"/>
+
+    <!-- Theme used for general layout -->
+    <!--	<link rel="stylesheet" href="../dist/theme/sky.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/simple.css" id="theme" />-->
+    <!--	<link rel="stylesheet" href="../dist/theme/serif.css" id="theme" />-->
+    <!--    <link rel="stylesheet" href="../dist/theme/solarized.css" id="theme" />-->
+    <link rel="stylesheet" href="../dist/theme/fith_solarized.css" id="theme"/>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.svg">
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <!--
+        ==========================================================================
+        00 Introduction
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+			<textarea data-template>
+				## Web Services API:<h3>Implementation for components</h3>
+
+				![logo10](./assets/icons/left_right.start.svg)
+
+				### Dipping the toe into the sea of joomla webserverices API coding for components
+
+				* Minimum component API code
+				* Standard use of the component controller/models  <!-- .element: class="fragment" data-fragment-index="2" -->
+				* Patch the data before reaching component controller/models <!-- .element: class="fragment" data-fragment-index="3" -->
+				* Prepare the JSON response <!-- .element: class="fragment" data-fragment-index="4" -->
+
+				The presentation is aimed at component developers who have no knowledge of Joomla's API functions.
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Thomas Finnern InsideTheMachine.de
+
+### 2008: First Joomla! web page
+[vollmondlauf-hechingen.de](https://www.vollmondlauf-hechingen.de/bildergallerie.html)
+
+Full moon fun run, no race, once per month, running up the hill<br>
+<img src="./assets/images/vollmond.png" width="70%" height="30%"/><br>
+<img src="./assets/icons/RSG2_logoText.svg" width="30%" /><br>
+Using **RSGallery2** as my gallery for images
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+<img src="./assets/icons/RSG2_logoText.svg" width="40%" style="margin-top:0; padding-top:0" /><br>
+### 2013: RSGallery2 Missing support in 2013
+
+* Founder with breakdown, <br>
+* rsgallery2.net URL captured for money (1000$),<br>
+* One person maintaining forum-server and <br>
+* 1 person upgrading from J! 2.5 to 3.x
+<br>
+<br>
+
+### 2014 Start of coding <!-- .element: class="fragment" data-fragment-index="2" -->
+
+* Start of transfer code from 3x to 4x to 5x <!-- .element: class="fragment" data-fragment-index="2" -->
+* Learning the ropes, first code in PHP .... <!-- .element: class="fragment" data-fragment-index="2" -->
+* First joomla! Day / JCamp Essen <!-- .element: class="fragment" data-fragment-index="2" -->
+<br>
+<br>
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+<img src="./assets/icons/RSG2_logoText.svg" width="40%" style="margin-top:0; padding-top:0" /><br>
+### 2026 Actual state of oldest living gallery
+
+* Baseline operational
+* Needs development
+* Some big ideas failed due to J! code expectations
+* Backend Ok, Site needs help
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+        ## 2024++ support for JoomGallery Friends
+
+        ![joomgalleryLogo](./assets/icons/logo-joomgalleryfriendskleiner.svg "JoomGallery Friends logo")
+
+        * Code for site upload
+        * Code for Web Services API
+        <br>
+        <br>
+                Where my knowledge of Joomla! API started <br>
+                (the hard way by checking the code)
+        </textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+        ## 2024++ Module to display standard J! icons
+(j4x/J5x/Jx)  mod_jx_std_icons<br>
+
+* List Joomla! standard icons on your website. (localhost | web)<br>
+* Part of <a href="https://guide.joomla.org/user-manual/templates/standard-icons?highlight=WyJpY29ucyJd">guide.joomls.org: Icons in standard templates</a>
+
+<img src="./assets/images/availableIcons.png" width="60%" />
+
+<a href="https://extensions.joomla.org/extension/mod-jx-std-icons" >JED: https://extensions.joomla.org/extension/mod-jx-std-icons</a>
+
+
+        </textarea>
+        </section>
+
+        <section>
+            <h3>Hobby:</h3>
+            <div class="r-hstack" style="gap: 2rem;">
+                <div>
+                    <img src="./assets/images/joggenDieLangsamen_2.jpg" width="60%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/joggingZellerHorn.jpg" width="35%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/joggingSanFranzisco.jpg" width="50%" /><br>
+                </div>
+            </div>
+            <hr>
+            <h3>Profession:</h3>
+            <h3>1999 - 2027 creating software at Walter Machines Tübingen</h3>
+
+            <div class="r-hstack" style="gap: 2rem;">
+                <div>
+                    <img src="./assets/images/machine-raptor2.png" width="70%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/toolsShapes.jpg" width="70%" /><br>
+                </div>
+                <div>
+                    <img src="./assets/images/toolInOperation.jpg" width="60%" /><br>
+                </div>
+            </div>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Location of code and a more detailed description
+
+In this presentation, the code is shown as shortened excerpt<br>
+
+A complete version can be viewed at on my Github account:<br>
+
+[https://github.com/ThomasFinnern/J_api_demo/tree/main/code](https://github.com/ThomasFinnern/J_api_demo/tree/main/code)
+
+Parts of this presentation will be transferred to articles<br>
+in [https://guide.joomla.org](https://guide.joomla.org)
+
+The slides will be present as a pdf version on www.insidethemachine.de
+
+                 </textarea>
+        </section>
+
+        <!--
+        ==========================================================================
+        01 RouterDefinitions
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+			<textarea data-template>
+## Introduction component "com_secondhand"
+
+<img src="./assets/icons/left_right.start.svg" width="12%" />
+
+Imagine a second hand books component with <br>
+just the one books table and matching view.
+
+The idea is to use an external scan of the ISBN
+of the book, fetch book data by other web API
+and use a J! web API to fill this table.
+
+<strong>Table items</strong>
+<ul>
+    <li>id</li>
+    <li>name</li>
+    <li>author</li>
+    <li>isbn</li>
+    <li>publish, created, ...</li>
+</ul>>
+<pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;">
+</pre>
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Which API routes do we want to expose ?
+
+CRUD definitions (GET/POST/PATCH/DELETE) <br>
+Which would look like following
+
+| Command | &nbsp;Endpoint                  | &nbsp;Comment                              |
+|:--------|:--------------------------------|:-------------------------------------------|
+| GET     | &nbsp;`v1/secondhand/books`     | &nbsp;lists all books with variables       |
+| GET     | &nbsp;`v1/secondhand/books/:id` | &nbsp;lists variables of book              |
+| POST    | &nbsp;`v1/secondhand/books`     | &nbsp;creates new book with data           |
+| PATCH   | &nbsp;`v1/secondhand/books/:id` | &nbsp;writes parameters into selected book |
+| DELETE  | &nbsp;`v1/secondhand/books/:id` | &nbsp;deletes selected book                |
+
+
+			</textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>URL structure for Joomla API calls</h2>
+
+            Joomla API form:
+            <pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;"><strong>
+example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=30
+\__________/\____________/\___________________/\_____________________________/
+     |            |                 |                        |
+    host       api path         endpoints                  query
+</strong>
+</pre>
+
+            <span style="text-align: left;">
+    <p><b>Api path:</b></p>
+    <ul>
+        <li>/api/index.php/                -&gt; webservice starting in web site `/api` folder </li>
+    </ul>
+</span>
+            <br>
+            <span style="text-align: left;">
+    <p><b>Endpoints:</b></p>
+    <ul>
+        <li> v1/config/application  -&gt; routes to address functionality</li>
+    </ul>
+</span>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>URL structure for Joomla API calls</h2>
+
+            Joomla API form:
+            <pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;"><strong>
+example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=30
+\__________/\____________/\___________________/\_____________________________/
+     |            |                 |                        |
+    host       api path         endpoints                  query
+</strong>
+</pre>
+            <span style="text-align: left;">
+    <p><b>Query:</b></p>
+    <ul>
+        <li>pagination:   page[offset]=30&amp;page[limit]=30</li>
+        <li>filter:                  filter[catid]=2&amp;filter[state]=1</li>
+        <li>sorting:           list[ordering]=created&amp;list[direction]=desc</li>
+        <li>fields:                fields[articles]=title,catid,state</li>
+    </ul>
+</span>
+            <span style="text-align: left;">
+    <p>Special characters like '[' and ']' must be converted to '%5B' and '%5D' ... <br>
+        like in other HTML queries</p>
+</span>
+        </section>
+
+        <!--
+        ==========================================================================
+        02 MinCode
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+			<textarea data-template>
+## Bare minimum component
+
+![logo10](./assets/icons/left_right.start.svg)
+
+* plg_webservices_secondhand
+* com_secondhand
+
+This example is valid only if the API is intended to address component tables.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## webservice API plugin
+
+The general base component folder structure
+
+```batch[7,10]
+plg_secondhand
+├─── language
+│      └─── en-GB
+│              ├─── plg_content_secondhand.ini
+│              └─── plg_content_secondhand.sys.ini
+├─── services
+│      └─── provider.php
+├─── src
+│      └─── Extension
+│              └─── Secondhand.php
+└─── secondhand.xml
+```
+Structure similar to other plugins
+
+* provider.php            Registers the service provider with a DI container.
+* Secondhand.php   Endpoint definitions
+
+			</textarea>
+        </section>
+
+
+        <section data-markdown>
+			<textarea data-template>
+## Service provider 'services/provider.php'
+
+Here the 'secondhand' API definition class is instantiated <br>and listed as a service provider.
+
+```php [14-15]
+use Joomla\...
+
+use Bluebox\Plugin\WebServices\Secondhand\Extension\Secondhand;
+
+return new class () implements ServiceProviderInterface{
+    /* Registers the service provider with a DI container.
+     * @param   Container  $container  The DI container.
+     * @return  void */
+    public function register(Container $container): void
+    {
+        $container->set(
+            PluginInterface::class,
+            $container->lazy(Secondhand::class, function (Container $container){
+                $plugin = new Secondhand(
+                    (array) PluginHelper::getPlugin('webservices', 'secondhand')
+                );
+                $plugin->setApplication(Factory::getApplication());
+
+                return $plugin;
+            })
+        );
+    }
+};
+```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Route extension class 'src\Extension\Secondhand.php'
+
+### part one
+
+**function getSubscribedEvents:** Register event
+
+```php  [1,2,5-8]
+/* Joomla! Webservices Plugin webservice secondhand. */
+final class Secondhand extends CMSPlugin implements SubscriberInterface
+{
+    /* Returns an array of events this subscriber will listen to  */
+    public static function getSubscribedEvents(): array
+    {
+        return ['onBeforeApiRoute' => 'onBeforeApiRoute',];
+    }
+
+    ....
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Route extension class 'src\Extension\Secondhand.php'
+
+### part two
+
+**function onBeforeApiRoute**
+
+```php [3|5-6,13|8-12]
+public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
+{
+    $router = $event->getRouter();
+
+    $defaults = ['component' => 'com_secondhand'];
+    $getDefaults = array_merge(['public' => false], $defaults);
+
+    $router->createCRUDRoutes(
+        'v1/secondhand/books',
+        'books',
+        $getDefaults
+    );
+}
+```
+
+**createCRUDRoutes:** Here the magic happens.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## createCRUDRoutes
+### Internal routes created
+
+<img src="./assets/images/mermaid/ResultUrlRequest_1.png" />
+
+function createCRUDRoutes has defined all CRUD routes internally
+
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### The magic applied
+
+instead of
+```php
+    $router->createCRUDRoutes(
+        'v1/secondhand/books',
+        'books',
+        $getDefaults
+    );
+```
+We could have written:
+```php
+   $routes = [
+        new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [],                $defaults),
+        new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $defaults),
+        new Route(['POST'],   'v1/secondhand/books',     'books.add',         [],                $defaults),
+        new Route(['PATCH'],  'v1/secondhand/books/:id', 'books.edit',        ['id' => '(\d+)'], $defaults),
+        new Route(['DELETE'], 'v1/secondhand/books/:id', 'books.delete',      ['id' => '(\d+)'], $defaults),
+   ];
+
+   $this->addRoutes($routes);
+```
+
+Which tells us `new Route(...)` will be the syntax for all our defined API routes
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## General Route function parameters
+
+```php[1,3]
+     new Route('CRUD' command, endpoint, 'controller'.'function', [var.regex], defaults);
+
+    $router->createCRUDRoutes('base endpoint', 'controller', defaults);
+```
+
+| &nbsp; | &nbsp; example                 | &nbsp;description                              |
+|:--------|:--------------------------------|:-------------------------------------------|
+| 'CRUD' command     | &nbsp;GET,POST,PATCH,DELETE  | &nbsp;       |
+| endpoint     | &nbsp;`v1/secondhand/books`     | &nbsp; route path       |
+| &nbsp;     | &nbsp;`v1/secondhand/books/:id`     | &nbsp; route path with variable      |
+| controller     | &nbsp;`books`     | &nbsp; path to controller and view      |
+| function     | &nbsp;`displayItem`     | &nbsp; any function in defined controller can be called  |
+| var.regex     | &nbsp;`['id' => '(\d+)']`    | &nbsp; Regex to catch and secure the variable value |
+| defaults     | &nbsp;`['component' => 'com_secondhand',`     | &nbsp; array of 'configuration' variables       |
+| defaults     | &nbsp;`'public' => false]`     | &nbsp;  more see next page       |
+
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+## X-Token and $getDefaults
+
+The route needs to know the component name
+
+```php
+    $defaults = ['component' => 'com_secondhand'];
+```
+
+**Joomla X-Token**<br>
+The X-Token is the key to the API door and is expected to <br>
+be part of the curl/http data send. The X-Token can be <br>
+fetched in user admin account after save.
+
+With defaults flag "`'public' => true`" on local development systems we <br>
+enable API calls without X-Token.
+
+```php [2|3]
+    // ToDo: Remove when tests finished, enables access without token
+    $getDefaults = array_merge(['public' => true], $defaults);
+    $getDefaults = array_merge(['public' => false], $defaults);
+```
+
+ Please make sure to remove this before going online
+
+Above $getDefaults is passed  as last parameter to the route <br>function definition
+
+
+            </textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+![logo10](./assets/icons/left_right.start.svg)
+
+## Minimum component
+
+When the API just needs to handle table data then <br> following minimuum component structure is possible
+
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## com_secondhand
+
+Second hand books component with <br>
+just the one books table and matching view.
+
+Table items
+* id
+* name
+* author
+* isbn
+* publish, created, ...
+<br>
+<br>
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Manifest file 'secondhand.xml'
+
+Following is an excerpt as the content is known
+```xml [6,15-20]
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+  <name>plg_webservices_secondhand</name>
+  ...
+  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
+  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
+  <files>
+    <folder plugin="secondhand">services</folder>
+    <folder>language</folder>
+    <folder>services</folder>
+    <folder>src</folder>
+    <file>secondhand.xml</file>
+  </files>
+
+  <api>
+    <files folder="api">
+      <folder>src</folder>
+    </files>
+  </api>
+  ...
+</extension>
+```
+
+Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middle
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## API part of the component 'com_secondhand'
+
+* We have to insert section API into manifest
+* We have to add code into the joomla root API folder.
+<br>
+<br>
+
+### The API sub folder structure:
+
+From the root of the joomla web page
+```
+api\components\com_secondhand\
+└─── src
+     ├─── Controller
+     │    └─── BooksController.php
+     └─── View
+          └─── Books
+               └─── JsonapiView.php
+```
+Attention: The API folder structure is similar to other component<br>
+structures with the exception that the controller folder keeps all<br>
+`nnnController.php` files without further subdirectories.<br>
+The view code is always kept in a JsonapiView.php file in a named folder
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Controller in API part 'BooksController.php'
+
+```php [5,8,11]
+namespace Bluebox\Component\Secondhand\Api\Controller;
+
+...
+
+class BooksController extends ApiController
+{
+    // The content type of the item.
+    protected $contentType = 'books';
+
+    // The default view for the display method.
+    protected $default_view = 'books';
+
+    // Implement other methods like read, update, delete as needed
+    ...
+}
+```
+
+Within the minimal controller only two variables need to be defined, <br>
+as the controller class inherits from ApiController.
+* The `$contentType` tells which component model to use
+* The `$default_view` tells which view does render the collected data.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## View in API part 'JsonapiView.php'
+
+Inside the minimum controller there are only two variables to <br>
+implement as the JsonapiView class inherits from BaseApiView.
+
+* The `$fieldsToRenderItem` tells which variables of the table <br>to show for single item view<br>
+
+* The `$fieldsToRenderList` tells which view does render the <br>collected data.
+
+```php
+    protected $fieldsToRenderItem = []
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description', 'note', 'published', 'created',
+        'created_by', 'modified', 'modified_by',
+    ];
+```
+```php
+   protected $fieldsToRenderList = [
+        'id',
+        'title',
+        'alias',
+        'isbn',
+        'description', 'note', 'published', 'created',
+        'created_by', 'modified', 'modified_by',
+    ];
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Resumee:
+
+We defined the API router interface.
+```php
+$router->createCRUDRoutes(
+    'v1/secondhand/books',
+    'books',
+    $getDefaults
+);
+```
+
+We defined the table and the view
+
+```php
+protected $contentType = 'books';
+protected $default_view = 'books';
+```
+
+We defined what the JSON response should contain for list and item.
+
+```php
+protected $fieldsToRenderList = ['id', 'title', 'alias', 'isbn', 'description', ....
+protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', ....
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+<img src="./assets/icons/left_right.start.svg" width="12%" />
+
+<h2>This is it !</h2>
+
+The plugin and two wo files enable <br>CRUD access over the API of joomla. <br>
+                <ul>
+                <li>`BooksController.php`</li>
+                <li>JsonapiView.php</li>
+                </ul><br>
+
+Support from the Joomla API base classes is all <BR>
+that is required to process basic table data.
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+## What API Routes do we get ?
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## API route definitions created
+
+The CRUD definitions result in following API routes:
+
+| Command | &nbsp;endpoint                  | &nbsp;Comment                              |
+|:--------|:--------------------------------|:-------------------------------------------|
+| GET     | &nbsp;`v1/secondhand/books`     | &nbsp;lists all books with variables       |
+| GET     | &nbsp;`v1/secondhand/books/:id` | &nbsp;lists variables of book              |
+| POST    | &nbsp;`v1/secondhand/books`     | &nbsp;creates new book with data           |
+| PATCH   | &nbsp;`v1/secondhand/books/:id` | &nbsp;writes parameters into selected book |
+| DELETE  | &nbsp;`v1/secondhand/books/:id` | &nbsp;deletes selected book                |
+
+Attention: There is no PUT support in Joomla
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Calling Joomla  API and json response
+<br>
+<br>
+
+How can we call the routes and
+<br>
+<br>
+how does the response look like
+
+			</textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>GET v1/secondhand/books (lists all books with variables)</h2>
+
+            <strong>Example CURL:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape>
+            curl -s --show-error
+            -X GET "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books"
+            -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+
+                </code>
+            </pre>
+
+            <strong>Example HTTP:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+            GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
+            Accept: application/vnd.api+json
+            Content-Type: application/json
+            X-Joomla-Token:  ...
+                </code>
+            </pre>
+
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+**Response:** "`GET v1/secondhand/books`"
+
+
+| http code | content-type                      | response                                                                                                            |
+|-----------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `200`     | `application/json; charset=UTF-8` | ```json {"type": "books","id": "2","attributes": {"id": 2,"title": "Why We Sleep","alias": "why-we-sleep",, ...}``` |
+
+                 </textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>GET v1/secondhand/books/:id</h2>
+
+            <strong>Example CURL:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape>
+curl -s --show-error
+   -X GET "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1"
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+                </code>
+            </pre>
+
+            <strong>Example HTTP:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:  ...
+                </code>
+            </pre>
+
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+**Response:** "`GET v1/secondhand/books/:id`"
+
+
+| http code     | content-type                      | response                                                                                                                    |
+|---------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `200`         | `application/json; charset=UTF-8` | ```json {"type": "books","id": "2","attributes": {"id": 2,"title": "Why We Sleep","alias": "why-we-sleep",, ... }``` |
+
+                 </textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>POST v1/secondhand/books (part 1 / curl)</h2>
+
+            <!--strong>Parameters:</strong>
+
+            <table>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>data type</th>
+                    <th>description</th>
+                </tr>
+                <tr>
+                    <td>all book parameters</td>
+                    <td>%</td>
+                    <td>json - string</td>
+                    <td></td>
+                </tr>
+            </table><br-->
+            <strong>Example CURL:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape>
+curl -s --show-error
+   -X POST "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books"
+   -d "{
+        \"titl\":\"My book\",
+        \"isbn\":\"12-3456-78-90\",
+        \"$author\":"john breeze\",
+        \"description\":\"The next book i write\",
+        \"published\":1
+    }"
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+                </code>
+            </pre>
+
+        </section>
+
+        <section style="text-align: left;">
+            <h2>POST v1/secondhand/books (part 2 / HTTP)</h2>
+
+            <strong>Example HTTP:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+###
+POST http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:
+{
+   "title": "My book",
+   "isbn": "12-3456-78-90",
+   "author": "john breeze",
+   "description": "The next book i write",
+   "published": 1
+}
+                </code>
+            </pre>
+
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+**Response:** "`POST v1/secondhand/books`"
+
+| http code     | content-type                      | response                                                                                                                   |
+|---------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `200`         | `application/json; charset=UTF-8` | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
+
+                 </textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>PATCH v1/secondhand/books/:id</h2>
+
+            <!-- strong>Parameters:</strong>
+
+            <table>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>data type</th>
+                    <th>description</th>
+                </tr>
+                <tr>
+                    <td>all book parameters</td>
+                    <td>%</td>
+                    <td>json - string</td>
+                    <td></td>
+                </tr>
+            </table><br-->
+
+            <strong>Example CURL:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape>
+curl -s --show-error
+   -X PATCH "http://127.0.0.1/web_page/api/index.php/v1/secondhand/1/books"
+   -d "{
+        \"published\":-2,
+        \"isbn\":\"1234-4567-8890\"
+    }"
+   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+
+                </code>
+            </pre>
+
+            <strong>Example HTTP:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+###
+PATCH http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:
+
+{
+    "published": -2,
+    "isbn": "1234-4567-8890",
+}
+                </code>
+            </pre>
+
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+**Response:** "`PATCH v1/secondhand/books/:id`#
+
+| http code     | content-type                      | response                                                            |
+|---------------|-----------------------------------|---------------------------------------------------------------------|
+| `200`         | `application/json; charset=UTF-8` | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
+
+
+                 </textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>DELETE secondhand/books/:id</h2>
+
+Reminder: Delete needs trash state before. <br>
+Please use 'PATCH' command with "published": -2, (see above)
+
+            <strong>Example CURL:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape>
+curl -s --show-error
+  -X DELETE  "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/2"
+  -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
+```
+
+
+                </code>
+            </pre>
+
+            <strong>Example HTTP:</strong>
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+###
+DELETE http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/2
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:
+                </code>
+            </pre>
+
+        <strong>Response:</strong> None
+        </section>
+
+
+
+<!-- ======================================================================= -->
+
+        <section data-markdown>
+            <textarea data-template>
+
+## API routes responses (json)
+
+The results are JSON style and contain the links to actual call and next, previous and last page
+
+#### GET book
+
+```
+{
+  "links": {
+    "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
+  },
+  "data": {
+    "type": "books",
+    "id": "1",
+    "attributes": {
+      "id": 1,
+      "title": "test 01",
+      "alias": "test-01",
+      "isbn": "1234567890",
+      "description": "",
+      "published": 1,
+      "created": "2026-05-24 17:23:19",
+      "created_by": 775,
+      "modified": "2026-05-24 17:42:09",
+      "modified_by": 775,
+      "note": ""
+    }
+  }
+}
+```
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+#### GET books
+
+```json
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": [
+        {
+            "type": "books",
+            "id": "2",
+            "attributes": {
+                "id": 2,
+                "title": "Why We Sleep",
+                "alias": "why-we-sleep",
+                "isbn": "da1b2048-cec2-4127-950e-35bc4b3ee181",
+                "description": "Sleep is one of the most important aspects of our life, health and longevity and yet it is increasingly neglected in twenty-first-century society, with devastating consequences- every major disease in the developed world - Alzheimer - s, cancer, obesity, diabetes - has very strong links to deficient sleep. In this book, the first of its kind written by a scientific expert, Professor Matthew Walker explores twenty years of cutting-edge research to solve the mystery of why sleep matters. Looking at creatures from across the animal kingdom as well as major human studies, Why We Sleep delves in to everything from what really happens in our brains and bodies when we dream to how caffeine and alcohol affect sleep and why our sleep patterns change across a lifetime, transforming our appreciation of the extraordinary phenomenon that safeguards our existence.",
+                "published": 1,
+                "created": "2026-05-27 09:53:06",
+                "created_by": 776,
+                "modified": "2026-05-27 09:53:06",
+                "modified_by": 776,
+                "note": ""
+            }
+        },
+        {
+            "type": "books",
+            "id": "3",
+            "attributes": {
+                "id": 3,
+                "title": "My book",
+                "alias": "my-book",
+                "isbn": "12-3456-78-90",
+                "description": "The next book i write",
+                "published": 1,
+                "created": "2026-06-23 11:40:16",
+                "created_by": 776,
+                "modified": "2026-06-23 11:40:16",
+                "modified_by": 776,
+                "note": ""
+            }
+        }
+    ],
+    "meta": {
+        "total-pages": 1
+    }
+}
+```
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+#### Post book
+
+```json
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": {
+        "type": "books",
+        "id": "3",
+        "attributes": {
+            "id": 3,
+            "title": "My book",
+            "alias": "my-book",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": 1,
+            "created": "2026-06-23 11:40:16",
+            "created_by": 776,
+            "modified": "2026-06-23 11:40:16",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+```
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+#### Patch book: after trash ("published": -2)
+
+```json [14]
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/4"
+    },
+    "data": {
+        "type": "books",
+        "id": "4",
+        "attributes": {
+            "id": 4,
+            "title": "My book",
+            "alias": "my-book-7",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": -2,
+            "created": "2026-05-26 16:25:09",
+            "created_by": 776,
+            "modified": "2026-05-26 16:41:17",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+```
+                 </textarea>
+        </section>
+
+        <!--
+        ==========================================================================
+        03 BehindTheScenes
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Behind the scenes
+
+### What is going on behind the scenes ?
+
+![logo10](./assets/icons/left_right.start.svg)
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+**Reminder:**
+
+We have defined the component's API router interface as follows:
+
+```php
+$router->createCRUDRoutes(
+    'v1/secondhand/books',
+    'books',
+    $defaults
+);
+```
+
+* The first parameter `v1/secondhand/books` tells the route which can be <br>
+  used in the call to the web page. 'v1' is used as the version, <br>
+  'secondhand' is the component and 'books' is the table. <br>
+* The second parameter `books` is the controller file to be used.
+* The last `getDefaults` is the internal config parameter which defines  <br>
+  the actual component and how 'public' the API is reachable.
+<br>
+<br>
+
+The $defaults variable contains a config array and looks like <br>
+```php
+$defaults = ['component' => 'com_secondhand', 'public' => false];
+$defaults = ['component' => 'com_secondhand', 'public' => true];
+```
+
+If **'public' => true** is set, no X-Token is checked and everyone can<br>
+access this entry. This should only be set for tests
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+
+## Function createCRUDRoutes
+
+The joomla createCRUDRoutes function organizes the code as following:
+
+```php
+public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
+{
+   $getDefaults = array_merge(['public' => $publicGets], $defaults);
+
+   $routes = [
+     new Route(['GET'],    $baseName,          $controller . '.displayList', [], $getDefaults),
+     new Route(['GET'],    $baseName . '/:id', $controller . '.displayItem', ['id'=>'(\d+)'], $getDefaults),
+     new Route(['POST'],   $baseName,          $controller . '.add',         [], $defaults),
+     new Route(['PATCH'],  $baseName . '/:id', $controller . '.edit',        ['id' => '(\d+)'], $defaults),
+     new Route(['DELETE'], $baseName . '/:id', $controller . '.delete',      ['id' => '(\d+)'], $defaults),
+   ];
+
+   $this->addRoutes($routes);
+}
+```
+
+The Route function is given the command, the route ($baseName) <br>
+and the config ($defaults). The last parameter for the 'createCRUDRoutes' <br>
+function is a second entry for the public flag and is merged into the default config.
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+## Route endpoint parameter
+
+<span style="text-align: left;">
+
+Examples:<br>
+      - 'v1/secondhand/books/**2**'<br>
+      - 'v1/secondhand/books/**The hobbit**'<br>
+
+```php
+new Route(['GET'], 'v1/secondhand/books/:id',    'books.displayItem', ['id'   => '(\d+)'],      $defaults),
+new Route(['GET'], 'v1/secondhand/books/:title', 'books.displayItem', ['title'=>'([A-Z0-9 ]+'], $defaults),
+```
+A colon ':' indicator followed by 'name' will be part of the URL input and<br>
+can be fetched accordingly. The value is restricted/secured by by given <br>
+regular expression.
+
+The JSON parameters given in the request can be fetched by
+```php
+$srcFilename  = $this->input->json->getString('id');
+```
+or all at once
+```php
+$data = json_decode($this->input->json->getRaw(), true);
+```
+
+There may be more than one parameter (Not tested ToDo: try it with code :-( )
+```php
+new Route(['GET'], 'v1/secondhand/categories/:catId/images/:id',
+                'books.displayItem', ['catId' => '(\d+)', 'id' => '(\d+)'], $defaults),
+```
+
+</span>
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Addressing the controller function
+
+The middle part of the route definition tells about the 'controller.function' call:
+
+```php
+`new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [], $getDefaults)`
+```
+
+Here `'books.displayList'` tells the controller name is 'books' and <br>
+the function to be called is "displayList". This is the entry point in <br>
+the API part of the component. The code above will lead to <br>
+file BooksController.php.
+
+Any combination which leads to a valid php <br>
+file class and function may be used. <br>
+Example: `'myControllerClass.someFunction'`
+
+The controller can leave the handling of model <br>
+and view to the joomla API functions or define its own.
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+# Code workflows
+<br>
+
+## URL request to used model
+
+<img src="./assets/images/mermaid/PathRequestToModel.png" width="100%"/>
+
+The API call to the controller function like 'displayList' will use the code in the component api controller path if available.
+Otherwise, the default API controller steps in and handles the request.
+In similar way the joomla api controller calls the model creator which tries to find the component api model
+or takes the component administrator model with given name.
+
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+
+## joomla api controller sequence
+
+<img src="./assets/images/mermaid/ApiControllerSequence.png" width="100%"/>
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+## ???
+???                Minimum display list: controller to view
+<img src="./assets/images/mermaid/Controller2view.svg" />
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+
+        <section data-markdown>
+			<textarea data-template>
+
+## empty
+
+Still the component API part may contain its own <br>
+                controller, model and display functions
+
+? image ?
+? example ?
+
+ToDo: fill out, create image ... or delete ;-)
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty last
+
+
+			</textarea>
+        </section>
+
+        <!--
+        ==========================================================================
+        04 Extend
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+			<textarea data-template>
+# Extend J! API support with own code
+![logo10](./assets/icons/left_right.start.svg)
+
+If your request does not involve a standard table, <br>
+you must bypass the default behavior of the J! API function.
+* Patch results by overriding base function but calling parent
+* Handle parts/all on your own
+
+Some important examples are listed below. <br>
+
+Of course all functions in the Joomla library API files<br>
+**ApiController.php, ApiMVCFactory.php, JsonApiView.php** can be overridden.<br>
+For 'API' models the standard MVC models are applied. There is no special <br>
+Apimodel.php file for API.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+## Functions to override
+
+There are some empty parent functions provided <br>
+to be overwritten from derived classes
+
+### Function prepareItem (jsonApi.php)
+
+Example: The 'get' command to the component config variables has <br>no **id** but
+the standard view function does expect an id. <br>
+Solution: In component JsonApiView.php override function prepareItem($item)
+
+```php
+/**
+ * Prepare item before render.
+ * @param   object  $item  The model item
+ * @return  object
+ */
+protected function prepareItem($item)
+{
+    // Config resources have no id.
+    $item->id = '0';
+
+    return $item;
+}
+```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+### Function preprocessSaveData (...controller.php)
+
+Controller:  protected function preprocessSaveData(array $data): array
+
+```php
+/**
+ * Method to allow extended classes to manipulate the data to be saved for an extension.
+ * @param   array  $data  An array of input data.
+ * @return  array
+ */
+protected function preprocessSaveData(array $data): array
+{
+    foreach (FieldsHelper::getFields('com_contact.contact') as $field) {
+        if (isset($data[$field->name])) {
+            !isset($data['com_fields']) && $data['com_fields'] = [];
+
+            $data['com_fields'][$field->name] = $data[$field->name];
+            unset($data[$field->name]);
+        }
+    }
+
+    if ($this->input->getMethod() === 'PATCH') {
+        $data['rules'] = json_decode($data['rules'], true);
+    }
+
+    $data['client_id'] = $this->getClientIdFromInput();
+
+    return $data;
+}
+```
+
+This function is mainly used to handle fields, <br>
+apply special variables handling on patch/post commands <br>
+or patch data before save function is called
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Expand by defining own Api model.php
+
+Example route/code for retrieving the component version ID via the API.
+Besides defining the route, a bare controller only a model and
+a helper is added.
+
+Also the code to change the version is presentetd here
+
+Routes in webservice plugin
+```php
+//--- version in db manifest -----------------------------
+$router->addRoutes(
+[
+    // version, creationDate
+    new Route(['GET'],   'v1/secondhand/version', 'version.displayItem', [], $getDefaults),
+    new Route(['PATCH'], 'v1/secondhand/version', 'version.edit',        [], $defaults),
+]);
+```
+
+Controller minimum
+```php
+protected $contentType = 'version';
+protected $default_view = 'version';
+
+... edit() // see patch
+```
+New path structure with additional model and helper
+
+```php
+com_secondhand\api\src
+   ├─── Controller
+   │      ├─── BooksController.php
+   │      └─── VersionController.php
+   ├─── Helper
+   │      └─── ManifestHelper.php
+   ├─── Model
+   │      └─── VersionModel.php
+   └─── View
+          ├─── Books
+          │      └─── JsonapiView.php
+          └─── Version
+                 └─── JsonapiView.php
+```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### New File VersionModel.php
+
+! No additional code in controller for get. <br>
+The model supports getItem which is called by joomla API code
+
+```php
+public function getItem()
+{
+    $oManifest = ManifestHelper::getDbManifest($this->componentName);
+
+    $oVersion->version      = $oManifest['version'];
+    $oVersion->creationDate = $oManifest['creationDate'];
+
+    return $oVersion;
+}
+```
+
+The ManifestHelper.php reads/writes the versionId from/to the database.<br>
+
+Change in jsonApiView.php with additional function prepareItem ()
+
+```php
+class JsonapiView extends BaseApiView
+{
+    protected $fieldsToRenderItem = [
+        'version',
+        'creationDate',
+    ];
+
+    protected function prepareItem($item)
+    {
+        // version resources have no id.
+        $item->id = '0';
+
+        return $item;
+    }
+}
+```
+
+That is all that is required to create a 'getVersion' API code.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Code to write the versionID
+
+In Version controller the edit function interfaces directly with the parallel model
+
+The view (displayItem) is called afterwards with id=0
+as it expects an table id
+<br>
+<br>
+
+VersionController.php
+```php
+public function edit() : ApiController
+{
+    // Access check.
+    if (!$this->allowEdit())
+    {
+        throw new NotAllowed('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED', 403);
+    }
+
+    // all variables
+    $data = $this->input->json->getArray();
+
+    if (empty($data))
+    {
+        throw new InvalidParameterException(Text::_('No parameter given for patch config'), 403);
+    }
+
+    //--- Create the model -----------------------------------------------------------------
+
+    /** @var VersionModel $model */
+    $model = $this->getModel('Version', '', ['ignore_request' => true, 'state' => $this->modelState]);
+
+    $isSaved = $model->save($data);
+
+    return parent::displayItem('0');
+}
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Save code in VersionModel.php
+
+```php
+public function save(mixed $data = []) {
+    $isSaved = true;
+    if (!empty ($data)) {
+        $isChanged = false;
+        $isSaved = false;
+
+        try {
+            $oManifest = ManifestHelper::getDbManifest($this->componentName);
+            if (!empty($oManifest)) {
+                if (!empty ($data['version'])) {
+                    $version = $data['version'];
+                    if ($oManifest['version'] != $version)
+                    {
+                        $oManifest['version'] = $data['version'];
+                        $isChanged = true;
+                    }
+                }
+
+                if (!empty ($data['creationDate'])) {
+                    $creationDate = $data['creationDate'];
+                    if ($oManifest['creationDate'] != $creationDate) {
+                        $oManifest['creationDate'] = $creationDate;
+                        $isChanged = true;
+                    }
+                }
+
+                if ($isChanged) {
+                    $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
+                }
+            }
+        } catch (\Exception $e) { throw new \RuntimeException($e->getMessage()); }
+    }
+
+    return $isSaved;
+}
+```
+
+The ManifestHelper.php reads/writes the versionId from/to the database.<br>
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+# Summary for the requests without the corresponding table:
+
+## Get item/items:
+* Tell controller the name of content type and view
+* Overwrite GetItem/GetItems in model
+<br>
+<br>
+
+## post/patch item/items:
+* Overwrite edit in controller
+* Create save function in model and call it in edit function
+<br>
+<br>
+
+There may be similar aproaches working. But this is the gist of it.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Move model to administrator part
+
+The model code may be moved to the component administrator path <br>
+or a already present model there can be called.
+
+Copy previous example model and helper to<br><br>
+```php
+.../administrator/components/com_secondhand/src/Model/VersionModel.php
+```
+Change the namespace and you are ready to go ;-)
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## How to manipulate the state
+
+The state parameter will be handled in the controller.
+
+```php
+$this->modelState->set('data', $data);
+```
+## modelState collection
+
+Examples of modelState use collected in joomla component API projects. <br>
+Seen in standard controller functions `displayitems`, `displayList` ...
+
+
+```php
+public function displayList()
+{
+    $this->modelState->set('list.ordering',  'h.save_date');
+    $this->modelState->set('list.direction', 'DESC');
+
+    $this->modelState->set('filter.core',   ($requestBool === 'true') ? '1' : '0');
+    $this->modelState->set('filter.status', $this->input->get('status', $this->input->get->get('status', null, 'INT'), 'INT'));
+    $this->modelState->set('filter.type',   $this->input->get('type', $this->input->get->get('type', null, 'STRING'), 'STRING'));
+
+    $this->modelState->set('filter.author_id',   $filter->clean($apiFilterInfo['author'], 'INT'));
+    $this->modelState->set('filter.category_id', $filter->clean($apiFilterInfo['category'], 'INT'));
+    $this->modelState->set('filter.search',      $filter->clean($apiFilterInfo['search'], 'STRING'));
+    $this->modelState->set('filter.published',   $filter->clean($apiFilterInfo['state'], 'INT'));
+    $this->modelState->set('filter.featured',    $filter->clean($apiFilterInfo['featured'], 'INT'));
+
+    $this->modelState->set('type_alias', $this->getTypeAliasFromInput());
+    $this->modelState->set('type_id',    $this->getTypeIdFromInput());
+    $this->modelState->set('item_id',    $this->getTypeAliasFromInput() . '.' . $this->getItemIdFromInput());
+
+    return parent::displayList();
+}
+```
+
+Especially the filtering addresses the original table model in the <br>
+administrator section. The model can be used like it is intended for <br>
+the component (admin)
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+Following example assigns in the controller 'para' from  <br>URL input
+and data from the request json data to the state<br>
+<br>
+$param: param in url<br>
+$data:  data by json object<br>
+
+```php
+public function displayItem($param = '')
+{
+    //--- set state from given URL parameter  -----------------
+
+    $param = $this->input->get('para', '', 'string');
+    $this->modelState->set('param', $param);
+
+    // --- set state from given json data  ----------------
+
+    $data = $this->input->json->getArray();
+    if (!empty($data))
+    {
+        $this->modelState->set('data', $data);
+    }
+
+    //--- display parameters ----------------------------------
+
+    return parent::displayItem(0);
+}
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## functions to override from ApiController.php in controller
+
+```php
+public function displayItem($id = null)
+public function displayList()
+public function delete($id = null)
+public function add()
+public function edit()
+protected function save($recordKey = null)
+protected function allowEdit($data = [], $key = 'id')
+protected function allowAdd($data = [])
+protected function allowDelete(): bool
+protected function preprocessSaveData(array $data): array
+
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## functions to override from JsonApiView.php in view
+
+```php
+public function displayList(?array $items = null)
+public function displayItem($item = null)
+protected function prepareItem($item)
+protected function queryEncode($query)
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+check function ... in controller / model for special handling
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+# Real examples:
+
+                config<br>
+                ...<br>
+
+```php
+```
+
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+                Have a look at pe7er
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty last
+
+```php
+```
+
+
+			</textarea>
+        </section>
+
+        <!--
+        ==========================================================================
+        05 LinksAndGoodBye
+        ==========================================================================
+        -->
+
+        <section data-markdown>
+			<textarea data-template>
+
+# Links to "Web service API"
+
+* Peter Martin: **Using the Joomla Web Services API**<br>
+  <small>Very good overview:</small><br>
+  https://petermartin.nl/en/focus-on/joomla/web-services-api
+
+* **manual@joomla.org/.../API<br>
+  <small>Web Services API component code example</small><br>
+  https://manual.joomla.org/docs/web-services-api/json-response-format/
+
+* **J4.x:Adding an API to a Joomla Component**:<br>
+  <small>Plain top down showing the code needed for minimum API support in component, old J4 description</small><br>
+  https://docs.joomla.org/J4.x:Adding_an_API_to_a_Joomla_Component
+
+* Communicate with the Joomla 4.x Web Services API<br>
+  <small>External PHP scripts to access Web page per "Web service API"</small><br>
+  https://manual.joomla.org/docs/general-concepts/webservices
+
+* Marc DechÃ¨vre: **Playing with the Joomla Web Services (API)**<br>
+  <small>(in Joomla 4 or 5 or 6)</small><br>
+  https://slides.woluweb.be/api
+
+* ??? postman , bruno
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+
+
+
+
+    </div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../dist/plugin/zoom.js"></script>
+<script src="../dist/plugin/notes.js"></script>
+<script src="../dist/plugin/search.js"></script>
+<script src="../dist/plugin/markdown.js"></script>
+<script src="../dist/plugin/highlight.js"></script>
+<script>
+    // Also available as an ES module, see: https://revealjs.com/initialization/
+    // import Reveal from 'reveal.js';
+    // import RevealZoom from 'reveal.js/plugin/zoom';
+    // import RevealNotes from 'reveal.js/plugin/notes';
+    // import RevealSearch from 'reveal.js/plugin/search';
+    // import RevealMarkdown from 'reveal.js/plugin/markdown';
+    // import RevealHighlight from 'reveal.js/plugin/highlight';
+
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+//				disableLayout: true,
+        slideNumber: true,
+
+        width: 960,
+        height: 540,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight],
+    });
+</script>
+</body>
+</html>
