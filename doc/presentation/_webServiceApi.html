@@ -731,7 +731,7 @@ protected $fieldsToRenderItem = ['id', 'title', 'alias', 'isbn', 'description', 
 
 <img src="./assets/icons/left_right.start.svg" width="12%" />
 
-<h2>This is it !</h2>
+<h2>That's it !</h2>
 
 The plugin and two wo files enable <br>CRUD access over the API of joomla. <br>
                 <ul>
@@ -801,6 +801,7 @@ how does the response look like
 
             <pre style="font-size: 24px; width: 100%">
                 <code data-trim data-noescape  class="language-http">
+            ###
             GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
             Accept: application/vnd.api+json
             Content-Type: application/json
@@ -839,6 +840,7 @@ curl -s --show-error
 
             <pre style="font-size: 24px; width: 100%">
                 <code data-trim data-noescape  class="language-http">
+###
 GET http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
 Accept: application/vnd.api+json
 Content-Type: application/json
@@ -1014,7 +1016,6 @@ curl -s --show-error
   -H "Content-Type: application/json" -H "X-Joomla-Token:  ..."
 ```
 
-
                 </code>
             </pre>
 
@@ -1031,9 +1032,9 @@ X-Joomla-Token:
             </pre>
 
         <strong>Response:</strong> None
+
+            </textarea>
         </section>
-
-
 
 <!-- ======================================================================= -->
 
@@ -1042,9 +1043,106 @@ X-Joomla-Token:
 
 ## API routes responses (json)
 
-The results are JSON style and contain the links to actual call and next, previous and last page
+The results are in JSON style string. They contain the sections
 
-#### GET book
+* links
+* data
+* meta
+
+```json [2,3,6,12,13,14]
+{
+  "links": {
+    "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
+    ...
+  },
+  "data": [ {
+      "type": "books",
+      "id": "1",
+      "attributes": { ... }
+     },
+     { ... }
+   ],
+   "meta": {
+        "total-pages": 4
+    }
+}
+```
+
+            </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Links / meta sections of API response
+
+* links
+   * self
+   * first
+   * previous
+   * next
+   * last
+* meta
+   * total-pages
+
+The links and the "meta:total-pages" sections support <br>
+easy pagination handling by direct use of the links
+
+            </textarea>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>Pagination request</h2>
+
+For pagination add
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+?page[offset]=90&page[limit]=30
+                </code>
+            </pre>
+
+which should be written like
+
+            <pre style="font-size: 24px; width: 100%">
+                <code data-trim data-noescape  class="language-http">
+?page%5Boffset%5D=30&page%5Blimit%5D=30
+            </code>
+            </pre>
+
+        </section>
+
+        <section style="text-align: left;">
+
+            <h2>Demo excerpt from Response </h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json">
+{
+    "links": {
+        "self":"http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                ?page%5Boffset%5D=30&page%5Blimit%5D=30",
+        "first": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                  ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "previous": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                     ?page%5Boffset%5D=0&page%5Blimit%5D=30",
+        "next": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=60&page%5Blimit%5D=30",
+        "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
+                 ?page%5Boffset%5D=90&page%5Blimit%5D=30"
+    },
+    "meta": {
+        "total-pages": 4
+    }
+}
+                </code>
+            </pre>
+      </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+? get books
+        ### GET book
 
 ```
 {
