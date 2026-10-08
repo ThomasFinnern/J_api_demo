@@ -439,7 +439,8 @@ public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
 ## createCRUDRoutes
 ### Internal routes created
 
-<img src="./assets/images/mermaid/ResultUrlRequest_1.png" />
+<img src="./assets/images/mermaid/PathUrlRequest.png" />
+<!--img src="./assets/images/mermaid/PathUrlRequest.svg" /-->
 
 function createCRUDRoutes has defined all CRUD routes internally
 
@@ -1482,12 +1483,15 @@ and view to the joomla API functions or define its own.
             <textarea data-template>
 
 # Code workflows
-<br>
 
 ## URL request to used model
 
-<img src="./assets/images/mermaid/PathRequestToModel.png" width="100%"/>
+<img src="./assets/images/mermaid/PathRequestToModel.svg" width="100%"/>
 
+1) Controller function 'displayList' handled by component or joomla controller
+2) Used model by API or administrator folder of component
+
+Note:
 The API call to the controller function like 'displayList' will use the code in the component api controller path if available.
 Otherwise, the default API controller steps in and handles the request.
 In similar way the joomla api controller calls the model creator which tries to find the component api model
@@ -1500,9 +1504,10 @@ or takes the component administrator model with given name.
             <textarea data-template>
 
 
-## joomla api controller sequence
+## Joomla api controller sequence
 
-<img src="./assets/images/mermaid/ApiControllerSequence.png" width="100%"/>
+<!--img src="./assets/images/mermaid/ApiControllerSequence.png" width="100%"/-->
+<img src="./assets/images/mermaid/ApiControllerSequence.svg" width="100%"/>
 
 			</textarea>
         </section>
@@ -1512,60 +1517,6 @@ or takes the component administrator model with given name.
 ## ???
 ???                Minimum display list: controller to view
 <img src="./assets/images/mermaid/Controller2view.svg" />
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-
-        <section data-markdown>
-			<textarea data-template>
-
-## empty
-
-Still the component API part may contain its own <br>
-                controller, model and display functions
-
-? image ?
-? example ?
-
-ToDo: fill out, create image ... or delete ;-)
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty last
-
 
 			</textarea>
         </section>
@@ -1581,17 +1532,25 @@ ToDo: fill out, create image ... or delete ;-)
 # Extend J! API support with own code
 ![logo10](./assets/icons/left_right.start.svg)
 
-If your request does not involve a standard table, <br>
-you must bypass the default behavior of the J! API function.
+### ==> no standard table, <br>bypass the default behavior of the J! API
 * Patch results by overriding base function but calling parent
 * Handle parts/all on your own
 
-Some important examples are listed below. <br>
+			</textarea>
+        </section>
 
-Of course all functions in the Joomla library API files<br>
-**ApiController.php, ApiMVCFactory.php, JsonApiView.php** can be overridden.<br>
-For 'API' models the standard MVC models are applied. There is no special <br>
-Apimodel.php file for API.
+        <section data-markdown>
+			<textarea data-template>
+
+        Most Functions in the Joomla library API files<br>
+* **ApiController.php**
+* **ApiMVCFactory.php**
+* **JsonApiView.php**
+
+can be overridden.<br>
+
+For 'API' models the standard MVC (administrator) models <br> are applied.
+There is no special Apimodel.php file for API.
 
 			</textarea>
         </section>
@@ -1670,13 +1629,12 @@ or patch data before save function is called
 
         <section data-markdown>
 			<textarea data-template>
-### Expand by defining own Api model.php
+## Expand by defining own Api model.php (part 1)
 
-Example route/code for retrieving the component version ID via the API.
-Besides defining the route, a bare controller only a model and
-a helper is added.
+### "GET" component version ID
 
-Also the code to change the version is presentetd here
+Example route/code for retrieving the component version ID via the API.<br>
+In addition to defining the route, only a controller, a model, and a helper are added..
 
 Routes in webservice plugin
 ```php
@@ -1696,6 +1654,14 @@ protected $default_view = 'version';
 
 ... edit() // see patch
 ```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+### Expand by defining own Api model.php (part 2)
+
 New path structure with additional model and helper
 
 ```php
@@ -1720,7 +1686,7 @@ com_secondhand\api\src
 			<textarea data-template>
 ### New File VersionModel.php
 
-! No additional code in controller for get. <br>
+! No additional code in controller for **GET**. <br>
 The model supports getItem which is called by joomla API code
 
 ```php
@@ -1739,7 +1705,7 @@ The ManifestHelper.php reads/writes the versionId from/to the database.<br>
 
 Change in jsonApiView.php with additional function prepareItem ()
 
-```php
+```php [|10]
 class JsonapiView extends BaseApiView
 {
     protected $fieldsToRenderItem = [
@@ -1749,8 +1715,7 @@ class JsonapiView extends BaseApiView
 
     protected function prepareItem($item)
     {
-        // version resources have no id.
-        $item->id = '0';
+        $item->id = '0'; // version resources have no id.
 
         return $item;
     }
@@ -1764,7 +1729,7 @@ That is all that is required to create a 'getVersion' API code.
 
         <section data-markdown>
 			<textarea data-template>
-### Code to write the versionID
+### Code to write the versionID (patch)
 
 In Version controller the edit function interfaces directly with the parallel model
 
@@ -1853,7 +1818,9 @@ The ManifestHelper.php reads/writes the versionId from/to the database.<br>
 
         <section data-markdown>
 			<textarea data-template>
-# Summary for the requests without the corresponding table:
+# Summary
+
+for the requests without the corresponding table:
 
 ## Get item/items:
 * Tell controller the name of content type and view
@@ -1890,13 +1857,20 @@ Change the namespace and you are ready to go ;-)
 
         <section data-markdown>
 			<textarea data-template>
-## How to manipulate the state
+## How to manipulate the 'model' state
 
-The state parameter will be handled in the controller.
+The state parameter will be handled in the controller.<br>
+
+Assign in controller for admin. model
 
 ```php
 $this->modelState->set('data', $data);
 ```
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
 ## modelState collection
 
 Examples of modelState use collected in joomla component API projects. <br>
@@ -2109,7 +2083,7 @@ check function ... in controller / model for special handling
   <small>Very good overview:</small><br>
   https://petermartin.nl/en/focus-on/joomla/web-services-api
 
-* **manual@joomla.org/.../API<br>
+* **manual@joomla.org/.../API**<br>
   <small>Web Services API component code example</small><br>
   https://manual.joomla.org/docs/web-services-api/json-response-format/
 
@@ -2121,7 +2095,7 @@ check function ... in controller / model for special handling
   <small>External PHP scripts to access Web page per "Web service API"</small><br>
   https://manual.joomla.org/docs/general-concepts/webservices
 
-* Marc DechÃ¨vre: **Playing with the Joomla Web Services (API)**<br>
+* Marc Dechèvre: **Playing with the Joomla Web Services (API)**<br>
   <small>(in Joomla 4 or 5 or 6)</small><br>
   https://slides.woluweb.be/api
 
@@ -2150,8 +2124,43 @@ check function ... in controller / model for special handling
 			</textarea>
         </section>
 
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty last
 
 
+			</textarea>
+        </section>
 
 
     </div>
