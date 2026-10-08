@@ -312,7 +312,7 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
 * plg_webservices_secondhand
 * com_secondhand
 
-This example is valid only if the API is intended to address component tables.
+This example is valid only if the API is intended <br>for accessing data in database tables.
 
 			</textarea>
         </section>
@@ -824,6 +824,60 @@ how does the response look like
         </section>
 
         <section style="text-align: left;">
+
+            <h2>Response "GET v1/secondhand/books"</h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json">
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": [
+        {
+            "type": "books",
+            "id": "2",
+            "attributes": {
+                "id": 2,
+                "title": "Why We Sleep",
+                "alias": "why-we-sleep",
+                "isbn": "da1b2048-cec2-4127-950e-35bc4b3ee181",
+                "description": "Sleep is one of the most important aspects ...",
+                "published": 1,
+                "created": "2026-05-27 09:53:06",
+                "created_by": 776,
+                "modified": "2026-05-27 09:53:06",
+                "modified_by": 776,
+                "note": ""
+            }
+        },
+        {
+            "type": "books",
+            "id": "3",
+            "attributes": {
+                "id": 3,
+                "title": "My book",
+                "alias": "my-book",
+                "isbn": "12-3456-78-90",
+                "description": "The next book i write",
+                "published": 1,
+                "created": "2026-06-23 11:40:16",
+                "created_by": 776,
+                "modified": "2026-06-23 11:40:16",
+                "modified_by": 776,
+                "note": ""
+            }
+        }
+    ],
+    "meta": {
+        "total-pages": 1
+    }
+}
+                </code>
+            </pre>
+        </section>
+
+        <section style="text-align: left;">
             <h2>GET v1/secondhand/books/:id</h2>
 
             <strong>Example CURL:</strong>
@@ -863,6 +917,38 @@ X-Joomla-Token:  ...
         </section>
 
         <section style="text-align: left;">
+
+            <h2>Response "GET v1/secondhand/books/1"</h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json">
+{
+  "links": {
+    "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
+  },
+  "data": {
+    "type": "books",
+    "id": "1",
+    "attributes": {
+      "id": 1,
+      "title": "test 01",
+      "alias": "test-01",
+      "isbn": "1234567890",
+      "description": "",
+      "published": 1,
+      "created": "2026-05-24 17:23:19",
+      "created_by": 775,
+      "modified": "2026-05-24 17:42:09",
+      "modified_by": 775,
+      "note": ""
+    }
+  }
+}
+                </code>
+            </pre>
+        </section>
+
+        <section style="text-align: left;">
             <h2>POST v1/secondhand/books (part 1 / curl)</h2>
 
             <!--strong>Parameters:</strong>
@@ -890,7 +976,7 @@ curl -s --show-error
    -d "{
         \"titl\":\"My book\",
         \"isbn\":\"12-3456-78-90\",
-        \"$author\":"john breeze\",
+        \"$author\":\"john breeze\",
         \"description\":\"The next book i write\",
         \"published\":1
     }"
@@ -933,6 +1019,38 @@ X-Joomla-Token:
 | `200`         | `application/json; charset=UTF-8` | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
 
                  </textarea>
+        </section>
+
+        <section style="text-align: left;">
+
+            <h2>Response "POST v1/secondhand/books"</h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json">
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
+    },
+    "data": {
+        "type": "books",
+        "id": "3",
+        "attributes": {
+            "id": 3,
+            "title": "My book",
+            "alias": "my-book",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": 1,
+            "created": "2026-06-23 11:40:16",
+            "created_by": 776,
+            "modified": "2026-06-23 11:40:16",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+                  </code>
+            </pre>
         </section>
 
         <section style="text-align: left;">
@@ -1002,6 +1120,38 @@ X-Joomla-Token:
         </section>
 
         <section style="text-align: left;">
+
+            <h2>Response "PATCH v1/secondhand/books"</h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json">
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
+    },
+    "data": {
+        "type": "books",
+        "id": "^3",
+        "attributes": {
+            "id": 3,
+            "title": "My book",
+            "alias": "my-book",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": 1,
+            "created": "2026-06-23 11:40:16",
+            "created_by": 776,
+            "modified": "2026-06-23 11:40:16",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+                  </code>
+            </pre>
+        </section>
+
+        <section style="text-align: left;">
             <h2>DELETE secondhand/books/:id</h2>
 
 Reminder: Delete needs trash state before. <br>
@@ -1032,11 +1182,45 @@ X-Joomla-Token:
             </pre>
 
         <strong>Response:</strong> None
-
             </textarea>
         </section>
 
-<!-- ======================================================================= -->
+        <section style="text-align: left;">
+
+            <h2>Response after trash ("published": -2)</h2>
+
+            <pre style="font-size: 20px; width: 100%">
+                <code data-trim data-noescape  class="language-json"  data-line-numbers="14">
+{
+    "links": {
+        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/2"
+    },
+    "data": {
+        "type": "books",
+        "id": "2",
+        "attributes": {
+            "id": 4,
+            "title": "My book",
+            "alias": "my-book-7",
+            "isbn": "12-3456-78-90",
+            "description": "The next book i write",
+            "published": -2,
+            "created": "2026-05-26 16:25:09",
+            "created_by": 776,
+            "modified": "2026-05-26 16:41:17",
+            "modified_by": 776,
+            "note": ""
+        }
+    }
+}
+                </code>
+            </pre>
+
+R
+
+        </section>
+
+        <!-- ======================================================================= -->
 
         <section data-markdown>
             <textarea data-template>
@@ -1113,7 +1297,7 @@ which should be written like
 
         <section style="text-align: left;">
 
-            <h2>Demo excerpt from Response </h2>
+            <h2>Links/meta excerpt from Response </h2>
 
             <pre style="font-size: 20px; width: 100%">
                 <code data-trim data-noescape  class="language-json">
@@ -1130,6 +1314,8 @@ which should be written like
         "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
                  ?page%5Boffset%5D=90&page%5Blimit%5D=30"
     },
+    "data": [ ... ],
+
     "meta": {
         "total-pages": 4
     }
@@ -1137,160 +1323,6 @@ which should be written like
                 </code>
             </pre>
       </section>
-
-        <section data-markdown>
-            <textarea data-template>
-
-? get books
-        ### GET book
-
-```
-{
-  "links": {
-    "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/1"
-  },
-  "data": {
-    "type": "books",
-    "id": "1",
-    "attributes": {
-      "id": 1,
-      "title": "test 01",
-      "alias": "test-01",
-      "isbn": "1234567890",
-      "description": "",
-      "published": 1,
-      "created": "2026-05-24 17:23:19",
-      "created_by": 775,
-      "modified": "2026-05-24 17:42:09",
-      "modified_by": 775,
-      "note": ""
-    }
-  }
-}
-```
-
-                 </textarea>
-        </section>
-
-        <section data-markdown>
-            <textarea data-template>
-
-#### GET books
-
-```json
-{
-    "links": {
-        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
-    },
-    "data": [
-        {
-            "type": "books",
-            "id": "2",
-            "attributes": {
-                "id": 2,
-                "title": "Why We Sleep",
-                "alias": "why-we-sleep",
-                "isbn": "da1b2048-cec2-4127-950e-35bc4b3ee181",
-                "description": "Sleep is one of the most important aspects of our life, health and longevity and yet it is increasingly neglected in twenty-first-century society, with devastating consequences- every major disease in the developed world - Alzheimer - s, cancer, obesity, diabetes - has very strong links to deficient sleep. In this book, the first of its kind written by a scientific expert, Professor Matthew Walker explores twenty years of cutting-edge research to solve the mystery of why sleep matters. Looking at creatures from across the animal kingdom as well as major human studies, Why We Sleep delves in to everything from what really happens in our brains and bodies when we dream to how caffeine and alcohol affect sleep and why our sleep patterns change across a lifetime, transforming our appreciation of the extraordinary phenomenon that safeguards our existence.",
-                "published": 1,
-                "created": "2026-05-27 09:53:06",
-                "created_by": 776,
-                "modified": "2026-05-27 09:53:06",
-                "modified_by": 776,
-                "note": ""
-            }
-        },
-        {
-            "type": "books",
-            "id": "3",
-            "attributes": {
-                "id": 3,
-                "title": "My book",
-                "alias": "my-book",
-                "isbn": "12-3456-78-90",
-                "description": "The next book i write",
-                "published": 1,
-                "created": "2026-06-23 11:40:16",
-                "created_by": 776,
-                "modified": "2026-06-23 11:40:16",
-                "modified_by": 776,
-                "note": ""
-            }
-        }
-    ],
-    "meta": {
-        "total-pages": 1
-    }
-}
-```
-
-                 </textarea>
-        </section>
-
-        <section data-markdown>
-            <textarea data-template>
-
-#### Post book
-
-```json
-{
-    "links": {
-        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books"
-    },
-    "data": {
-        "type": "books",
-        "id": "3",
-        "attributes": {
-            "id": 3,
-            "title": "My book",
-            "alias": "my-book",
-            "isbn": "12-3456-78-90",
-            "description": "The next book i write",
-            "published": 1,
-            "created": "2026-06-23 11:40:16",
-            "created_by": 776,
-            "modified": "2026-06-23 11:40:16",
-            "modified_by": 776,
-            "note": ""
-        }
-    }
-}
-```
-
-                 </textarea>
-        </section>
-
-        <section data-markdown>
-            <textarea data-template>
-
-#### Patch book: after trash ("published": -2)
-
-```json [14]
-{
-    "links": {
-        "self": "http://127.0.0.1/api_6x/api/index.php/v1/secondhand/books/4"
-    },
-    "data": {
-        "type": "books",
-        "id": "4",
-        "attributes": {
-            "id": 4,
-            "title": "My book",
-            "alias": "my-book-7",
-            "isbn": "12-3456-78-90",
-            "description": "The next book i write",
-            "published": -2,
-            "created": "2026-05-26 16:25:09",
-            "created_by": 776,
-            "modified": "2026-05-26 16:41:17",
-            "modified_by": 776,
-            "note": ""
-        }
-    }
-}
-```
-                 </textarea>
-        </section>
 
         <!--
         ==========================================================================
@@ -1301,9 +1333,7 @@ which should be written like
         <section data-markdown>
             <textarea data-template>
 
-## Behind the scenes
-
-### What is going on behind the scenes ?
+## What happens behind the scenes ?
 
 ![logo10](./assets/icons/left_right.start.svg)
 
@@ -1315,7 +1345,7 @@ which should be written like
 
 **Reminder:**
 
-We have defined the component's API router interface as follows:
+We have defined the component's API router interface as following:
 
 ```php
 $router->createCRUDRoutes(
@@ -1325,23 +1355,34 @@ $router->createCRUDRoutes(
 );
 ```
 
-* The first parameter `v1/secondhand/books` tells the route which can be <br>
-  used in the call to the web page. 'v1' is used as the version, <br>
-  'secondhand' is the component and 'books' is the table. <br>
-* The second parameter `books` is the controller file to be used.
-* The last `getDefaults` is the internal config parameter which defines  <br>
-  the actual component and how 'public' the API is reachable.
+* `v1/secondhand/books` tells the route
+  * "`v1`" is used as the version
+  * "`secondhand`" is the component
+  * "`books`" is the table. <br>
+
+* Parameter "`books`" tells the  controller file to be used.
+
+* Parameter "`$defaults`" contains a config parameter array
 <br>
-<br>
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Parameter "$defaults"
 
 The $defaults variable contains a config array and looks like <br>
 ```php
 $defaults = ['component' => 'com_secondhand', 'public' => false];
-$defaults = ['component' => 'com_secondhand', 'public' => true];
 ```
 
 If **'public' => true** is set, no X-Token is checked and everyone can<br>
 access this entry. This should only be set for tests
+
+```php
+$defaults = ['component' => 'com_secondhand', 'public' => true];
+```
 
                  </textarea>
         </section>
@@ -1354,15 +1395,17 @@ access this entry. This should only be set for tests
 
 The joomla createCRUDRoutes function organizes the code as following:
 
+
+
 ```php
 public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
 {
    $getDefaults = array_merge(['public' => $publicGets], $defaults);
 
    $routes = [
-     new Route(['GET'],    $baseName,          $controller . '.displayList', [], $getDefaults),
-     new Route(['GET'],    $baseName . '/:id', $controller . '.displayItem', ['id'=>'(\d+)'], $getDefaults),
-     new Route(['POST'],   $baseName,          $controller . '.add',         [], $defaults),
+     new Route(['GET'],    $baseName,          $controller . '.displayList', [               ], $defaults),
+     new Route(['GET'],    $baseName . '/:id', $controller . '.displayItem', ['id' => '(\d+)'], $defaults),
+     new Route(['POST'],   $baseName,          $controller . '.add',         [               ], $defaults),
      new Route(['PATCH'],  $baseName . '/:id', $controller . '.edit',        ['id' => '(\d+)'], $defaults),
      new Route(['DELETE'], $baseName . '/:id', $controller . '.delete',      ['id' => '(\d+)'], $defaults),
    ];
@@ -1371,12 +1414,13 @@ public function createCRUDRoutes($baseName, $controller, $defaults = [], $public
 }
 ```
 
-The Route function is given the command, the route ($baseName) <br>
-and the config ($defaults). The last parameter for the 'createCRUDRoutes' <br>
-function is a second entry for the public flag and is merged into the default config.
-
+* $baseName: Endpoint (v1/secondhand/books/1)
+* controller functions provided: <br>"`displayList`", "`displayItem`", "`add`", "`edit`", "`delete`"
+* regEx the variable values (['id' => '(\d+)'])
                  </textarea>
         </section>
+
+        <!-- ???????????????????????????????????????????????????????????????????????????? -->
 
         <section data-markdown>
             <textarea data-template>
@@ -1404,14 +1448,6 @@ or all at once
 ```php
 $data = json_decode($this->input->json->getRaw(), true);
 ```
-
-There may be more than one parameter (Not tested ToDo: try it with code :-( )
-```php
-new Route(['GET'], 'v1/secondhand/categories/:catId/images/:id',
-                'books.displayItem', ['catId' => '(\d+)', 'id' => '(\d+)'], $defaults),
-```
-
-</span>
 
                  </textarea>
         </section>
