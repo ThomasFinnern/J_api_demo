@@ -1,0 +1,2428 @@
+{
+    "shapeIds": [
+        "qJ3bDpBBCGE",
+        "ufqBWE5hanO",
+        "WpJG6W0BFxT",
+        "gWdqpmY0bT9",
+        "F90vE8GmT32",
+        "IzNuAYqdpEE",
+        "txsEo2v4Pxd",
+        "enPN2HgUfjk",
+        "8HUHWybjPBH",
+        "cchqjlCKnrX",
+        "9sUu5pth9Aq",
+        "NYTLxoxi17i",
+        "03dVoWFGyyz",
+        "93gsDmShdfl",
+        "IKMIxEXKLks",
+        "97q4tPNsHoo",
+        "VIsrY2qUhsD",
+        "EmcMSF9CjNj"
+    ],
+    "selected": false,
+    "copyEdata": true,
+    "shapesToCopy": [
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "type": "basic",
+                "version": 4,
+                "enableTiptap": true,
+                "autoResizeWidth": false,
+                "autoResizeHeight": false,
+                "name": "Rectangle",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "width": 119.98750305175781,
+                        "height": 18.399999618530273,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "xType": "relative",
+                        "yType": "relative",
+                        "alignX": 0,
+                        "alignY": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Handle Request ()",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "rendering": "carota",
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "minWidth": 54.43,
+                        "wrapWidth": 139.99536731834243
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "id": "qJ3bDpBBCGE",
+                "x": 915.000000187816,
+                "y": 1045.2380750079085,
+                "userSetWidth": 139.99536731834246,
+                "userSetHeight": 60,
+                "scaleX": 0.87497104573964024,
+                "scaleY": 0.60000000000000009,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "cchqjlCKnrX",
+                "endpoints": {
+                    "from": {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707669306
+                },
+                "zIndex": 4,
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "URL Request",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "rgb(0, 0, 0)",
+                    "size": 10,
+                    "font": "noto_regular"
+                },
+                "connectorIds": [
+                    "03dVoWFGyyz",
+                    "93gsDmShdfl",
+                    "IKMIxEXKLks"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708362189
+                    }
+                ],
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "ports": [
+                ],
+                "premium": false,
+                "switchHistory": {
+                    "creately_basic_rectangle_4": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 140,
+                                "height": 18.399999618530273,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "color": "#4b4b4b",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "align": "center",
+                                        "script": "normal",
+                                        "text": "\n"
+                                    }
+                                ],
+                                "html": "<p></p>",
+                                "rendering": "carota"
+                            }
+                        },
+                        "width": 79.2000161041525,
+                        "height": 79.2000161041525,
+                        "scaleX": 0.49500010065095312,
+                        "scaleY": 0.79200016104152493,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                            "pbnadF9Wirq": "03dVoWFGyyz"
+                        },
+                        "images": {
+                        }
+                    },
+                    "creately_basic_roundedrectangle_6": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 140,
+                                "height": 18.399999618530273,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "color": "#4b4b4b",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "align": "center",
+                                        "script": "normal",
+                                        "text": "\n"
+                                    }
+                                ],
+                                "html": "<p></p>",
+                                "rendering": "carota"
+                            }
+                        },
+                        "width": 160,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                            "pbnadF9Wirq": "03dVoWFGyyz"
+                        },
+                        "images": {
+                        }
+                    }
+                }
+            },
+            "bounds": {
+                "top": 1045.2380750079085,
+                "left": 915.000000187816,
+                "width": 139.99536731834235,
+                "height": 60
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "ufqBWE5hanO",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 915.000000187816,
+                "y": 990,
+                "premium": false,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786708017933
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 14,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708421282
+                    }
+                ],
+                "scaleX": 1.0768879632033899,
+                "texts": {
+                    "main": {
+                        "rendering": "carota",
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Joomla API Controller",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "_alignX": -1,
+                        "height": 36.799999237060547,
+                        "width": 119.98750305175781,
+                        "handlebars": "{}",
+                        "minWidth": 75.47,
+                        "wrapWidth": 139.99543521644068
+                    }
+                },
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "scaleY": 1.5,
+                "userSetHeight": 60,
+                "userSetWidth": 139.99543521644068
+            },
+            "bounds": {
+                "top": 990,
+                "left": 915.000000187816,
+                "width": 139.99543521644057,
+                "height": 60
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "WpJG6W0BFxT",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 890,
+                "y": 980,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(48, 99, 57); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#306339",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 0,
+                        "height": 0,
+                        "handlebars": "{}",
+                        "wrapWidth": 185.0000001358834,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -2,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 3,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#306339"
+                },
+                "style": {
+                    "lineColor": "#5EC269",
+                    "textColor": "#306339",
+                    "themeIndex": 3,
+                    "themeId": "base",
+                    "fillColor": "#F2FDF5"
+                },
+                "scaleX": 1.1562500008492713,
+                "autoResizeWidth": false,
+                "userSetWidth": 185.00000013588328,
+                "scaleY": 1.3999999978580515,
+                "autoResizeHeight": false,
+                "userSetHeight": 139.99999978580513,
+                "editedBy": [
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 980,
+                "left": 890,
+                "width": 185.00000013588351,
+                "height": 139.99999978580513
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 160,
+                        "height": 100
+                    }
+                },
+                "scaleX": 0.81246555208206284,
+                "scaleY": 0.49999999667580158,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "gWdqpmY0bT9",
+                "x": 1150,
+                "y": 970.0000000000166,
+                "userSetWidth": 129.99448833313,
+                "userSetHeight": 49.999999667580141,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "\n",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "#4b4b4b",
+                    "size": 10,
+                    "font": "noto_regular",
+                    "script": "normal"
+                },
+                "data": {
+                },
+                "createdFrom": "qJ3bDpBBCGE",
+                "endpoints": {
+                    "from": {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707719332
+                },
+                "type": "basic",
+                "zIndex": 6,
+                "connectorIds": [
+                    "93gsDmShdfl",
+                    "97q4tPNsHoo"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708366167
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "width": 109.98750305175781,
+                        "height": 18.399999618530273,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "xType": "relative",
+                        "yType": "relative",
+                        "alignX": 0,
+                        "alignY": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Functions ()",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "rendering": "carota",
+                        "minWidth": 0.01,
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "wrapWidth": 129.99448833313005
+                    }
+                },
+                "ports": [
+                ],
+                "premium": false,
+                "switchHistory": {
+                    "creately_basic_rectangle_4": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 0.01,
+                                "height": 37.6,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "color": "#4b4b4b",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "align": "center",
+                                        "script": "normal",
+                                        "text": "\n"
+                                    }
+                                ],
+                                "html": "<p></p>",
+                                "rendering": "carota",
+                                "minWidth": 0.01
+                            }
+                        },
+                        "width": 79.2000161041525,
+                        "height": 79.2000161041525,
+                        "scaleX": 0.49500010065095312,
+                        "scaleY": 0.79200016104152493,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                            "pbnadF9Wirq": "93gsDmShdfl"
+                        },
+                        "images": {
+                        }
+                    }
+                }
+            },
+            "bounds": {
+                "top": 970.0000000000166,
+                "left": 1150,
+                "width": 129.99448833313,
+                "height": 49.999999667580141
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "F90vE8GmT32",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 1150,
+                "y": 920.0000000000166,
+                "premium": false,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786708017933
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 12,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708432207
+                    }
+                ],
+                "scaleX": 0.92307723590460977,
+                "texts": {
+                    "main": {
+                        "rendering": "carota",
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Component ",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "API ",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(75, 75, 75)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            },
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "model",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "_alignX": -1,
+                        "height": 36.799999237060547,
+                        "width": 100,
+                        "handlebars": "{}",
+                        "minWidth": 75.47,
+                        "wrapWidth": 120.00004066759927
+                    }
+                },
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "scaleY": 1.5,
+                "userSetHeight": 60,
+                "userSetWidth": 120.00004066759925
+            },
+            "bounds": {
+                "top": 920.0000000000166,
+                "left": 1150,
+                "width": 120.00004066759925,
+                "height": 60
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "IzNuAYqdpEE",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 1130,
+                "y": 910.00002,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(45, 93, 115); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#4b4b4b",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            },
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#4b4b4b",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 149.8125,
+                        "height": 36.799999237060547,
+                        "handlebars": "{}",
+                        "wrapWidth": 169.81595075497208,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -1,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 6,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#2D5D73"
+                },
+                "style": {
+                    "lineColor": "#52B3D0",
+                    "textColor": "#2D5D73",
+                    "themeIndex": 6,
+                    "themeId": "base",
+                    "fillColor": "#EFFDFF"
+                },
+                "scaleX": 1.0613496922185754,
+                "autoResizeWidth": false,
+                "userSetWidth": 169.81595075497216,
+                "scaleY": 1.3999994486162,
+                "autoResizeHeight": false,
+                "userSetHeight": 139.99994486161995,
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786709113698
+                    }
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 910.00002,
+                "left": 1130,
+                "width": 169.81595075497216,
+                "height": 139.99994486161995
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "version": 4,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "basem",
+                    "linePreset": "normal",
+                    "fillColor": "white",
+                    "fillStyle": "solid",
+                    "fillGradient": {
+                        "colors": [
+                            "#46B4B9",
+                            "#52C36C"
+                        ],
+                        "ratios": [
+                            0,
+                            1
+                        ],
+                        "x0": 0.5,
+                        "y0": 0,
+                        "x1": 0.5,
+                        "y1": 0.9
+                    },
+                    "fillAlpha": 1,
+                    "fillPreset": "flat"
+                },
+                "typeStyle": {
+                    "bounds": {
+                        "width": 160,
+                        "height": 100
+                    }
+                },
+                "scaleX": 0.81250066604603544,
+                "scaleY": 0.49959982176032941,
+                "angle": 0,
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "shapeContext": "*",
+                "gluepoints": {
+                    "pbnadF9Wirq": {
+                        "id": "pbnadF9Wirq",
+                        "x": 0,
+                        "y": 0.5
+                    },
+                    "P9d4172UDLb": {
+                        "id": "P9d4172UDLb",
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "0FUuJlNPewl": {
+                        "id": "0FUuJlNPewl",
+                        "x": 0.5,
+                        "y": 0
+                    },
+                    "BRZfYLOPiRa": {
+                        "id": "BRZfYLOPiRa",
+                        "x": 0.5,
+                        "y": 1
+                    }
+                },
+                "id": "txsEo2v4Pxd",
+                "x": 1350,
+                "y": 1049.9972038513861,
+                "userSetWidth": 130.00010656736572,
+                "userSetHeight": 49.959982176033009,
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "styleDefinitions": {
+                },
+                "defaultTextFormat": {
+                    "link": null,
+                    "underline": false,
+                    "text": "\n",
+                    "bold": false,
+                    "italic": false,
+                    "strikeout": false,
+                    "color": "#4b4b4b",
+                    "size": 10,
+                    "font": "noto_regular",
+                    "script": "normal"
+                },
+                "data": {
+                },
+                "createdFrom": "qJ3bDpBBCGE",
+                "endpoints": {
+                    "from": {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707724228
+                },
+                "type": "basic",
+                "zIndex": 8,
+                "connectorIds": [
+                    "IKMIxEXKLks",
+                    "97q4tPNsHoo"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708374159
+                    }
+                ],
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "width": 110,
+                        "height": 18.399999618530273,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "xType": "relative",
+                        "yType": "relative",
+                        "alignX": 0,
+                        "alignY": 0,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Functions ()",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "rendering": "carota",
+                        "minWidth": 0.01,
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "wrapWidth": 130.00010656736566
+                    }
+                },
+                "ports": [
+                ],
+                "premium": false,
+                "switchHistory": {
+                    "creately_basic_rectangle_4": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 0.01,
+                                "height": 37.6,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "color": "#4b4b4b",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "align": "center",
+                                        "script": "normal",
+                                        "text": "\n"
+                                    }
+                                ],
+                                "html": "<p></p>",
+                                "rendering": "carota",
+                                "minWidth": 0.01
+                            }
+                        },
+                        "width": 79.2000161041525,
+                        "height": 79.2000161041525,
+                        "scaleX": 0.49500010065095312,
+                        "scaleY": 0.79200016104152493,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                            "pbnadF9Wirq": "IKMIxEXKLks"
+                        },
+                        "images": {
+                        }
+                    }
+                }
+            },
+            "bounds": {
+                "top": 1049.9972038513861,
+                "left": 1350,
+                "width": 130.00010656736572,
+                "height": 49.959982176033009
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "enPN2HgUfjk",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 1350,
+                "y": 989.99720385138608,
+                "premium": false,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786708017933
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 13,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708409054
+                    }
+                ],
+                "scaleX": 1.1538461538465279,
+                "texts": {
+                    "main": {
+                        "rendering": "carota",
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "Administrator Component Model",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "_alignX": -1,
+                        "height": 36.799999237060547,
+                        "width": 130,
+                        "handlebars": "{}",
+                        "minWidth": 75.47,
+                        "wrapWidth": 150.00000000004863
+                    }
+                },
+                "scaleY": 1.5,
+                "autoResizeWidth": false,
+                "userSetWidth": 150.00000000004866
+            },
+            "bounds": {
+                "top": 989.99720385138608,
+                "left": 1350,
+                "width": 150.00000000004866,
+                "height": 60
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "8HUHWybjPBH",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 1330,
+                "y": 980,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(38, 88, 128); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#265880",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 0,
+                        "height": 0,
+                        "handlebars": "{}",
+                        "wrapWidth": 169.99994459467021,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": -3,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 2,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#265880"
+                },
+                "style": {
+                    "lineColor": "#4BA3E3",
+                    "textColor": "#265880",
+                    "themeIndex": 2,
+                    "themeId": "base",
+                    "fillColor": "#F2F9FE"
+                },
+                "scaleX": 1.0624996537166889,
+                "autoResizeWidth": false,
+                "userSetWidth": 169.9999445946703,
+                "scaleY": 1.3999720402186584,
+                "autoResizeHeight": false,
+                "userSetHeight": 139.99720402186585,
+                "editedBy": [
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 980,
+                "left": 1330,
+                "width": 169.9999445946703,
+                "height": 139.99720402186585
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "cchqjlCKnrX",
+                "defId": "creately.basic.circle",
+                "version": 2,
+                "x": 580,
+                "y": 1040.7971838958474,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "URL Request",
+                                "bold": false,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "rgb(0, 0, 0)",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 59.200000762939453,
+                        "height": 36.799999237060547,
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota",
+                        "wrapWidth": 79.2000161041525
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786524586471
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 100,
+                    "height": 100
+                },
+                "zIndex": 1,
+                "connectorIds": [
+                    "NYTLxoxi17i",
+                    "03dVoWFGyyz"
+                ],
+                "editedBy": [
+                ],
+                "gluepoints": {
+                    "BRZfYLOPiRa": {
+                        "connectionState": "expanded"
+                    }
+                },
+                "scaleX": 0.79200016104152493,
+                "scaleY": 0.79200016104152493,
+                "userSetHeight": 79.2000161041525,
+                "userSetWidth": 79.2000161041525,
+                "style": {
+                }
+            },
+            "bounds": {
+                "top": 1040.7971838958474,
+                "left": 580,
+                "width": 79.2000161041525,
+                "height": 79.200016104152382
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "defId": "creately.basic.rectangle",
+                "type": "basic",
+                "version": 4,
+                "enableTiptap": true,
+                "autoResizeWidth": false,
+                "autoResizeHeight": false,
+                "name": "Rectangle",
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "texts": {
+                    "identifier": {
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color:#1a1a1a\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "align": "center",
+                                "link": null,
+                                "underline": false,
+                                "text": "Handle Request ()",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "width": 115,
+                        "height": 18.399999618530273,
+                        "id": "identifier",
+                        "_alignX": 0,
+                        "handlebars": "{}",
+                        "rendering": "carota",
+                        "minWidth": 54.43,
+                        "wrapWidth": 134.99999976894546
+                    }
+                },
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a"
+                },
+                "id": "9sUu5pth9Aq",
+                "x": 715.000000187816,
+                "y": 979.52380872336767,
+                "styleDefinitions": {
+                },
+                "data": {
+                },
+                "createdFrom": "cchqjlCKnrX",
+                "endpoints": {
+                    "from": {
+                        "x": 1,
+                        "y": 0.5
+                    },
+                    "to": {
+                        "x": 0,
+                        "y": 0.5
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707659016
+                },
+                "zIndex": 2,
+                "connectorIds": [
+                    "NYTLxoxi17i"
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708355422
+                    }
+                ],
+                "scaleY": 0.50476191378137913,
+                "userSetHeight": 50.476191378137855,
+                "scaleX": 0.84374999855590915,
+                "userSetWidth": 134.99999976894549
+            },
+            "bounds": {
+                "top": 979.52380872336767,
+                "left": 715.000000187816,
+                "width": 134.99999976894549,
+                "height": 50.476191378137855
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "NYTLxoxi17i",
+                "texts": {
+                },
+                "type": "connector",
+                "hidden": false,
+                "defId": "creately.connector.default",
+                "version": 1,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 659,
+                        "y": 1080,
+                        "shapeId": "cchqjlCKnrX",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 680,
+                        "y": 1043,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t",
+                        "pathAdjustedManually": true,
+                        "shapeId": "VIsrY2qUhsD",
+                        "onShape": true,
+                        "position": {
+                            "x": -0.055555555791510614,
+                            "y": 0.93426559074333559
+                        },
+                        "c2": null,
+                        "c1": {
+                            "x": 680,
+                            "y": 1080
+                        },
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 715,
+                        "y": 1005,
+                        "shapeId": "9sUu5pth9Aq",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 680,
+                            "y": 1005
+                        }
+                    }
+                },
+                "zIndex": 3,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707659018
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 1005,
+                "left": 659,
+                "width": 56,
+                "height": 75
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "03dVoWFGyyz",
+                "zIndex": 5,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 659,
+                        "y": 1080,
+                        "shapeId": "cchqjlCKnrX",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": true,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 670,
+                        "y": 1080,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t",
+                        "pathAdjustedManually": true,
+                        "yFixed": true,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": null
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 915,
+                        "y": 1080,
+                        "shapeId": "qJ3bDpBBCGE",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": true,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 670,
+                            "y": 1080
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707669308
+                }
+            },
+            "bounds": {
+                "top": 1080,
+                "left": 659,
+                "width": 256,
+                "height": 0
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "93gsDmShdfl",
+                "zIndex": 7,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1055,
+                        "y": 1075,
+                        "shapeId": "qJ3bDpBBCGE",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 1100,
+                        "y": 1035,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t",
+                        "pathAdjustedManually": true,
+                        "c2": null,
+                        "c1": {
+                            "x": 1100,
+                            "y": 1075
+                        },
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1150,
+                        "y": 995,
+                        "shapeId": "gWdqpmY0bT9",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 1100,
+                            "y": 995
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707719333
+                }
+            },
+            "bounds": {
+                "top": 995,
+                "left": 1055,
+                "width": 95,
+                "height": 80
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "IKMIxEXKLks",
+                "zIndex": 9,
+                "images": {
+                },
+                "attachmentIds": [
+                ],
+                "enableTiptap": false,
+                "usesPlainText": false,
+                "visible": true,
+                "premium": true,
+                "data": {
+                    "description": {
+                        "id": "description",
+                        "def": "descriptionRichtext",
+                        "label": "Description",
+                        "value": "<p></p>",
+                        "optional": true,
+                        "visibility": [
+                            {
+                                "type": "editor"
+                            }
+                        ]
+                    }
+                },
+                "texts": {
+                },
+                "horizontal": false,
+                "vertical": false,
+                "ends": {
+                    "to": "connectors.bundle.js#PointerFilled"
+                },
+                "showBumps": false,
+                "style": {
+                    "lineThickness": 2,
+                    "lineColor": "#1a1a1a",
+                    "lineStyle": [
+                        0,
+                        0
+                    ],
+                    "lineAlpha": 1,
+                    "textColor": "#1a1a1a",
+                    "themeIndex": 0,
+                    "themeId": "base",
+                    "linePreset": "normal"
+                },
+                "hidden": false,
+                "isHighlighted": true,
+                "preventChangeDrawStyle": false,
+                "defId": "creately.connector.default",
+                "type": "connector",
+                "version": 1,
+                "name": "Just a Line",
+                "entryClass": "connectors.bundle.js#ConnectorSmoothAngled",
+                "drawAroundShapes": false,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1055,
+                        "y": 1075,
+                        "shapeId": "qJ3bDpBBCGE",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": true,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 1100,
+                        "y": 1075,
+                        "bumps": [
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t",
+                        "pathAdjustedManually": true,
+                        "yFixed": true,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": null
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1350,
+                        "y": 1075,
+                        "shapeId": "txsEo2v4Pxd",
+                        "nextId": null,
+                        "prevId": "p1",
+                        "gluepointId": "pbnadF9Wirq",
+                        "gluepointLocked": false,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "yFixed": true,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 1100,
+                            "y": 1075
+                        }
+                    }
+                },
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707724229
+                }
+            },
+            "bounds": {
+                "top": 1075,
+                "left": 1055,
+                "width": 295,
+                "height": 0
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "97q4tPNsHoo",
+                "texts": {
+                    "9429b234qce": {
+                        "id": "9429b234qce",
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#FFFFFF",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": true,
+                        "pos": 0.77132061959323839,
+                        "width": 11,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    },
+                    "50316hm61vw": {
+                        "id": "50316hm61vw",
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#FFFFFF",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n",
+                                "backgroundColor": "#1a1a1a"
+                            }
+                        ],
+                        "customCreated": true,
+                        "primary": false,
+                        "pos": 0.56550449938712166,
+                        "width": 11,
+                        "height": 18.399999618530273,
+                        "handlebars": "{}",
+                        "rendering": "carota"
+                    }
+                },
+                "type": "connector",
+                "hidden": false,
+                "defId": "creately.connector.default",
+                "version": 1,
+                "path": {
+                    "headId": "h",
+                    "h": {
+                        "id": "h",
+                        "x": 1280,
+                        "y": 995,
+                        "shapeId": "gWdqpmY0bT9",
+                        "prevId": null,
+                        "gluepointId": "P9d4172UDLb",
+                        "gluepointLocked": false,
+                        "nextId": "p1",
+                        "bumps": [
+                        ],
+                        "direction": 180,
+                        "yFixed": false,
+                        "xFixed": false
+                    },
+                    "p1": {
+                        "x": 1315,
+                        "y": 1027,
+                        "c2": null,
+                        "c1": {
+                            "x": 1314.7554785976049,
+                            "y": 994.99999983380667
+                        },
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "id": "p1",
+                        "prevId": "h",
+                        "nextId": "t"
+                    },
+                    "tailId": "t",
+                    "t": {
+                        "id": "t",
+                        "x": 1350,
+                        "y": 1058,
+                        "nextId": null,
+                        "prevId": "p1",
+                        "shapeId": "txsEo2v4Pxd",
+                        "gluepointId": null,
+                        "gluepointLocked": null,
+                        "onShape": true,
+                        "bumps": [
+                            [
+                            ],
+                            [
+                            ]
+                        ],
+                        "direction": 0,
+                        "position": {
+                            "x": -0.0037194672426622334,
+                            "y": 0.17000014484579878
+                        },
+                        "yFixed": false,
+                        "xFixed": false,
+                        "c2": null,
+                        "c1": {
+                            "x": 1314.7554785976049,
+                            "y": 1058.4904080578053
+                        }
+                    }
+                },
+                "zIndex": 10,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786707853752
+                },
+                "visible": true
+            },
+            "bounds": {
+                "top": 995,
+                "left": 1280,
+                "width": 70,
+                "height": 63
+            },
+            "type": "connector"
+        },
+        {
+            "data": {
+                "id": "VIsrY2qUhsD",
+                "defId": "creately.basic.roundedrectangle",
+                "version": 6,
+                "x": 690,
+                "y": 910.00001760174212,
+                "type": "basic",
+                "texts": {
+                    "identifier": {
+                        "id": "identifier",
+                        "primary": true,
+                        "x": 0.5,
+                        "y": 0.5,
+                        "alignX": 0,
+                        "alignY": 0,
+                        "value": "<span style=\"color: rgb(144, 38, 77); font-size: 10pt; font-family: noto_regular; text-align: center; font-weight: normal; font-style: normal;\"></span>",
+                        "wordWrap": true,
+                        "content": [
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#4b4b4b",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            },
+                            {
+                                "size": 10,
+                                "font": "noto_regular",
+                                "color": "#4b4b4b",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "strikeout": false,
+                                "align": "center",
+                                "script": "normal",
+                                "text": "\n"
+                            }
+                        ],
+                        "width": 160,
+                        "height": 36.799999237060547,
+                        "handlebars": "{}",
+                        "wrapWidth": 179.99999923550686,
+                        "_alignX": 0,
+                        "rendering": "carota"
+                    }
+                },
+                "premium": false,
+                "createdBy": {
+                    "userId": "FCEC3257-3C56-F8FA-345A-9D4C3A7A1CA1",
+                    "time": 1786533268778
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 160,
+                    "height": 100
+                },
+                "zIndex": 0,
+                "connectorIds": [
+                ],
+                "switchHistory": {
+                    "creately_basic_square_3": {
+                        "texts": {
+                            "identifier": {
+                                "id": "identifier",
+                                "primary": true,
+                                "width": 48,
+                                "height": 18,
+                                "x": 0.5,
+                                "y": 0.5,
+                                "xType": "relative",
+                                "yType": "relative",
+                                "alignX": 0,
+                                "alignY": 0,
+                                "content": [
+                                    {
+                                        "text": "",
+                                        "color": "rgb(26, 26, 26)",
+                                        "size": 10,
+                                        "font": "noto_regular",
+                                        "align": "center",
+                                        "bold": false,
+                                        "italic": false,
+                                        "underline": false,
+                                        "strikeout": false,
+                                        "script": "normal"
+                                    }
+                                ],
+                                "html": "<p></p>"
+                            }
+                        },
+                        "width": 100,
+                        "height": 100,
+                        "scaleX": 1,
+                        "scaleY": 1,
+                        "data": {
+                            "description": {
+                                "value": "<p></p>"
+                            }
+                        },
+                        "gpData": {
+                        },
+                        "images": {
+                        }
+                    }
+                },
+                "ports": [
+                ],
+                "themeIndex": 4,
+                "themeId": "base",
+                "defaultTextFormat": {
+                    "color": "#90264D"
+                },
+                "style": {
+                    "lineColor": "#DA5597",
+                    "textColor": "#90264D",
+                    "themeIndex": 4,
+                    "themeId": "base",
+                    "fillColor": "#FBF2F8"
+                },
+                "scaleX": 1.1249999952219178,
+                "autoResizeWidth": false,
+                "userSetWidth": 179.99999923550683,
+                "scaleY": 1.3999998243544243,
+                "autoResizeHeight": false,
+                "userSetHeight": 139.99998243544235,
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708536200
+                    }
+                ],
+                "vectors": {
+                    "diagonal": {
+                        "points": [
+                            {
+                                "x": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                },
+                                "y": {
+                                    "type": "fixed-start",
+                                    "value": 15.763415255149658
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "bounds": {
+                "top": 910.00001760174212,
+                "left": 690,
+                "width": 179.99999923550683,
+                "height": 139.99998243544235
+            },
+            "type": "basic"
+        },
+        {
+            "data": {
+                "id": "EmcMSF9CjNj",
+                "defId": "creately.basic.text",
+                "version": "2",
+                "x": 719.92700738764415,
+                "y": 920,
+                "premium": false,
+                "createdBy": {
+                    "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                    "time": 1786708017933
+                },
+                "defaultBounds": {
+                    "top": 0,
+                    "left": 0,
+                    "width": 130,
+                    "height": 40
+                },
+                "type": "basic",
+                "zIndex": 11,
+                "connectorIds": [
+                ],
+                "editedBy": [
+                    {
+                        "userId": "A8DC774B-239C-25E0-7E82-BD047A909823",
+                        "time": 1786708412955
+                    }
+                ],
+                "scaleX": 0.96266142480547467,
+                "texts": {
+                    "main": {
+                        "_alignX": -1,
+                        "content": [
+                            {
+                                "align": "left",
+                                "link": null,
+                                "underline": false,
+                                "text": "API component Controller",
+                                "bold": true,
+                                "italic": false,
+                                "strikeout": false,
+                                "color": "#4b4b4b",
+                                "size": 10,
+                                "font": "noto_regular"
+                            }
+                        ],
+                        "handlebars": "{}",
+                        "height": 36.799999237060547,
+                        "minWidth": 75.47,
+                        "rendering": "carota",
+                        "width": 105.13750457763672,
+                        "wrapWidth": 125.14598522471171
+                    }
+                },
+                "autoResizeHeight": false,
+                "autoResizeWidth": false,
+                "scaleY": 1.5,
+                "userSetHeight": 60,
+                "userSetWidth": 125.14598522471169
+            },
+            "bounds": {
+                "top": 920,
+                "left": 719.92700738764415,
+                "width": 125.14598522471169,
+                "height": 60
+            },
+            "type": "basic"
+        }
+    ],
+    "dataDefs": {
+    }
+}
