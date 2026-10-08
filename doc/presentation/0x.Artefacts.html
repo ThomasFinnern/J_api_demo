@@ -48,37 +48,6 @@
         </section>
 
         <section data-markdown>
-            <textarea data-template>
-
-## Pagination Joomla example with configuration (application)
-
-### Links part of API response
-
-The response starts with a "links" section and ends with "meta/total pages"
-
-```json
-{
-    "links": {
-        "self":"http://127.0.0.1/api_6x/api/index.php/v1/config/application
-                ?page%5Boffset%5D=30&page%5Blimit%5D=30",
-        "first": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
-                  ?page%5Boffset%5D=0&page%5Blimit%5D=30",
-        "previous": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
-                     ?page%5Boffset%5D=0&page%5Blimit%5D=30",
-        "next": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
-                 ?page%5Boffset%5D=60&page%5Blimit%5D=30",
-        "last": "http://127.0.0.1/api_6x/api/index.php/v1/config/application
-                 ?page%5Boffset%5D=90&page%5Blimit%5D=30"
-    },
-
-```
-
-For pagination add `?page[offset]=90&page[limit]=30"` <br>
-to the route in the form shown in above response.
-			</textarea>
-        </section>
-
-        <section data-markdown>
 			<textarea data-template>
 ## Which API routes do we want to expose ?
 
@@ -125,6 +94,8 @@ Can you see `page[offset]=90&amp;page[limit]=30` in<br>
 
 
 ### Data part of API response
+
+links to actual call and next, previous and last page
 
 ```json
 {
