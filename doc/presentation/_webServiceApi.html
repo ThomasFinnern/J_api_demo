@@ -1629,13 +1629,21 @@ or patch data before save function is called
 
         <section data-markdown>
 			<textarea data-template>
-## Expand by defining own Api model.php (part 1)
+## Expand by defining own Api model.php
+<br>
 
 ### "GET" component version ID
 
-Example route/code for retrieving the component version ID via the API.<br>
-In addition to defining the route, only a controller, a model, and a helper are added..
+Example route/code for retrieving the <br>component version ID via the API.<br>
 
+In addition to defining the route, <br>only a controller, a model, and a helper are added.
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## "GET" component version ID (part 1)
 Routes in webservice plugin
 ```php
 //--- version in db manifest -----------------------------
@@ -1660,7 +1668,7 @@ protected $default_view = 'version';
 
         <section data-markdown>
 			<textarea data-template>
-### Expand by defining own Api model.php (part 2)
+### "GET" component version ID (part 2)
 
 New path structure with additional model and helper
 
@@ -1687,7 +1695,7 @@ com_secondhand\api\src
 ### New File VersionModel.php
 
 ! No additional code in controller for **GET**. <br>
-The model supports getItem which is called by joomla API code
+The model overrides getItem which is called by joomla API code
 
 ```php
 public function getItem()
@@ -1703,7 +1711,14 @@ public function getItem()
 
 The ManifestHelper.php reads/writes the versionId from/to the database.<br>
 
-Change in jsonApiView.php with additional function prepareItem ()
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+### Change in jsonApiView.php
+ with additional function prepareItem ()
 
 ```php [|10]
 class JsonapiView extends BaseApiView
@@ -1731,30 +1746,15 @@ That is all that is required to create a 'getVersion' API code.
 			<textarea data-template>
 ### Code to write the versionID (patch)
 
-In Version controller the edit function interfaces directly with the parallel model
-
-The view (displayItem) is called afterwards with id=0
-as it expects an table id
-<br>
-<br>
+The controller calls the edit function<br>
+of the parallel component api model
 
 VersionController.php
-```php
+```php [4|8,9,11|13]
 public function edit() : ApiController
 {
-    // Access check.
-    if (!$this->allowEdit())
-    {
-        throw new NotAllowed('JLIB_APPLICATION_ERROR_CREATE_RECORD_NOT_PERMITTED', 403);
-    }
-
     // all variables
     $data = $this->input->json->getArray();
-
-    if (empty($data))
-    {
-        throw new InvalidParameterException(Text::_('No parameter given for patch config'), 403);
-    }
 
     //--- Create the model -----------------------------------------------------------------
 
@@ -1766,6 +1766,8 @@ public function edit() : ApiController
     return parent::displayItem('0');
 }
 ```
+The view (displayItem) is called afterwards with id=0
+as it expects an table id
 
 			</textarea>
         </section>
@@ -1774,38 +1776,32 @@ public function edit() : ApiController
 			<textarea data-template>
 ### Save code in VersionModel.php
 
-```php
+```php [5,6,7|9,10|12,15,19|23,25]
 public function save(mixed $data = []) {
+    $isChanged = false;
     $isSaved = true;
-    if (!empty ($data)) {
-        $isChanged = false;
-        $isSaved = false;
 
-        try {
-            $oManifest = ManifestHelper::getDbManifest($this->componentName);
-            if (!empty($oManifest)) {
-                if (!empty ($data['version'])) {
-                    $version = $data['version'];
-                    if ($oManifest['version'] != $version)
-                    {
-                        $oManifest['version'] = $data['version'];
-                        $isChanged = true;
-                    }
-                }
+    // New data
+    $version = $data['version'];
+    $creationDate = $data['creationDate'];
 
-                if (!empty ($data['creationDate'])) {
-                    $creationDate = $data['creationDate'];
-                    if ($oManifest['creationDate'] != $creationDate) {
-                        $oManifest['creationDate'] = $creationDate;
-                        $isChanged = true;
-                    }
-                }
+    // Fetch old data
+    $oManifest = ManifestHelper::getDbManifest($this->componentName);
 
-                if ($isChanged) {
-                    $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
-                }
-            }
-        } catch (\Exception $e) { throw new \RuntimeException($e->getMessage()); }
+    // Assign data
+    if ($oManifest['version'] != $version)
+    {
+        $oManifest['version'] = $data['version'];
+        $isChanged = true;
+    }
+    if ($oManifest['creationDate'] != $creationDate) {
+        $oManifest['creationDate'] = $creationDate;
+        $isChanged = true;
+    }
+
+    // save data
+    if ($isChanged) {
+        $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
     }
 
     return $isSaved;
@@ -1834,38 +1830,89 @@ for the requests without the corresponding table:
 <br>
 <br>
 
-There may be similar aproaches working. But this is the gist of it.
+There may be similar approaches working. But this is the gist of it.
 
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-## Move model to administrator part
+## Use model from administrator part
 
-The model code may be moved to the component administrator path <br>
-or a already present model there can be called.
+Copy the model and helper to the component administrator path.<br>
+Change the namespace and you are ready to go ;-)
 
-Copy previous example model and helper to<br><br>
 ```php
 .../administrator/components/com_secondhand/src/Model/VersionModel.php
 ```
-Change the namespace and you are ready to go ;-)
+
+Alternatively, an existing model can be accessed from there.
 
 			</textarea>
         </section>
 
+        <section data-markdown>
+			<textarea data-template>
+## Possible overrides
+
+### Functions to override from ApiController.php in controller
+
+```php
+public function displayItem($id = null);
+public function displayList();
+public function delete($id = null);
+public function add();
+public function edit();
+protected function save($recordKey = null);
+protected function allowEdit($data = [], $key = 'id');
+protected function allowAdd($data = []);
+protected function allowDelete(): bool;
+protected function preprocessSaveData(array $data): array;
+
+```
+### Functions to override from JsonApiView.php in view
+
+```php
+public function displayList(?array $items = null);
+public function displayItem($item = null);
+protected function prepareItem($item);
+protected function queryEncode($query);
+```
+
+			</textarea>
+        </section>
+
+
+        <!-- ???????????????????????????????????????? -->
         <section data-markdown>
 			<textarea data-template>
 ## How to manipulate the 'model' state
 
-The state parameter will be handled in the controller.<br>
+In the controller, the state parameters must be collected <br>
+from the URL parameters or the JSON data.<br>
 
-Assign in controller for admin. model
+```php
+    public function displayItem($path = '')
+    {
+        // Set the id as the parent sets it as int
+        $this->modelState->set('id', $this->input->get('id', '', 'string'));
+
+        return parent::displayItem();
+    }
+```
+When using the J! API model call the `$this->modelState` <br>
+is assigned to the model. <br>
+
+Otherwise use
 
 ```php
 $this->modelState->set('data', $data);
+
+// Create the model, ignoring request data so we can safely set the state in the request from the controller
+$model = $this->getModel($modelName, '', ['ignore_request' => true, 'state' => $this->modelState]);
+
 ```
+
 			</textarea>
         </section>
 
@@ -1911,13 +1958,13 @@ the component (admin)
 
         <section data-markdown>
 			<textarea data-template>
-Following example assigns in the controller 'para' from  <br>URL input
-and data from the request json data to the state<br>
-<br>
-$param: param in url<br>
-$data:  data by json object<br>
+### Example modelState:
+## URL/JSON
 
-```php
+* $param: param in url<br>
+* $data:  data by json object<br>
+
+```php [1-6,15,16|8-11,15]
 public function displayItem($param = '')
 {
     //--- set state from given URL parameter  -----------------
@@ -1928,10 +1975,7 @@ public function displayItem($param = '')
     // --- set state from given json data  ----------------
 
     $data = $this->input->json->getArray();
-    if (!empty($data))
-    {
-        $this->modelState->set('data', $data);
-    }
+    $this->modelState->set('data', $data);
 
     //--- display parameters ----------------------------------
 
@@ -1944,20 +1988,30 @@ public function displayItem($param = '')
 
         <section data-markdown>
 			<textarea data-template>
-## functions to override from ApiController.php in controller
+### Example modelState:
+## Filter
+
+Collect URL filter data and assign single <br>
+expected variables to the modelState
 
 ```php
-public function displayItem($id = null)
-public function displayList()
-public function delete($id = null)
-public function add()
-public function edit()
-protected function save($recordKey = null)
-protected function allowEdit($data = [], $key = 'id')
-protected function allowAdd($data = [])
-protected function allowDelete(): bool
-protected function preprocessSaveData(array $data): array
+    public function displayList()
+    {
+        $apiFilterInfo = $this->input->get('filter', [], 'array');
+        $filter        = InputFilter::getInstance();
 
+        if (\array_key_exists('author', $apiFilterInfo)) {
+            $this->modelState->set('filter.author_id', $filter->clean($apiFilterInfo['author'], 'INT'));
+        }
+
+        if (\array_key_exists('category', $apiFilterInfo)) {
+            $this->modelState->set('filter.category_id', $filter->clean($apiFilterInfo['category'], 'INT'));
+        }
+
+        ...
+
+        return parent::displayList();
+    }
 ```
 
 			</textarea>
@@ -1965,13 +2019,27 @@ protected function preprocessSaveData(array $data): array
 
         <section data-markdown>
 			<textarea data-template>
-## functions to override from JsonApiView.php in view
+### Example modelState:
+## Ordering/direction
+
+Collect URL list data and assign single <br>
+expected variables to the modelState
 
 ```php
-public function displayList(?array $items = null)
-public function displayItem($item = null)
-protected function prepareItem($item)
-protected function queryEncode($query)
+    public function displayList()
+    {
+        $apiListInfo = $this->input->get('list', [], 'array');
+
+        if (\array_key_exists('ordering', $apiListInfo)) {
+            $this->modelState->set('list.ordering', $filter->clean($apiListInfo['ordering'], 'STRING'));
+        }
+
+        if (\array_key_exists('direction', $apiListInfo)) {
+            $this->modelState->set('list.direction', $filter->clean($apiListInfo['direction'], 'STRING'));
+        }
+
+        return parent::displayList();
+    }
 ```
 
 			</textarea>
@@ -1979,36 +2047,30 @@ protected function queryEncode($query)
 
         <section data-markdown>
 			<textarea data-template>
-## empty
+## findings
 
-check function ... in controller / model for special handling
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
+If URL variable could not be found in input try post data
 
 ```php
+private function getExtensionFromInput()
+{
+    return $this->input->exists('extension') ?
+        $this->input->get('extension') : $this->input->post->get('extension');
+}
+
+private function getClientIdFromInput()
+{
+    return $this->input->exists('client_id') ?
+        $this->input->get('client_id') : $this->input->post->get('client_id');
+}
+
+private function getClientIdFromInput()
+{
+    return $this->input->exists('client_id') ? $this->input->get('client_id') : $this->input->post->get('client_id');
+}
 ```
 
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-# Real examples:
-
-                config<br>
-                ...<br>
-
-```php
-```
-
+Name it "`get'something'FromInput () {...}`"
 
 
 			</textarea>
@@ -2019,6 +2081,26 @@ check function ... in controller / model for special handling
 ## empty
 
                 Have a look at pe7er
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
+```php
+```
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## empty
+
 ```php
 ```
 
