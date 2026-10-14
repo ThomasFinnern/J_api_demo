@@ -62,6 +62,7 @@ Note:
 * Welcome to presentation ... Web Services API:Implementation for components<br>
 * We will we cover : Minimum, Controller/Models, patch data and JSON response<br>
 * The code for path of data by API to and from the web page<br>
+* Questions please at the end , only correct big mistakes
 			</textarea>
         </section>
 
@@ -192,18 +193,18 @@ API Knowledge by implementing it
 			<textarea data-template>
 ## Location of code and a more detailed description
 
-In this presentation, the code is shown as shortened excerpt<br>
+In this presentation, the code is shown in abbreviated excerpts.<br>
 
 A complete version can be viewed at on my Github account:<br>
-
 [https://github.com/ThomasFinnern/J_api_demo/tree/main/code](https://github.com/ThomasFinnern/J_api_demo/tree/main/code)
 
-Parts of this presentation will be transferred to articles in<br>
+Parts of this presentation will later be transferred to articles in<br>
 [https://guide.joomla.org](https://guide.joomla.org)
 
-The slides will be present as a pdf version on <br>www.insidethemachine.de
-???
-                 </textarea>
+The slides will be present as a pdf version on <br>
+[http://www.insidethemachine.de/index.php/joomla-projects/presentations](http://www.insidethemachine.de/index.php/joomla-projects/presentations)
+
+            </textarea>
         </section>
 
         <!--
@@ -391,9 +392,43 @@ Structure similar to other plugins
 * provider.php            Registers the service provider with a DI container.
 * Secondhand.php   Endpoint definitions
 
+<br>
+<br>
+<span style="text-align: left;">
+>
+</span>
+Note:
+📝
 			</textarea>
         </section>
 
+
+        <section data-markdown>
+			<textarea data-template>
+## Manifest file Plugin  'secondhand.xml'
+
+Following is an excerpt as the content is known
+```xml [6,15-20]
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+  <name>plg_webservices_secondhand</name>
+  ...
+  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
+  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
+  <files>
+    <folder plugin="secondhand">services</folder>
+    <folder>language</folder>
+    <folder>services</folder>
+    <folder>src</folder>
+    <file>secondhand.xml</file>
+  </files>
+  ...
+</extension>
+```
+
+Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middle
+			</textarea>
+        </section>
 
         <section data-markdown>
 			<textarea data-template>
@@ -521,7 +556,7 @@ instead of
     );
 ```
 We could have written:
-```php
+```php [1-7|9 |]
    $routes = [
         new Route(['GET'],    'v1/secondhand/books',     'books.displayList', [],                $defaults),
         new Route(['GET'],    'v1/secondhand/books/:id', 'books.displayItem', ['id' => '(\d+)'], $defaults),
@@ -535,31 +570,61 @@ We could have written:
 
 'new Route(...)' will be the <br>syntax for all our defined API routes
 
+
 Note:
-📝
+See $routes array + addroutes
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-## General Route function parameters
+## createCRUDRoutes function parameters
 
-```php[1,3]
-     new Route('CRUD' command, endpoint, 'controller'.'function', [var.regex], defaults);
-
-    $router->createCRUDRoutes('base endpoint', 'controller', defaults);
+```php
+    $router->createCRUDRoutes(
+        'v1/secondhand/books',
+        'books',
+        $defaults
+    );
 ```
+
+$route = $router->createCRUDRoutes('base endpoint', 'controller', defaults);
+
+
+| &nbsp; | &nbsp; example                 | &nbsp;description                              |
+|:--------|:--------------------------------|:-------------------------------------------|
+| endpoint     | &nbsp;`v1/secondhand/books`     | &nbsp; route path       |
+| controller     | &nbsp;`books`     | &nbsp; path to controller and view      |
+| defaults     | &nbsp;`['component' => 'com_secondhand',`<br>&nbsp;`'public' => false]`     | &nbsp; array of 'configuration' variables<br>  |
+|      |      |        |
+
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+## Route function parameters
+
+new Route('CRUD' command, endpoint, 'controller'.'function', [var.regex], defaults);
+
+```php
+$routes = [ new Route(['GET'],
+    'v1/content/articles/:id/contenthistory', 'history.displayList', ['id' => '(\d+)'], $defaults),];
+$router->addRoutes($routes);
+```
+
 
 | &nbsp; | &nbsp; example                 | &nbsp;description                              |
 |:--------|:--------------------------------|:-------------------------------------------|
 | 'CRUD' command     | &nbsp;GET,POST,PATCH,DELETE  | &nbsp;       |
-| endpoint     | &nbsp;`v1/secondhand/books`     | &nbsp; route path       |
-| &nbsp;     | &nbsp;`v1/secondhand/books/:id`     | &nbsp; route path with variable      |
+| endpoint<br>     | &nbsp;`v1/secondhand/books`<br>&nbsp;`v1/secondhand/books/:id`     | &nbsp; route path<br>route path with variable       |
 | controller     | &nbsp;`books`     | &nbsp; path to controller and view      |
 | function     | &nbsp;`displayItem`     | &nbsp; any function in defined controller can be called  |
-| var.regex     | &nbsp;`['id' => '(\d+)']`    | &nbsp; Regex to catch and secure the variable value |
-| defaults     | &nbsp;`['component' => 'com_secondhand',`     | &nbsp; array of 'configuration' variables       |
-| defaults     | &nbsp;`'public' => false]`     | &nbsp;  more see next page       |
+| var.regex     | &nbsp;`['id' => '(\d+)']`    | &nbsp; regex to catch and secure the variable value |
+| defaults     | &nbsp;`['component' => 'com_secondhand',`<br>&nbsp;`'public' => false]`     | &nbsp; array of 'configuration' variables<br>  |
+|      |      |        |
 
 
 
@@ -635,23 +700,24 @@ Table items
 
         <section data-markdown>
 			<textarea data-template>
-## Manifest file 'secondhand.xml'
+## Manifest file component 'secondhand.xml'
 
-Following is an excerpt as the content is known
-```xml [6,15-20]
-<?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="webservices" method="upgrade">
-  <name>plg_webservices_secondhand</name>
+Add an API section as the component.<br>
+The API code will reside there in folder <br>
+"/api/component/com_secondhand"
+
+```xml [1,2,13-17,19]
+<extension type="component" method="upgrade">
+  <name>com_secondhand</name>
+  <element>com_secondhand</element>
+  <author>Steven Smith</author>
   ...
-  <description>PLG_WEBSERVICES_SECONDHAND_XML_DESCRIPTION</description>
-  <namespace path="src">Bluebox\Plugin\WebServices\Secondhand</namespace>
-  <files>
-    <folder plugin="secondhand">services</folder>
-    <folder>language</folder>
-    <folder>services</folder>
-    <folder>src</folder>
-    <file>secondhand.xml</file>
-  </files>
+  <description>COM_SECONDHAND_XML_DESCRIPTION</description>
+  <namespace path="src">Bluebox\Component\Secondhand</namespace>
+
+  <administration>
+  ....
+  </>administration>
 
   <api>
     <files folder="api">
@@ -662,7 +728,6 @@ Following is an excerpt as the content is known
 </extension>
 ```
 
-Attention: The namespace contains 'WebSpaces' with an uppercase 'S' in the middle
 			</textarea>
         </section>
 
@@ -873,6 +938,11 @@ how does the response look like
                 </code>
             </pre>
 
+            <aside class="notes">
+                * Other postman, bruno  see <br>
+                    Marc Dechèvre: Playing with the Joomla Web Services (API)<br>
+                <br>
+            </aside>
         </section>
 
         <section data-markdown>
@@ -1038,7 +1108,7 @@ X-Joomla-Token:  ...
 curl -s --show-error
    -X POST "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books"
    -d "{
-        \"titl\":\"My book\",
+        \"titel\":\"My book\",
         \"isbn\":\"12-3456-78-90\",
         \"$author\":\"john breeze\",
         \"description\":\"The next book i write\",
@@ -1072,6 +1142,11 @@ X-Joomla-Token:
                 </code>
             </pre>
 
+            <aside class="notes">
+                Hint to URL data and json data<br>
+                How to read it Input->get... / input-json-get <br>
+                <br>
+            </aside>
         </section>
 
         <section data-markdown>
@@ -1120,29 +1195,12 @@ X-Joomla-Token:
         <section style="text-align: left;">
             <h2>PATCH v1/secondhand/books/:id</h2>
 
-            <!-- strong>Parameters:</strong>
-
-            <table>
-                <tr>
-                    <th>name</th>
-                    <th>type</th>
-                    <th>data type</th>
-                    <th>description</th>
-                </tr>
-                <tr>
-                    <td>all book parameters</td>
-                    <td>%</td>
-                    <td>json - string</td>
-                    <td></td>
-                </tr>
-            </table><br-->
-
             <strong>Example CURL:</strong>
 
             <pre style="font-size: 24px; width: 100%">
                 <code data-trim data-noescape>
 curl -s --show-error
-   -X PATCH "http://127.0.0.1/web_page/api/index.php/v1/secondhand/1/books"
+   -X PATCH "http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1"
    -d "{
         \"published\":-2,
         \"isbn\":\"1234-4567-8890\"
@@ -1177,7 +1235,7 @@ X-Joomla-Token:
 
 | http code     | content-type                      | response                                                            |
 |---------------|-----------------------------------|---------------------------------------------------------------------|
-| `200`         | `application/json; charset=UTF-8` | ```json {"type": "books", "id": "2", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
+| `200`         | `application/json; charset=UTF-8` | ```json {"type": "books", "id": "1", "attributes": { "id": 1, "asset_id": 105, "title": "Global Configuration", ... }``` |
 
 
                  </textarea>
@@ -1195,14 +1253,14 @@ X-Joomla-Token:
     },
     "data": {
         "type": "books",
-        "id": "^3",
+        "id": "1",
         "attributes": {
-            "id": 3,
+            "id": 1,
             "title": "My book",
             "alias": "my-book",
-            "isbn": "12-3456-78-90",
+            "isbn": "1234-4567-8890",
             "description": "The next book i write",
-            "published": 1,
+            "published": -2,
             "created": "2026-06-23 11:40:16",
             "created_by": 776,
             "modified": "2026-06-23 11:40:16",
@@ -1279,8 +1337,7 @@ X-Joomla-Token:
 }
                 </code>
             </pre>
-
-R
+@
 
         </section>
 
