@@ -57,21 +57,28 @@
 				* Prepare the JSON response <!-- .element: class="fragment" data-fragment-index="4" -->
 
 				The presentation is aimed at component developers who have no knowledge of Joomla's API functions.
+
+Note:
+* Welcome to presentation ... Web Services API:Implementation for components<br>
+* We will we cover : Minimum, Controller/Models, patch data and JSON response<br>
+* The code for path of data by API to and from the web page<br>
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-## Thomas Finnern InsideTheMachine.de
-
+## Thomas Finnern
+### InsideTheMachine.de
 ### 2008: First Joomla! web page
 [vollmondlauf-hechingen.de](https://www.vollmondlauf-hechingen.de/bildergallerie.html)
 
 Full moon fun run, no race, once per month, running up the hill<br>
-<img src="./assets/images/vollmond.png" width="70%" height="30%"/><br>
-<img src="./assets/icons/RSG2_logoText.svg" width="30%" /><br>
+<img src="./assets/images/vollmond.png" width="75%" />
+<!--img src="./assets/icons/RSG2_logoText.svg" width="30%" /><br-->
 Using **RSGallery2** as my gallery for images
 
+Note:
+How i begun the journey with joomla<br>
 			</textarea>
         </section>
 
@@ -79,12 +86,12 @@ Using **RSGallery2** as my gallery for images
 			<textarea data-template>
 
 <img src="./assets/icons/RSG2_logoText.svg" width="40%" style="margin-top:0; padding-top:0" /><br>
-### 2013: RSGallery2 Missing support in 2013
+### 2013: RSGallery2 Missing support
 
 * Founder with breakdown, <br>
-* rsgallery2.net URL captured for money (1000$),<br>
-* One person maintaining forum-server and <br>
-* 1 person upgrading from J! 2.5 to 3.x
+* Rsgallery2.net domain was captured and offered for money (1000$),<br>
+* One person maintaining forum-server <br>
+* One person upgrading from J! 2.5 to 3.x
 <br>
 <br>
 
@@ -96,6 +103,9 @@ Using **RSGallery2** as my gallery for images
 <br>
 <br>
 
+Note:
+How i begun the journey with joomla<br>
+RSG2 was at its peak and recommended in joomla books
 
 			</textarea>
         </section>
@@ -125,6 +135,10 @@ Using **RSGallery2** as my gallery for images
         <br>
                 Where my knowledge of Joomla! API started <br>
                 (the hard way by checking the code)
+
+Note:
+Similar Story J3x to actual J!xx
+API Knowledge by implementing it
         </textarea>
         </section>
 
@@ -184,11 +198,11 @@ A complete version can be viewed at on my Github account:<br>
 
 [https://github.com/ThomasFinnern/J_api_demo/tree/main/code](https://github.com/ThomasFinnern/J_api_demo/tree/main/code)
 
-Parts of this presentation will be transferred to articles<br>
-in [https://guide.joomla.org](https://guide.joomla.org)
+Parts of this presentation will be transferred to articles in<br>
+[https://guide.joomla.org](https://guide.joomla.org)
 
-The slides will be present as a pdf version on www.insidethemachine.de
-
+The slides will be present as a pdf version on <br>www.insidethemachine.de
+???
                  </textarea>
         </section>
 
@@ -200,16 +214,32 @@ The slides will be present as a pdf version on www.insidethemachine.de
 
         <section data-markdown>
 			<textarea data-template>
-## Introduction component "com_secondhand"
 
-<img src="./assets/icons/left_right.start.svg" width="12%" />
+## First part
+
+<img src="./assets/icons/left_right.start.svg" width="12%" /><br>
+
+* Minimum component com_secondhand
+* API: From calling to JSON result
+
+Note:
+We are starting with a definition of component "com_secondhang" <br>
+and tell about the environment it lives (route, code, response) <br>
+? Who is familiar with API code  ? in Joomla ?
+
+            </textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+## Introduction component "com_secondhand"
 
 Imagine a second hand books component with <br>
 just the one books table and matching view.
 
-The idea is to use an external scan of the ISBN
-of the book, fetch book data by other web API
-and use a J! web API to fill this table.
+1) Scan an book ISBN
+2) Fetch book data by other web API
+3) Use a J! web API to fill this table.
 
 <strong>Table items</strong>
 <ul>
@@ -222,6 +252,10 @@ and use a J! web API to fill this table.
 <pre style="background-color: #ecf0f1; font-size: 18px; line-height: 1;">
 </pre>
 
+Note:
+* The Idea of the component is
+* So what have to do
+>>routes
 			</textarea>
         </section>
 
@@ -259,7 +293,7 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
             <span style="text-align: left;">
     <p><b>Api path:</b></p>
     <ul>
-        <li>/api/index.php/                -&gt; webservice starting in web site `/api` folder </li>
+        <li>/api/index.php/                -&gt; webservice starting in web site '/api' folder </li>
     </ul>
 </span>
             <br>
@@ -269,6 +303,10 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
         <li> v1/config/application  -&gt; routes to address functionality</li>
     </ul>
 </span>
+
+            <aside class="notes">
+               Example API route 📝
+            </aside>
         </section>
 
         <section style="text-align: left;">
@@ -285,9 +323,9 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
             <span style="text-align: left;">
     <p><b>Query:</b></p>
     <ul>
-        <li>pagination:   page[offset]=30&amp;page[limit]=30</li>
+        <li>pagination:    page[offset]=30&amp;page[limit]=30</li>
         <li>filter:                  filter[catid]=2&amp;filter[state]=1</li>
-        <li>sorting:           list[ordering]=created&amp;list[direction]=desc</li>
+        <li>sorting:            list[ordering]=created&amp;list[direction]=desc</li>
         <li>fields:                fields[articles]=title,catid,state</li>
     </ul>
 </span>
@@ -295,6 +333,11 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
     <p>Special characters like '[' and ']' must be converted to '%5B' and '%5D' ... <br>
         like in other HTML queries</p>
 </span>
+            <aside class="notes">
+                * Last part is 'query' where we handle ...<br>
+                * Special characters <br>
+                *                  <br>
+            </aside>
         </section>
 
         <!--
@@ -314,7 +357,13 @@ example.com/api/index.php/v1/config/application?page[offset]=30&amp;page[limit]=
 
 This example is valid only if the API is intended <br>for accessing data in database tables.
 
-			</textarea>
+Note:
+* We need a webservice plugin and a component
+* Direct table data access only
+*
+<br>
+
+            </textarea>
         </section>
 
         <section data-markdown>
@@ -324,7 +373,7 @@ This example is valid only if the API is intended <br>for accessing data in data
 
 The general base component folder structure
 
-```batch[7,10]
+```batch[7,10|]
 plg_secondhand
 ├─── language
 │      └─── en-GB
@@ -400,6 +449,10 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
 
     ....
 ```
+Note: ???
+* This is where we define the event we are listening to
+*
+*
 
 			</textarea>
         </section>
@@ -430,6 +483,10 @@ public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
 
 **createCRUDRoutes:** Here the magic happens.
 
+Note:
+* receive a router object
+* assign component and config
+* and create internal routes
 			</textarea>
         </section>
 
@@ -444,6 +501,9 @@ public function onBeforeApiRoute(BeforeApiRouteEvent $event): void
 
 function createCRUDRoutes has defined all CRUD routes internally
 
+Note:
+* And the it goes into Joomla API controller and model
+* Which i present later in detail
 
                  </textarea>
         </section>
@@ -473,7 +533,10 @@ We could have written:
    $this->addRoutes($routes);
 ```
 
-Which tells us `new Route(...)` will be the syntax for all our defined API routes
+'new Route(...)' will be the <br>syntax for all our defined API routes
+
+Note:
+📝
 			</textarea>
         </section>
 
@@ -2076,80 +2139,6 @@ Name it "`get'something'FromInput () {...}`"
 			</textarea>
         </section>
 
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-                Have a look at pe7er
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty last
-
-```php
-```
-
-
-			</textarea>
-        </section>
-
         <!--
         ==========================================================================
         05 LinksAndGoodBye
@@ -2186,63 +2175,6 @@ Name it "`get'something'FromInput () {...}`"
 			</textarea>
         </section>
 
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty
-
-```php
-```
-
-			</textarea>
-        </section>
-
-        <section data-markdown>
-			<textarea data-template>
-## empty last
-
-
-			</textarea>
-        </section>
 
 
     </div>
@@ -2270,6 +2202,8 @@ Name it "`get'something'FromInput () {...}`"
         hash: true,
 //				disableLayout: true,
         slideNumber: true,
+//		showNotes: "separate-page",
+        pdfSeparateFragments: false,
 
         width: 960,
         height: 540,

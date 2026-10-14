@@ -1,0 +1,11 @@
+
+S: Notes window (Speaker view)
+F: Full screen
+O: ESC:  Overview
+G: Jump to slide
+T: Timer
+
+-------------------
+PDF: ?print-pdf 
+	CTRL/CMD+P, Destination 'Save as PDF': Landscape, Margins to None.
+
