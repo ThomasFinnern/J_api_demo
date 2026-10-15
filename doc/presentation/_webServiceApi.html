@@ -634,7 +634,7 @@ $router->addRoutes($routes);
         <section data-markdown>
 			<textarea data-template>
 
-## X-Token and $getDefaults
+## $defaults and X-Token
 
 The route needs to know the component name
 
@@ -643,12 +643,11 @@ The route needs to know the component name
 ```
 
 **Joomla X-Token**<br>
-The X-Token is the key to the API door and is expected to <br>
-be part of the curl/http data send. The X-Token can be <br>
-fetched in user admin account after save.
+The X-Token is the key to the API door. It will be sendt with the the curl/http data. <br>
+The X-Token can be fetched in the user admin account after save.
 
-With defaults flag "`'public' => true`" on local development systems we <br>
-enable API calls without X-Token.
+With flag **"`'public' => true`"** <br>
+(on local development) systems we enable API calls without X-Token.
 
 ```php [2|3]
     // ToDo: Remove when tests finished, enables access without token
@@ -658,8 +657,9 @@ enable API calls without X-Token.
 
  Please make sure to remove this before going online
 
-Above $getDefaults is passed  as last parameter to the route <br>function definition
-
+Above $getDefaults is passed  as last parameter <br>
+to the route function definition<br>
+@
 
             </textarea>
         </section>
@@ -1131,7 +1131,7 @@ curl -s --show-error
 POST http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
 Accept: application/vnd.api+json
 Content-Type: application/json
-X-Joomla-Token:
+X-Joomla-Token:  ...
 {
    "title": "My book",
    "isbn": "12-3456-78-90",
@@ -1218,8 +1218,7 @@ curl -s --show-error
 PATCH http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/1
 Accept: application/vnd.api+json
 Content-Type: application/json
-X-Joomla-Token:
-
+X-Joomla-Token:  ...
 {
     "published": -2,
     "isbn": "1234-4567-8890",
@@ -1299,7 +1298,7 @@ curl -s --show-error
 DELETE http://127.0.0.1/web_page/api/index.php/v1/secondhand/books/2
 Accept: application/vnd.api+json
 Content-Type: application/json
-X-Joomla-Token:
+X-Joomla-Token:  ...
                 </code>
             </pre>
 
@@ -1381,6 +1380,8 @@ The results are in JSON style string. They contain the sections
 
 ## Links / meta sections of API response
 
+### Pagination
+
 * links
    * self
    * first
@@ -1397,20 +1398,21 @@ easy pagination handling by direct use of the links
         </section>
 
         <section style="text-align: left;">
-            <h2>Pagination request</h2>
-
-For pagination add
+            <h2>Pagination request </h2>
+For pagination add<br>
             <pre style="font-size: 24px; width: 100%">
                 <code data-trim data-noescape  class="language-http">
 ?page[offset]=90&page[limit]=30
                 </code>
             </pre>
-
+            (start at 90, 30 items)
+            <br>
+<br>
 which should be written like
 
             <pre style="font-size: 24px; width: 100%">
                 <code data-trim data-noescape  class="language-http">
-?page%5Boffset%5D=30&page%5Blimit%5D=30
+?page%5Boffset%5D=90&page%5Blimit%5D=30
             </code>
             </pre>
 
@@ -1443,6 +1445,7 @@ which should be written like
 }
                 </code>
             </pre>
+@
       </section>
 
         <!--
@@ -1485,7 +1488,8 @@ $router->createCRUDRoutes(
 
 * Parameter "`$defaults`" contains a config parameter array
 <br>
-                 </textarea>
+>
+            </textarea>
         </section>
 
         <section data-markdown>
@@ -1516,8 +1520,6 @@ $defaults = ['component' => 'com_secondhand', 'public' => true];
 
 The joomla createCRUDRoutes function organizes the code as following:
 
-
-
 ```php
 public function createCRUDRoutes($baseName, $controller, $defaults = [], $publicGets = false)
 {
@@ -1534,10 +1536,10 @@ public function createCRUDRoutes($baseName, $controller, $defaults = [], $public
    $this->addRoutes($routes);
 }
 ```
+Function parameters
+* $baseName -> Endpoint (v1/secondhand/books/1)
+* controller provided -> <br>**"`displayList`", "`displayItem`", "`add`", "`edit`", "`delete`"**
 
-* $baseName: Endpoint (v1/secondhand/books/1)
-* controller functions provided: <br>"`displayList`", "`displayItem`", "`add`", "`edit`", "`delete`"
-* regEx the variable values (['id' => '(\d+)'])
                  </textarea>
         </section>
 
@@ -1557,20 +1559,47 @@ Examples:<br>
 new Route(['GET'], 'v1/secondhand/books/:id',    'books.displayItem', ['id'   => '(\d+)'],      $defaults),
 new Route(['GET'], 'v1/secondhand/books/:title', 'books.displayItem', ['title'=>'([A-Z0-9 ]+'], $defaults),
 ```
-A colon ':' indicator followed by 'name' will be part of the URL input and<br>
-can be fetched accordingly. The value is restricted/secured by by given <br>
-regular expression.
+A colon ':' indicator with 'name' defines an endpoint variable<br>
+The value is secured by regular expression ['id' => '(\d+)']
+</span>
+                 </textarea>
+        </section>
+
+        <section data-markdown>
+            <textarea data-template>
+
+## Fetch API call json variables
+
+<span style="text-align: left;">
+            <pre >
+                <code data-trim data-noescape  class="language-http">
+###
+POST http://127.0.0.1/web_page/api/index.php/v1/secondhand/books
+Accept: application/vnd.api+json
+Content-Type: application/json
+X-Joomla-Token:  ...
+{
+   "title": "My book",
+   "isbn": "12-3456-78-90",
+   "author": "john breeze",
+   "description": "The next book i write",
+   "published": 1
+}
+                </code>
+            </pre>
+
 
 The JSON parameters given in the request can be fetched by
 ```php
-$srcFilename  = $this->input->json->getString('id');
+$author  = $this->input->json->getString('author');
 ```
 or all at once
 ```php
 $data = json_decode($this->input->json->getRaw(), true);
 ```
 
-                 </textarea>
+</span>
+            </textarea>
         </section>
 
         <section data-markdown>
@@ -1626,9 +1655,8 @@ or takes the component administrator model with given name.
 
 ## Joomla api controller sequence
 
-<!--img src="./assets/images/mermaid/ApiControllerSequence.png" width="100%"/-->
 <img src="./assets/images/mermaid/ApiControllerSequence.svg" width="100%"/>
-
+<br>??? where is call display (item/list)
 			</textarea>
         </section>
 
@@ -1650,9 +1678,14 @@ or takes the component administrator model with given name.
         <section data-markdown>
 			<textarea data-template>
 # Extend J! API support with own code
+* No standard table,
+* Handle data before read/save
+* Special needs ...
+
+==>bypass the default behavior of the J! API
+
 ![logo10](./assets/icons/left_right.start.svg)
 
-### ==> no standard table, <br>bypass the default behavior of the J! API
 * Patch results by overriding base function but calling parent
 * Handle parts/all on your own
 
@@ -1663,15 +1696,19 @@ or takes the component administrator model with given name.
 			<textarea data-template>
 
         Most Functions in the Joomla library API files<br>
-* **ApiController.php**
+* **ApiController.php**<br>
+
+* **JsonApiView.php**<br>
+
 * **ApiMVCFactory.php**
-* **JsonApiView.php**
 
 can be overridden.<br>
 
-For 'API' models the standard MVC (administrator) models <br> are applied.
-There is no special Apimodel.php file for API.
+There is no special ApiModel.php file for API.<br>
+For 'API' models the standard joomla <br>
+administrator models are used.
 
+ApiMVCFactory -> createTable, createModel
 			</textarea>
         </section>
 
@@ -1687,7 +1724,7 @@ to be overwritten from derived classes
 
 Example: The 'get' command to the component config variables has <br>no **id** but
 the standard view function does expect an id. <br>
-Solution: In component JsonApiView.php override function prepareItem($item)
+Solution: In **component JsonApiView.php override** function prepareItem($item)
 
 ```php
 /**
@@ -1743,7 +1780,8 @@ protected function preprocessSaveData(array $data): array
 This function is mainly used to handle fields, <br>
 apply special variables handling on patch/post commands <br>
 or patch data before save function is called
-
+Note:
+Example handling fields before save ...
 			</textarea>
         </section>
 
@@ -1752,12 +1790,15 @@ or patch data before save function is called
 ## Expand by defining own Api model.php
 <br>
 
-### "GET" component version ID
+### Example: Route "GET component version ID"
 
-Example route/code for retrieving the <br>component version ID via the API.<br>
+The command will retrieve the component version ID via the API.<br>
 
-In addition to defining the route, <br>only a controller, a model, and a helper are added.
+### What do we need ?
+In addition to defining the route, <br>only a **controller**, a **model**, and a **helper** are added.
 
+Note:
+   code follows
 			</textarea>
         </section>
 
@@ -1775,13 +1816,9 @@ $router->addRoutes(
 ]);
 ```
 
-Controller minimum
-```php
-protected $contentType = 'version';
-protected $default_view = 'version';
-
-... edit() // see patch
-```
+Note:
+* Two new routes
+*
 
 			</textarea>
         </section>
@@ -1792,7 +1829,7 @@ protected $default_view = 'version';
 
 New path structure with additional model and helper
 
-```php
+```php [2,4-9,12,13|]
 com_secondhand\api\src
    ├─── Controller
    │      ├─── BooksController.php
@@ -1807,6 +1844,35 @@ com_secondhand\api\src
           └─── Version
                  └─── JsonapiView.php
 ```
+Note:
+* New path structure
+* Controller model view
+*
+
+			</textarea>
+        </section>
+
+        <section data-markdown>
+			<textarea data-template>
+
+### New File VersionController.php
+
+VersionController.php minimum
+```php
+protected $contentType = 'version';
+protected $default_view = 'version';
+
+... edit() // see patch
+```
+
+! No additional code needed in controller for **GET** <br>
+as request data is handled in component API model <br>
+
+Note:
+* Minimum code in Controller
+* Controller model view
+*
+
 			</textarea>
         </section>
 
@@ -1814,7 +1880,6 @@ com_secondhand\api\src
 			<textarea data-template>
 ### New File VersionModel.php
 
-! No additional code in controller for **GET**. <br>
 The model overrides getItem which is called by joomla API code
 
 ```php
@@ -1829,18 +1894,27 @@ public function getItem()
 }
 ```
 
-The ManifestHelper.php reads/writes the versionId from/to the database.<br>
+			</textarea>
+        </section>
 
+        <section data-markdown>
+			<textarea data-template>
+### New File ManifestHelper.php
+
+The ManifestHelper.php reads/writes <br>the versionId from/to the database.<br>
+
+Code see github repository
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
 
-### Change in jsonApiView.php
- with additional function prepareItem ()
+### New File jsonApiView.php
+Minimum display variable definition <br>
+and additional function prepareItem ()
 
-```php [|10]
+```php []
 class JsonapiView extends BaseApiView
 {
     protected $fieldsToRenderItem = [
@@ -1858,13 +1932,17 @@ class JsonapiView extends BaseApiView
 ```
 
 That is all that is required to create a 'getVersion' API code.
+Note:
+* Define Variables to return
+* Assign ID for joomla api code
+*
 
 			</textarea>
         </section>
 
         <section data-markdown>
 			<textarea data-template>
-### Code to write the versionID (patch)
+## Code to write the versionID (patch)
 
 The controller calls the edit function<br>
 of the parallel component api model
@@ -1889,6 +1967,10 @@ public function edit() : ApiController
 The view (displayItem) is called afterwards with id=0
 as it expects an table id
 
+Note:
+* fetch data from array
+* get model and use it to save
+* and display the hcanged results
 			</textarea>
         </section>
 
@@ -1896,10 +1978,8 @@ as it expects an table id
 			<textarea data-template>
 ### Save code in VersionModel.php
 
-```php [5,6,7|9,10|12,15,19|23,25]
+```php [1-6|1,7,8|10-12|14,15]
 public function save(mixed $data = []) {
-    $isChanged = false;
-    $isSaved = true;
 
     // New data
     $version = $data['version'];
@@ -1909,20 +1989,11 @@ public function save(mixed $data = []) {
     $oManifest = ManifestHelper::getDbManifest($this->componentName);
 
     // Assign data
-    if ($oManifest['version'] != $version)
-    {
-        $oManifest['version'] = $data['version'];
-        $isChanged = true;
-    }
-    if ($oManifest['creationDate'] != $creationDate) {
-        $oManifest['creationDate'] = $creationDate;
-        $isChanged = true;
-    }
+    $oManifest['version'] = $version;
+    $oManifest['creationDate'] = $creationDate;
 
-    // save data
-    if ($isChanged) {
-        $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
-    }
+    // Save
+    $isSaved = ManifestHelper::saveDbManifest($oManifest, $this->componentName);
 
     return $isSaved;
 }
@@ -1964,10 +2035,9 @@ Change the namespace and you are ready to go ;-)
 
 ```php
 .../administrator/components/com_secondhand/src/Model/VersionModel.php
+.../administrator/components/com_secondhand/src/Helper/VersionModel.php
 ```
-
-Alternatively, an existing model can be accessed from there.
-
+??? general calling admin models / contollers ? is again now ?
 			</textarea>
         </section>
 
@@ -2169,7 +2239,7 @@ expected variables to the modelState
 			<textarea data-template>
 ## findings
 
-If URL variable could not be found in input try post data
+If a URL variable could not be found in input try post data
 
 ```php
 private function getExtensionFromInput()
