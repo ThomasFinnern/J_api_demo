@@ -484,7 +484,7 @@ final class Secondhand extends CMSPlugin implements SubscriberInterface
 
     ....
 ```
-Note: ???
+Note:
 * This is where we define the event we are listening to
 *
 *
@@ -1543,8 +1543,6 @@ Function parameters
                  </textarea>
         </section>
 
-        <!-- ???????????????????????????????????????????????????????????????????????????? -->
-
         <section data-markdown>
             <textarea data-template>
 ## Route endpoint parameter
@@ -1641,9 +1639,9 @@ and view to the joomla API functions or define its own.
 2) Used model by API or administrator folder of component
 
 Note:
-The API call to the controller function like 'displayList' will use the code in the component api controller path if available.
+The API call to the controller function like 'displayList' will use the code in the component API controller path if available.
 Otherwise, the default API controller steps in and handles the request.
-In similar way the joomla api controller calls the model creator which tries to find the component api model
+In similar way the joomla API controller calls the model creator which tries to find the component API model
 or takes the component administrator model with given name.
 
                  </textarea>
@@ -1652,20 +1650,19 @@ or takes the component administrator model with given name.
         <section data-markdown>
             <textarea data-template>
 
+### Joomla API GET controller sequence
 
-## Joomla api controller sequence
+<img src="./assets/images/mermaid/GetApiControllerSequence.svg" width="100%"/>
 
-<img src="./assets/images/mermaid/ApiControllerSequence.svg" width="100%"/>
-<br>??? where is call display (item/list)
 			</textarea>
         </section>
 
         <section data-markdown>
             <textarea data-template>
-## ???
-???                Minimum display list: controller to view
-<img src="./assets/images/mermaid/Controller2view.svg" />
 
+### Joomla API POST/PATCH controller sequence
+
+<img src="./assets/images/mermaid/PostPasteApiControllerSequence.svg" width="100%"/>
 			</textarea>
         </section>
 
@@ -1934,7 +1931,7 @@ class JsonapiView extends BaseApiView
 That is all that is required to create a 'getVersion' API code.
 Note:
 * Define Variables to return
-* Assign ID for joomla api code
+* Assign ID for joomla API code
 *
 
 			</textarea>
@@ -1945,7 +1942,7 @@ Note:
 ## Code to write the versionID (patch)
 
 The controller calls the edit function<br>
-of the parallel component api model
+of the parallel component API model
 
 VersionController.php
 ```php [4|8,9,11|13]
@@ -2037,7 +2034,6 @@ Change the namespace and you are ready to go ;-)
 .../administrator/components/com_secondhand/src/Model/VersionModel.php
 .../administrator/components/com_secondhand/src/Helper/VersionModel.php
 ```
-??? general calling admin models / contollers ? is again now ?
 			</textarea>
         </section>
 
@@ -2072,8 +2068,6 @@ protected function queryEncode($query);
 			</textarea>
         </section>
 
-
-        <!-- ???????????????????????????????????????? -->
         <section data-markdown>
 			<textarea data-template>
 ## How to manipulate the 'model' state
@@ -2297,7 +2291,7 @@ Name it "`get'something'FromInput () {...}`"
   <small>(in Joomla 4 or 5 or 6)</small><br>
   https://slides.woluweb.be/api
 
-* ??? postman , bruno
+* Ceckout postman and bruno
 
 			</textarea>
         </section>
